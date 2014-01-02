@@ -1,0 +1,157 @@
+
+\chapter{Fourier Series}
+
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{11-Fourier-Series/Fourier-Series-objectives}
+
+
+\section{Basic Definitions}
+A function $f(x)$ is said to be periodic with period $p$ if $f(x+p)=f(x)$ for all $x$ in the domain of $f$. This means that the function will repeat itself every $p$ units. The trig functions $\sin x$ and $\cos x$ are periodic with period $2\pi$, as well as with period $4\pi, 6\pi,8\pi$, etc. The fundamental period is the smallest positive period of a function. The function $\sin nx$ is periodic, with fundamental period $\frac{2\pi}{n}$, though it also has period $2\pi$.  
+
+If two functions are period with the same period, then any linear combination of those functions is periodic with the same period. In particular, the sum $a_0 + \sum_{n=1}^\infty (a_n\cos nx +b_n\sin nx)$ has period $2\pi$.  This sum is called a Fourier series, where $a_i,b_i$ are called Fourier coefficients.  Given a function $f(x)$ which has period $2\pi$, we write $$f(x) = a_0 + \sum_{n=1}^\infty (a_n\cos nx +b_n\sin nx)$$ where the Fourier coefficients of $f(x)$ are given by the Euler formulas $$a_0 = \frac{1}{2\pi}\int_{-\pi}^\pi f(x)dx, a_n =  \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos (nx) dx,b_n =  \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin (nx) dx$$ for $n\geq 1$. This is another way of expressing a function in terms of an infinite series. 
+A Fourier series will converge to the function $f(x)$ for a function which is piecewise continuous and has a left and right hand derivative at each point of the domain. At a point of discontinuity, the Fourier series will converge to the average of the left and right limits at that point. One main use of Fourier series is in solving partial differential equations.
+
+If the function has period $2L$ instead of period $2\pi$, then we make a substitution in the formulas above. Replace every $x$ above with $X$, and then perform the substitution $\frac{X}{2\pi}=\frac{x}{2L}$, or $X=\frac{\pi}{L}x$. The function $\sin\frac{\pi x}{L}$ has period $2L$, and the Fourier series becomes $$a_0 + \sum_{n=1}^\infty \left(a_n\cos \frac{n\pi x}{L} +b_n\sin \frac{n\pi x}{L}\right)$$ where the Fourier coefficients are given by $$a_0 = \frac{1}{2L}\int_{-L}^L f(x)dx, a_n =  \frac{1}{L}\int_{-L}^L f(x)\cos  \frac{n\pi x}{L} dx,b_n =  \frac{1}{L}\int_{-L}^L f(x)\sin  \frac{n\pi x}{L} dx.$$
+
+\subsection{Examples}
+Let $f(x) = \begin{cases}1&0<x<\pi\\-1&-\pi<x<0\end{cases}$. The function $f(x)$ has period $2\pi$.  We compute $a_0 
+= \frac{1}{2\pi}\int_{-\pi}^\pi f(x)dx 
+= \frac{1}{2\pi}\left(\int_{-\pi}^0 -1dx+\int_{0}^\pi 1dx\right) 
+= \frac{1}{2\pi}\left(-\pi+\pi\right) 
+= 0$.  
+Also, we have 
+\begin{center}
+\begin{tabular}{ll}
+$\begin{array}{rl}
+a_n 
+&=  \frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos (nx) dx\\
+&=  \frac{1}{\pi}\left(\int_{-\pi}^0 - \cos (nx) dx + \int_{0}^\pi \cos (nx) dx\right)\\
+&=  \frac{1}{\pi}\left( -\frac{\sin nx}{n} \big|_{-\pi}^0 + \frac{\sin nx}{n} \big|_{0}^\pi\right)\\
+&=  \frac{1}{\pi}( 0-0 + 0-0)\\
+&=0
+\end{array}$
+&
+$\begin{array}{rl}
+b_n 
+&=  \frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin (nx) dx\\
+&=  \frac{1}{\pi}\left(\int_{-\pi}^0 - \sin (nx) dx + \int_{0}^\pi \sin (nx) dx\right)\\
+&=  \frac{1}{\pi}\left( \frac{\cos nx}{n} \big|_{-\pi}^0 - \frac{\cos nx}{n} \big|_{0}^\pi\right)\\
+&=  \frac{1}{\pi}( \frac{1}{n}-\frac{\cos n\pi}{n} - \frac{\cos n\pi}{n}+1)\\
+&=  \frac{1}{n\pi}(2-2\cos n\pi)
+\end{array}$
+\end{tabular}
+\end{center}
+If $n$ is even then $\cos n\pi = 1$. If $n$ is odd then $\cos n\pi = -1$. Hence $b_n = \frac{4}{n\pi}$ if $n$ is odd and $b_n=0$ if $n$ is even. This means that we can write $$f(x)=\begin{cases}1&0<x<\pi\\-1&-\pi<x<0\end{cases}=0+\sum_{n=0}^\infty \frac{4}{n\pi}\sin n\pi = \frac{4}{\pi}\left(\sin x + \frac{1}{3}\sin 3x + \frac{1}{5}\sin 5 x + \frac{1}{7}\sin 7x +\cdots\right).$$
+
+The Fourier series of $f(x)=af_1(x)+bf_2(x)$ is found by computing the Fourier series of $f_1$ and $f_2$, multiplying by $a$ and $b$ and then adding.  The function $f(x) =\begin{cases}2&0<x<\pi\\0&-\pi<x<0\end{cases}$ is the same as $f_1(x) +f_2(x)$, where $f_1(x) = \begin{cases}1&0<x<\pi\\-1&-\pi<x<0\end{cases}$ and $f_2(x) = 1$.  The Fourier series of $f_1(x)$ was computed above, and the Fourier series $f_2$ has coefficients $a_0=1,a_n=b_n=0$, so its Fourier series is simply $f_2(x) = 1 $.  Hence this gives the Fourier series $$\begin{cases}2&0<x<\pi\\0&-\pi<x<0\end{cases}=1+\sum_{n=0}^\infty \frac{4}{n\pi}\sin n\pi = 1+\frac{4}{\pi}\left(\sin x + \frac{1}{3}\sin 3x + \frac{1}{5}\sin 5 x + \frac{1}{7}\sin 7x +\cdots\right).$$ 
+Division by 2 gives the Fourier series  $$\begin{cases}1&0<x<\pi\\0&-\pi<x<0\end{cases}=\frac12+\sum_{n=0}^\infty \frac{2}{n\pi}\sin n\pi = \frac12+\frac{2}{\pi}\left(\sin x + \frac{1}{3}\sin 3x + \frac{1}{5}\sin 5 x + \frac{1}{7}\sin 7x +\cdots\right).$$
+
+
+We now consider a function with period 8  defined by the $f(x) = \begin{cases}0&-4<x<-2\\1&-2<x<2\\0&2<x<4\end{cases}$. This function is 1 for $-2<x<2$, $6<x<10$, etc.  It is a regular pulse which is on for 4 units of time, and then off for four units of time.  Since the period is not $2\pi$, but instead $2L=8$, we have $L=4$.  The Fourier coefficients are $a_0 = \frac{1}{2(4)}\int_{-4}^4f(x)dx = \frac{1}{8}\int_{-2}^2 1dx = \frac{1}{2}$, and 
+\begin{center}
+\begin{tabular}{ll}
+$\begin{array}{rl}
+a_n 
+&=  \frac{1}{L}\int_{-4}^4 f(x)\cos \frac{n\pi x}{4} dx\\
+&=  \frac{1}{4}\int_{-2}^2 \cos \frac{n\pi x}{4} dx \\
+&=  -\frac{1}{4}\frac{4}{n\pi}\sin \frac{n\pi x}{4} \big|_{-2}^2 \\
+&=  -\frac{1}{n\pi}\sin \frac{n\pi x}{4} \big|_{-2}^2 \\
+&=  -\frac{1}{n\pi}\left(\sin \frac{ 2n\pi }{4}-\sin \frac{-2 n\pi }{4}\right)\\
+&=  \frac{1}{n\pi}(2\sin \frac{ n\pi }{2}) 
+\end{array}$
+&
+$\begin{array}{rl}
+b_n 
+&=  \frac{1}{L}\int_{-4}^4 f(x)\sin \frac{n\pi x}{4} dx\\
+&=  \frac{1}{4}\int_{-2}^2 \sin \frac{n\pi x}{4} dx \\
+&=  -\frac{1}{4}\frac{4}{n\pi}\cos \frac{n\pi x}{4} \big|_{-2}^2 \\
+&=  -\frac{1}{n\pi}\cos \frac{n\pi x}{4} \big|_{-2}^2 \\
+&=  -\frac{1}{n\pi}\left(\cos \frac{ n\pi }{2}-\cos \frac{- n\pi }{2}\right)\\
+&=  \frac{1}{n\pi}(0) =0
+\end{array}$
+\end{tabular}
+\end{center}
+If $n$ is even, then $a_n=0$ as sine is 0 at integer values. We have $a_1=\frac{2}{n\pi} = a_5=a_9=\cdots$, and $a_3=-\frac{2}{n\pi} = a_7=a_{11}=\cdots$. Hence the Fourier series is
+$$f(x) = \begin{cases}0&-4<x<-2\\1&-2<x<2\\0&2<x<4\end{cases}= \frac12+\frac{2}{\pi}\left(\cos \frac{\pi x}{4} - \frac{1}{3}\cos  \frac{3 \pi x}{4} + \frac{1}{5}\cos  \frac{5 \pi x}{4} - \frac{1}{7}\cos  \frac{7 \pi x}{4} +\cdots\right).$$
+
+
+\section{Orthogonality of Trigonometric functions}
+For any integers $m\neq n$, we have $\int_{-\pi}^\pi \cos nx \cos mx dx =0, \int_{-\pi}^\pi \sin nx \sin mx dx =0, \int_{-\pi}^\pi \sin nx \cos mx dx =0$.  In addition, if $m=n$ then $\int_{-\pi}^\pi \sin nx \cos nx dx =0$.  Because these integrals are zero, we say that $\sin nx, \cos mx$ forms an orthogonal system of functions. This is proved using the trigonometric identities $\cos nx \cos mx = \frac{1}{2}(\cos(n+m)+\cos(n-m)), \sin nx \sin mx = \frac{1}{2}(\cos(n-m)-\cos(n+m)), \sin nx \cos mx = \frac{1}{2}(\sin(n+m)+\sin(n-m))$, together with the fact that $n\pm m\neq 0$ is an integer, and so $\int_{-\pi}^\pi \cos (n\pm m) dx =0$ and $\int_{-\pi}^\pi \sin (n\pm m) dx =0$. If $n=m$, then $\cos nx \cos nx= \frac{1}{2}(\cos(2nx)+1)$ and $\sin nx \sin nx= \frac{1}{2}(1-\cos 2nx)$, so we can compute 
+$
+\int_{-\pi}^\pi \cos nx \cos nx dx = 
+\frac{1}{2}\int_{-\pi}^\pi (\cos(2nx)+1) dx = 
+\frac{1}{2} (\sin(2nx)/2n+x)\big|_{-\pi}^\pi dx = 
+\pi
+$ 
+and
+$
+\int_{-\pi}^\pi \sin nx \sin nx dx = 
+\frac{1}{2}\int_{-\pi}^\pi (1-\cos(2nx)) dx = 
+\frac{1}{2} (x-\sin(2nx)/2n)\big|_{-\pi}^\pi dx = 
+\pi
+$.  These facts are used derive Euler's formulas for the Fourier coefficients.  If we multiply both sides of 
+$f(x) = a_0 + \sum_{n=1}^\infty (a_n\cos nx +b_n\sin nx)$
+by $\cos mx$, and then integrate term by terms, we have 
+$\int_{-\pi}^{\pi} f(x)\cos(mx)dx = \int_{-\pi}^{\pi}a_0 \cos(mx)dx + \sum_{n=1}^\infty (a_n\int_{-\pi}^{\pi}\cos nx \cos(mx)dx +b_n\int_{-\pi}^{\pi}\sin nx \cos(mx)dx) = 0+a_m\pi$.  Hence $a_m = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\cos(mx)dx$.  The other coefficients are derived similarly.
+
+\subsection{Half-Wave Rectifier}
+A half wave rectifier clips off the negative portion of a trigonometric function. The function $f(x) = \begin{cases}0&-\frac{\pi}{\omega}<x<0\\ \sin\omega x &0< x<\frac{\pi}{\omega}\end{cases}$, where $p = 2L = \frac{2\pi}{\omega}$ has had the negative portion of the sine wave clipped off (hence has passed through a half wave rectifier).  The Fourier coefficients are (using the same trig identities as above) 
+$$a_0=\frac{\omega}{2\pi}\int_0^{\pi/\omega}\sin\omega x dx = -\frac{1}{2\pi}\cos\omega x \big|_0^{\pi/\omega} = \frac{1}{\pi},$$ and 
+\begin{align*}
+a_n 
+&= \frac{\omega}{\pi}\int_{0}^{\pi/\omega}\sin \omega t \cos n\omega tdt \\
+&= \frac{\omega}{2\pi}\int_{0}^{\pi/\omega}\sin(1+n)\omega t+ \sin(1-n)\omega t dt \\
+&= -\frac{1}{2\pi}\left(\frac{\cos(1+n)\omega t}{(1+n)}+ \frac{\cos(1-n)\omega t}{(1-n)\omega} \right)\big|_{0}^{\pi\omega} \\
+&= -\frac{1}{2\pi}\left(\frac{\cos(1+n)\pi}{(1+n)}+ \frac{\cos(1-n)\pi}{(1-n)}  - \frac{1}{1+n}-\frac{1}{1-n}\right). 
+\end{align*}
+If $n$ is odd, this is zero.  If $n$ is even, then $a_n = \frac{1}{2\pi}\left( \frac{2}{1+n}+\frac{2}{1-n}\right) = -\frac{2}{(n-1)(n+1)\pi}$.  You can also calculate $b_1=1/2$ and $b_n=0$ for all $n\geq 2$.  This gives the Fourier series as
+$$f(x) = \frac{1}{\pi}+\frac{1}{2}\sin\omega x  - \frac{2}{\pi}\left(\frac{1}{1\cdot 3}\cos 2\omega x + \frac{1}{3\cdot 5}\cos 4\omega x +\frac{1}{5\cdot 7}\cos 6\omega x +\cdots \right).$$
+
+
+
+\section{Even and Odd Functions}
+We often use the facts that $\cos(-x)=\cos(x)$ and $\sin(-x)=-\sin(x)$ in some of the work above.  Any function $f(x)$ which satisfies $f(-x)=f(x)$ is called an even function (polynomials with only even powers of $x$ are even functions).  An odd function satisfies $f(-x)=-f(x)$ (and polynomials with only odd powers of $x$ are odd functions).  Even functions are symmetric about the $y$-axis. Odd functions are symmetric about the origin.  The Fourier coefficients of an even function are simply $a_0=\frac{1}{L}\int_0^L f(x)dx, a_n=\frac{2}{L}\int_0^L f(x)\cos \frac{n\pi x}{L}dx, b_n=0$, and the corresponding Fourier series is called a Fourier cosine series.  Similarly, for an odd function the coefficients are $a_0=0, a_n=0, b_n=\frac{2}{L}\int_0^L f(x)\sin \frac{n\pi x}{L}dx$, and the corresponding Fourier series is called a Fourier sine series. This comes because the product of two even functions is even, the product of two odd functions is even, and the product of an even and an odd function is odd. In addition, integration from $-L$ to $L$ of an odd function is zero, while integration from $-L$ to $L$ of an even function is twice the integral of $0$ to $L$.
+
+The sawtooth wave is the function $f(x) = x+\pi$ for $-\pi<x<\pi$, and $f(x+2\pi)=f(x)$.  It can be written as the sum of an even function $f_1(x)=\pi$ and an odd function $f_2(x)=x$.  The corresponding Fourier cosine and sine series are $f_1=\pi$ and $f_2=2\left(\sin x -\frac{1}{2}\sin 2x +\frac{1}{3}\sin 3x -\frac{1}{4}\sin 4x+\cdots\right)$. Addition of series gives $f(x) = \pi+ 2\left(\sin x -\frac{1}{2}\sin 2x +\frac{1}{3}\sin 3x -\frac{1}{4}\sin 4x+\cdots\right)$. (The coefficients $b_n$ are obtained using integration by parts and $b_n = -\frac{2}{n}\cos n\pi$.)
+
+If a function is defined on the interval $[0,L]$, then it is possible to expand the function periodically onto the interval $[-L,0]$ by either using an even expansion (reflection about the $y$ axis), or an odd expansion (reflection about the origin). Both expansions are called half-range expansions.  The Fourier series of an even half-range expansion is the Fourier cosine series, and the Fourier series of an odd half-range expansion is the Fourier sine series.  
+
+Consider the triangle $f(x) = \begin{cases}x&0\leq x\leq L/2\\L-x&L/2\leq x\leq L\end{cases}$. The Fourier cosine series has coefficients 
+$$a_0=\frac{1}{L}\int_0^{L/2} x dx+\frac{1}{L}\int_{L/2}^L (L-x) dx = \frac{1}{2},\quad\quad a_n=\frac{2}{L}\int_0^{L/2} x\cos \frac{n\pi x}{L}dx + \frac{2}{L}\int_{L/2}^L (L-x)\cos \frac{n\pi x}{L}dx.$$
+Integration by parts gives 
+\begin{align*}
+\int_0^{L/2} x\cos \frac{n\pi x}{L}dx 
+&= \left(x\frac{L}{n\pi}\sin\frac{n\pi x}{L} + \frac{L^2}{n^2\pi^2}\cos\frac{n\pi x}{L}\right)\bigg|_{0}^{L/2} \\
+&= \left(\frac{L^2}{2n\pi}\sin\frac{n\pi }{2} + \frac{L^2}{n^2\pi^2}\cos\frac{n\pi }{2}\right) - \left(\frac{L^2}{n^2\pi^2}\right)
+\end{align*}
+and
+\begin{align*}
+\int_{L/2}^L (L-x)\cos \frac{n\pi x}{L}dx 
+&= \left((L-x)\frac{L}{n\pi}\sin\frac{n\pi x}{L} - \frac{L^2}{n^2\pi^2}\cos\frac{n\pi x}{L}\right)\bigg|_{L/2}^L \\
+&= \left( 0-\frac{L^2}{n^2\pi^2}\cos n\pi \right) 
+- \left(\frac{L^2}{2n\pi}\sin\frac{n\pi}{2} - \frac{L^2}{n^2\pi^2}\cos\frac{n\pi }{2}\right).
+\end{align*}
+This means 
+\begin{align*}
+a_n 
+&= \frac{2}{L}\left(\frac{L^2}{2n\pi}\sin\frac{n\pi }{2} + \frac{L^2}{n^2\pi^2}\cos\frac{n\pi }{2} - \frac{L^2}{n^2\pi^2} -\frac{L^2}{n^2\pi^2}\cos n\pi  
+- \frac{L^2}{2n\pi}\sin\frac{n\pi }{2} + \frac{L^2}{n^2\pi^2}\cos\frac{n\pi }{2}\right) \\
+&= \frac{2L}{n^2\pi^2}\left(2\cos\frac{n\pi }{2} -1 - \cos n\pi \right).
+\end{align*}
+We have $a_0=\frac{1}{2}, a_2=-8L/(2^2\pi^2), a_6= -8L/(6^2\pi^2), a_{10}=-8L/(10^2\pi^2) ,\ldots$, and $a_n=0$ for all $n$ which are odd or multiples of 4.   Hence the even expansion of $f$ has Fourier series 
+$$f(x) = \frac{1}{2} -\frac{8L}{\pi^2}\left( \frac{1}{2^2}\cos \frac{2\pi x}{L} +  \frac{1}{6^2}\cos \frac{2\pi x}{L}+  \frac{1}{10^2}\cos \frac{2\pi x}{L}+\cdots\right).$$
+Similar computations show that if we use a half-range odd expansion, then $b_n = \frac{4L}{n^2\pi^2}\sin\frac{n\pi}{2}$, which means $b_n = 0$ for all even $n$, and we have 
+$$f(x) = \frac{4L}{\pi^2}\left( \frac{1}{1^2}\sin \frac{\pi x}{L} -  \frac{1}{3^2}\sin \frac{3\pi x}{L}+  \frac{1}{5^2}\sin \frac{5\pi x}{L}-\cdots\right).$$
+
+\section{Identities}
+Fourier series can be used to prove various identities.  For example, the Fourier series of $\sin^2 x$ is $\frac{1}{2}-\frac{1}{2}\cos(2x)$, a familiar identity.  Fourier series also give $\sin^4 x =  \frac{3}{8}-\frac{1}{2} \cos 2 x+\frac{1}{8} \cos 4 x$.  Essentially you can use Fourier series to derive a power reduction formula for any power of $\sin x$ or $\cos x$.    
+
+In addition, Fourier series when evaluated at a point can yield interesting results. The function $f(x)=x^2$ on the interval $-1<x<1$ has Fourier coefficients $a_0=\frac{1}{3}, a_n=\frac{4}{n^2\pi^2}\cos n\pi, b_n=0$.  This means $$x^2 = \frac{1}{3}-\frac{4}{\pi^2}\left(\frac{1}{1^2}\cos \pi x -\frac{1}{2^2}\cos 2x +\frac{1}{3^2}\cos 3x-\frac{1}{4^2}\cos 4x +\cdots\right).$$  Evaluation at $0$ gives a formula for $\pi^2/12$.  Evaluation at $1/2$ and $1$ gives additional expressions involving $\pi^2$. These identities can lead to powerful ways of giving numerical approximations to $\pi$, and other numbers.
+
+\section{Where do people use Fourier Series}
+Besides mathematicians who like studying infinite series for fun, Fourier series have an extremely useful application in the telecommunications and graphics industry (cell phones, internet, land lines, JPG, MP3, radio communication, etc.).  Radio waves can be thought of as periodic vibrations of space, sent by a radio transmitter.  These vibrations are sent out in all directions, and are captured by antennae.  Your radio receiver computes Fourier integrals to compute the coefficients of the signal received.  The FCC dictates at what frequency people are allowed to broadcast.  We will discuss this more in class with an animation.
+
+In addition, Fourier series play a major role in modeling heat transfer. Engineers use Fourier series to model the transfer of heat in jet engines, car engines, space craft, and any other device which could fail because it overheats.  You can learn more about this topic in a course on partial differential equations.  We'll take up a brief study of partial differential equations in the next chapter, and briefly show where Fourier series appear. 
+
+

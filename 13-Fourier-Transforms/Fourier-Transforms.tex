@@ -1,0 +1,94 @@
+
+\chapter{Fourier Transforms}
+
+\noindent(Rough draft \today) This learning module covers the following ideas.  When you make your lesson plan, it should explain and contain examples of the following:
+\begin{enumerate}
+
+\item Define and compute Fourier integrals. 
+\item Define and compute Fourier cosine and sine transforms.   Use the derivative rules to find new transforms.
+\item Define and compute Fourier transforms.   Use the derivative rule to find new transforms.
+
+\end{enumerate}
+
+
+\section{Fourier Integrals}
+
+We defined the Fourier series of $f(x)$ as 
+\begin{align*}
+f(x) 
+&= a_0+\sum_{n=1}^\infty \left(a_n \cos\frac{n\pi x}{L}+b_n\sin \frac{n\pi x}{L}\right)\\
+&= \frac{1}{2L}\int_{-L}^{L}f(v)dv+\sum_{n=1}^\infty \left(\left(\frac{1}{L}\int_{-L}^{L}f(v)\cos\frac{n\pi v}{L}dv\right) \cos\frac{n\pi x}{L}+\left(\frac{1}{L}\int_{-L}^{L}f(v)\sin\frac{n\pi v}{L}dv\right)\sin \frac{n\pi x}{L}\right)\\
+&= \frac{1}{2L}\int_{-L}^{L}f(v)dv+\frac{1}{L}\sum_{n=1}^\infty \left(\left(\int_{-L}^{L} f(v)\cos w_n v dv\right) \cos w_n x+\left(\int_{-L}^{L}f(v)\sin w_n vdv\right)\sin w_n x\right)
+\end{align*}
+where $w_n=\frac{n\pi}{L}$ and we use $v$ as the dummy variable of integration instead of $x$.  If we let $\Delta w = w_{n+1}-w_{n} = \frac{(n+1)\pi}{L} - \frac{n\pi}{L} = \frac{\pi}{L}$, then we can write this instead as 
+\begin{align*}
+f(x) 
+&= \frac{\Delta w}{2\pi}\int_{-L}^{L}f(v)dv+\frac{\Delta w}{\pi}\sum_{n=1}^\infty \left(\left(\int_{-L}^{L} f(v)\cos w_n v dv\right) \cos w_n x+\left(\int_{-L}^{L}f(v)\sin w_n vdv\right)\sin w_n x\right)\\
+&= \frac{\Delta w}{2\pi}\int_{-L}^{L}f(v)dv+\frac{1}{\pi}\sum_{n=1}^\infty \left(\left(\int_{-L}^{L} f(v)\cos w_n v dv\right) \cos w_n x+\left(\int_{-L}^{L}f(v)\sin w_n vdv\right)\sin w_n x\right)\Delta w%\\
+%&= \frac{\Delta w}{2\pi}\int_{-L}^{L}f(v)dv+\frac{1}{\pi}\sum_{n=1}^\infty \left(A_L(w_n) \cos w_n x+B_L(w_n)\sin w_n x\right)\Delta w
+\end{align*}
+This series is defined for functions $f$ which are $2L$ periodic.  We now ask what happens if $L\to \infty$, in other words how do we extend the definition of a Fourier series so that we can consider functions defined over the entire number line. This will give what is called a Fourier integral. In order to even attempt this procedure, we must first require that $f(x)$ is absolutetly integrable, which means $\int_{-\infty}^\infty |f(x)|dx$ is finite. As $L\to \infty$, $\Delta w\to 0$ and  last line above suggests that we write 
+$$f(x) = \frac{1}{\pi}\int_{0}^\infty \left(\left(\int_{-\infty}^{\infty} f(v)\cos w v dv\right) \cos w x+\left(\int_{-\infty}^{\infty}f(v)\sin w vdv\right)\sin w x\right)dw.$$   
+where we add the notation 
+$$A(w) = \frac{1}{\pi}\int_{-\infty}^{\infty} f(v)\cos w v dv \ \ \ \ \ B(w) = \frac{1}{\pi}\int_{-\infty}^{\infty} f(v)\sin w v dv $$ which means we can write 
+$$f(x) = \int_{0}^\infty \left(A(w) \cos w x+B(w)\sin w x\right)dw.$$  
+This representation of $f(x)$, called a Fourier integral, exists if $f$ is piecewise continuous on every finite interval, has a right and left hand derivative at every $x$, and is absolutely integrable.  If $f(x)$ is not continuous at $x$, then the value of the integral equals the average of the left and right limits of $f$. 
+If $f(x)$ is an even function, then $A(w) = \frac{2}{\pi}\int_{0}^{\infty} f(v)\cos w v dv, B(w)=0, f(x) = \int_{0}^\infty A(w) \cos w xdw.$
+If $f(x)$ is an odd function, then $B(w) = \frac{2}{\pi}\int_{0}^{\infty} f(v)\sin w v dv, A(w)=0, f(x) = \int_{0}^\infty B(w) \sin w xdw.$
+These are called the Fourier cosine and Fourier sine integrals.  
+The purpose of these integrals is that they allows us to extend the idea of a Fourier series to a function which is defined on the entire number line.  The Fourier cosine and Fourier sine integrals allow us to extend functions defined on only the positive axis to even or odd functions defined everywhere. Fourier integrals are used to solve PDEs.  We will define Fourier transforms in the next section which are similar to Laplace transforms and can be used in a similar manner.
+
+Consider the function $f(x) = \begin{cases}1& -1<x<1\\0&\text{otherwise}\end{cases}$. As it is an even function, we have $B(w)=0$ automatically.  We calculate $A(w) = \frac{2}{\pi}\int_0^{\infty}f(v)\cos wv dv = \frac{2}{\pi}\int_0^{1}1\cos wv dv = \frac{2\sin wv}{w\pi} \big|_0^{1} = \frac{2\sin w}{w\pi}$.  Hence $f(x) = \frac{2}{\pi}\int_0^\infty \frac{\sin w}{w}\cos wxdw$.  Since $f(x)$ is not continuous at $1$, the value on the right side is the average of 1 and 0, or $\frac12$.  Multiplying by $\frac{\pi}{2}$ we obtain $\ds\int_0^\infty \frac{\sin w\cos wx}{w}dw=\begin{cases}\pi/2 & -1< x<1\\ \pi/4 & x=\pm 1\\ 0 &\text{otherwise}\end{cases}$. If $x=0$, we obtain the integral identity $\ds\int_0^\infty \frac{\sin w}{w}dw = \frac{\pi}{2}$. 
+
+
+
+
+
+\section{Fourier Sine and Cosine Transform}
+For an even function we defined $A(w) = \frac{2}{\pi}\int_{0}^{\infty} f(v)\cos w v dv$ and $f(x) = \int_{0}^\infty A(w) \cos w xdw.$ Let $A(w) =\ds\sqrt{\frac{2}{\pi}}\hat f_c (w)$ where $\hat f_c(w) = \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} f(x)\cos w x dx$ (where we replace the dummy variable $v$ with $x$). Hence $$ f(x) = \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} \hat f_c(w)\cos w x dw \ \ \text{ and }\ \ \ \hat f_c(w) = \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} f(x)\cos w x dx.$$ 
+Notice the symmetry in this definition.  We call $\hat f_c(w)$ the Fourier cosine transform of $f$, and we call $f$ the inverse Fourier cosine transform of $\hat f_c(w)$.  
+
+For an odd function we defined $B(w) = \frac{2}{\pi}\int_{0}^{\infty} f(v)\sin w v dv$ and $f(x) = \int_{0}^\infty B(w) \sin w xdw.$ Let $B(w) =\ds\sqrt{\frac{2}{\pi}}\hat f_s (w)$ where $\hat f_s(w) = \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} f(x)\sin w x dx$ (where we replace the dummy variable $v$ with $x$). Hence $$ f(x) = \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} \hat f_s(w)\sin w x dw \ \ \text{ and }\ \ \ \hat f_s(w) = \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} f(x)\sin w x dx.$$ 
+Notice the symmetry in this definition.  We call $\hat f_s(w)$ the Fourier sine transform of $f$, and we call $f$ the inverse Fourier sine transform of $\hat f_s(w)$. 
+
+The two transforms above introduce another transform similar to the Laplace transform. We can use them on any function defined on the positive $x$-axis. The transforms are linear, and they satisfy differentiability properties $\widehat{f^\prime}_c(w) = w\hat f_s-\sqrt{\frac{2}{\pi}}f(0)$ and  $\widehat{f^\prime}_s(w) = -w\hat f_c$, which are proved by integration by parts. These properties make them useful for solving ODEs and PDEs.
+
+For the function $f(x) = 1$ if $0\leq x\leq a$ and 0 other wise, we have 
+\begin{align*}
+\hat f_c(w) 
+&= \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} f(x)\cos w x dx
+= \ds\sqrt{\frac{2}{\pi}}\int_{0}^{a} \cos w x dx
+= \ds\sqrt{\frac{2}{\pi}}\frac{\sin w a }{w}
+\\
+\hat f_s(w) 
+&= \ds\sqrt{\frac{2}{\pi}}\int_{0}^{\infty} f(x)\sin w x dx
+= \ds\sqrt{\frac{2}{\pi}}\int_{0}^{a} \sin w x dx
+= \ds\sqrt{\frac{2}{\pi}}\frac{(-\cos w a +1)}{w} .
+\end{align*}
+So you can obtain the Fourier sine and cosine series of $f(x) = k$ for $0\leq x\leq a$ by multiplying these results by $k$, which is formula 1 in tables I and II in section 11.10.  Essentially the homework is to derive the formulas in section 11.10.
+
+\section{Fourier Transform}
+
+The  complex Fourier integral 
+$$f(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(v) e^{iw(x-v)}dvdw = \sqrt{\frac{1}{2\pi}}\int_{-\infty}^{\infty}\left[\sqrt{\frac{1}{2\pi}}\int_{-\infty}^{\infty} f(v) e^{-iwv}dv\right]e^{iwx}dw.
+$$ 
+It is a complex extension of the Fourier integral.  To obtain it requires using a trig identity and then adding 0.  The derivation is on page 518 in your text. The Fourier transform $\hat f (w)$ of $f(x)$ is then defined as 
+$$\hat f (w) = \sqrt{\frac{1}{2\pi}}\int_{-\infty}^{\infty} f(x) e^{-iwx}dx\ \ \ \ \ f (x) = \sqrt{\frac{1}{2\pi}}\int_{-\infty}^{\infty} \hat f(w) e^{iwx}dw.$$ Fourier transforms exist if $f$ is piecewise continuous on every finite interval and $f$ is absolutely integrable (meaning $\int_{-\infty}^\infty |f(x)|dx<\infty$). Notice that this integral involved the complex number $i$, and one integral has a positive sign while the other has a negative sign.  
+
+If $f(x) = 1$ for $-a\leq x\leq a$ and 0 otherwise, then we compute 
+$$\hat f(w) 
+= \sqrt{\frac{1}{2\pi}}\int_{-\infty}^{\infty} f(x) e^{-iwx}dx  
+= \sqrt{\frac{1}{2\pi}}\int_{-a}^{a} e^{-iwx}dx  
+= \sqrt{\frac{1}{2\pi}}\frac{e^{-iwa} - e^{iwa}}{-iw}
+$$.
+Using Euler's formula $e^{ix}=\cos x + i \sin x$, we can write $e^{-iwa} - e^{iwa} = \cos(-wa)+i\sin(-wa) - [\cos(wa)+i\sin(wa)] = \cos(wa)-i\sin(wa) - \cos(wa)-i\sin(wa) =-2i\sin(wa)$.  So we have $\ds\hat f(w) = \sqrt{\frac{1}{2\pi}}\frac{e^{-iwa} - e^{iwa}}{-iw} = \sqrt{\frac{1}{2\pi}}\frac{2\sin(wa)}{w}$. This matches with table III in section 11.10. 
+
+The main use of Fourier transforms comes to play in solving PDEs.  This is just a brief introduction to the topic. If you head to graduate school, you will most likely need Fourier transforms again. Fourier transforms are linear, and the Fourier transform of a derivative is found by multiplying by $iw$: $\widehat{f^\prime}(w) = iw\hat f$. This makes Fourier transforms particularly useful in PDEs.
+
+
+
+\section{Discrete and Fast Fourier Transform}
+
+We will only briefly discuss this idea.  All of the previous transforms required that we know the curve $f(x)$ on an entire interval. Measuring devices cannot collect an entire interval of data, but rather collect the data at finitely many points. The Discrete Fourier transform creates from a finite sequence of data points a complex valued trigonometric polynomial which can then be transmitted via radio waves. The process of inverting this polynomial was originally a very time intensive operation, and the Fast Fourier transform is a ``trick'' invented to rapidly inverting this polynomial.  The Fast Fourier transform is a crucial tool used by the telecommunications industry. The textbook gives an example describing the FFT.  If you are interested in telecommunications, then make sure you spend some personal time reading and learning about the Fast Fourier transform.
+
+

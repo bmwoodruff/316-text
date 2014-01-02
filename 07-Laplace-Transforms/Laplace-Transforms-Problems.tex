@@ -1,0 +1,148 @@
+\section{Preparation}
+
+\noindent  
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{07-Laplace-Transforms/Laplace-Transforms-objectives}
+
+Here are the preparation problems for this unit. Chapter numbers precede the problems from Schaum's.
+\begin{center}
+\begin{tabular}{ll}
+&Preparation Problems 
+(click for 
+\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/07-Laplace-Transforms-23-Solutions.pdf}{Chp 23},
+\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/07-Laplace-Transforms-24-Solutions.pdf}{Chp 24}, and 
+\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/07-Laplace-Transforms-Book-Solutions.pdf}{Book} solutions.
+)
+\\
+\hline\hline
+Day 1&
+24.26,
+24.28,
+24.29,
+24.31,
+\\\hline
+Day 2&
+23.8,
+23.14, 
+23.6,
+23.33 
+\\\hline
+Day 3&
+Book 1-3, 
+Book 7, 
+24.33,
+Book 20
+\\\hline
+Day 4&
+Book 22,
+Book 23,
+Book 25,
+Book 27
+\\\hline
+Day 5& Lesson Plan, Quiz
+\\\hline
+\end{tabular}
+\end{center}
+
+Your homework comes from chapters 21 -24 in Schaum's, and the problems in this online book. Do enough of each type that you feel comfortable with the ideas. 
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}[t]{|c|cc|}
+\hline
+$f(t)$ & $F(s)$ & provided\\
+\hline\hline
+$1$					&$\dfrac{1}{s}$ 							&$s>0$\\\hline
+$t^n$				&$\dfrac{n!}{s^{n+1}}$ 			&$s>0$\\\hline
+$e^{at}$		&$\dfrac{1}{s-a}$ 			&$s>a$\\\hline
+$y'$					&$sY-y(0)$ 						&\\\hline
+$y''$					&$s^2Y-sy(0)-y'(0)$ 						&\\\hline
+$y'''$					&$s^3Y-s^2y(0)-sy'(0)-y''(0)$ 						&\\\hline
+$e^{at}f(t)$  &$F(s-a)$ 						&\\\hline
+$f(t)*g(t)$  &$F(s)G(s)$ 						&\\\hline
+\end{tabular}
+&
+\begin{tabular}[t]{|c|cc|}
+\hline
+$f(t)$ & $F(s)$ & provided\\
+\hline\hline
+$\cos(wt)$  &$\dfrac{s}{s^2+\omega^2}$ 			&$s>0$\\\hline
+$\sin(wt)$  &$\dfrac{\omega}{s^2+\omega^2}$ 			&$s>0$\\\hline
+$\cosh(wt)$ &$\dfrac{s}{s^2-\omega^2}$ 			&$s>|\omega|$\\\hline
+$\sinh(wt)$ &$\dfrac{\omega}{s^2-\omega^2}$ 			&$s>|\omega|$\\\hline
+$u(t-a)$  &$\frac{1}{s}e^{-as}$ 						&\\\hline
+$\delta(t-a)$  &$e^{-as}$ 						&\\\hline
+$f(t-a)u(t-a)$  &$L(f(t))e^{-as}$ 						&\\
+$f(t)u(t-a)$  &$L(f(t+a))e^{-as}$ 						&\\
+\hline
+\end{tabular}
+\end{tabular}
+Note that the $s$ shifting theorem $L(e^{at}f(t))=F(s-a)$ has a positive $a$ in the exponent, while the $t$ shifting theorem $L(f(t-a)u(t-a))=L(f(t))e^{-as}$ has a negative $a$ in the exponent.
+\end{center}
+\end{table}
+
+You must practice lots of problems to gain a feel for patterns.  The problems in 21 and 22 are fast.  Do way more than 7 problems a night.  You may be able to finish 7 problems in 5 minutes or less. Try to do them all in less than an hour.  If you can't, then try again the next day. If one stumps you, skip it and come back later.  Once you feel confident, chapters 23 (on convolutions and the heaviside function) and 24 (solving IVPS) will help you use the Laplace transforms to solve ODEs. The online book contains some additional problems to help you cement your understanding. I've included a table that summarizes the transforms we use most often.
+
+
+\section{Problems}
+Make sure you try some of each type of problem from chapters 21-24 (except for the last set of problems in 23).  The new ideas involve convolutions and the Heaviside (unit step) function in 23.  Once you have tried some of each of these, use this page to give you more practice.  
+
+
+%\begin{multicols}{2}
+\begin{enumerate}
+\item[I] Find the Laplace transform of each of the following, and use Mathematica to check your answer.
+\item $f(x) = 8e^{-3x}\cos 2x -4e^{4x}\sin 5x+3e^{7x}x^5$
+\item $f(x) = xu(x-4)+\delta(x-6)$
+\item $f(x) = e^{3x}u(x-2)+7\delta(x-4)$
+
+\item[II] Find the inverse Laplace transform of each of the following, and use Mathematica to check your answer. Many of these will require you to use a partial fraction decomposition.
+\item $\dfrac{s}{(s+3)^2+25}+\dfrac{2}{(s-2)^4}e^{-3s}$
+\item $\dfrac{s}{s^2+4s+13}e^{-4s}$
+\item $\dfrac{1}{s(s^2+1)}e^{-5s}$
+\item $\dfrac{1}{s^2(s^2+1)}e^{-3s}$
+\item $\dfrac{2s+1}{(s-1)^2(s+1)}e^{-7s}$
+\item $\dfrac{1}{(s-1)(s+2)(s-3)}e^{-4s}$
+
+\item[III] Use Laplace transforms to find the position $y(t)$ of an object or current current $I(t)$ in each of the following scenarios. I will give you the constants $m,c,k$ and the driving force $r(t)$, or I will give you the inductance $L$, resistance $R$, capacitance $C$, and voltage source $E(t)$, as well as any relevant initial conditions.  Your job is to use Laplace transforms to find the solution. Use Mathematica to check your solution, and draw the graph of $y(t)$ or $I(t)$ and the steady-state (steady periodic) solution to see how the Heaviside and Dirac delta functions affect the graph. The point here is to see these two new functions affect solutions. I suggest that you do all of these problems with the computer, so you can quickly see the effects of a Heaviside function or Dirac delta distribution.
+\item $m = 1, c = 0, k=4, r(t)=u(t-1), y(0)=1,y^\prime(0)=0$
+\item $m = 1, c = 0, k=4, r(t)=\delta(t-3), y(0)=1,y^\prime(0)=0$
+\item $m = 1, c = 0, k=4, r(t)=7u(t-3), y(0)=1,y^\prime(0)=0$
+\item $m = 1, c = 0, k=4, r(t)=7u(t-3)+11\delta(t-5), y(0)=1,y^\prime(0)=0$
+\item $m = 1, c = 0, k=4, r(t)=7t u(t-3), y(0)=1,y^\prime(0)=0$
+\item $m = 1, c = 0, k=4, r(t)=7, y(0)=1,y^\prime(0)=0$
+\item $m = 1, c = 0, k=4, r(t)=7, y(\pi)=1,y^\prime(\pi)=0$
+
+\item $m = 1, c = 3, k=2, r(t)=u(t-2), y(0)=0,y^\prime(0)=0$
+\item $m = 1, c = 3, k=2, r(t)=\delta(t-2), y(0)=0,y^\prime(0)=0$
+\item $m = 1, c = 3, k=2, r(t)=4u(t-1), y(0)=0,y^\prime(0)=0$
+\item $m = 1, c = 3, k=2, r(t)=4u(t-1)+10\delta(t-2), y(0)=0,y^\prime(0)=0$
+\item $m = 1, c = 3, k=2, r(t)=4t u(t-1), y(0)=0,y^\prime(0)=0$
+
+\item $L = 0, R = 2, C=1/5, E(t)=12 u(t-2), Q(0)=0$ (use first order ODE)
+\item $L = 1, R = 2, C=0, E(t)=12 u(t-2), I(0)=0$ (use first order ODE)
+\item $L = 1, R = 2, C=1/5, E(t)=12, Q(0)=0,I(0)=0$ (first find $I^\prime(0)$.)
+\item $L = 1, R = 2, C=1/5, E(t)=12 u(t-2), Q(0)=0,I(0)=0$
+\item $L = 1, R = 2, C=1/5, E(t)=e^{3t} u(t-2), Q(0)=0,I(0)=0$
+\item $L = 1, R = 2, C=1/5, E(t)=4\cos (3t), Q(0)=0,I(0)=0$
+\item $L = 1, R = 4, C=1/4, E(t)=u(t-3), Q(0)=0,I(0)=0$
+\item $L = 1, R = 4, C=1/4, E(t)=e^{-2t}, Q(0)=0,I(0)=0$
+
+
+\item[IV] Find transforms and inverse transforms of the following, using the transform theorems. 
+\item We will skip this section.  Don't worry about this objective.
+
+
+
+
+
+
+
+
+	
+\end{enumerate}
+
+
+
+

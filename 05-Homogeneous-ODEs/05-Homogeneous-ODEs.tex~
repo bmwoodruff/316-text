@@ -1,0 +1,285 @@
+
+\chapter{Homogeneous ODEs}
+
+\noindent This chapter covers the following ideas.
+
+\begin{enumerate}
+	\item Explain Hooke's Law in regards to mass-spring systems. Construct and solve differential equations which represent this physical model, with or without the presence of a damper.  
+	\item Understand the vocabulary and language of higher order ODEs, such as homogeneous, linear, coefficients, superposition principle, basis, linear independence. 
+	\item Solve homogeneous linear ODE's with constant coefficients (with and without Laplace transforms). In addition, create linear homogeneous ODE's given a basis of solutions, or the roots of the characteristic equation.
+	\item Explain how the Wronskian can be used to determine if a set of solutions is linear independent.	Briefly mention the existence and uniqueness theorems in relation to linear ODEs, and give a reason for their importance.
+\end{enumerate}
+
+The problems below come from Schaum's Outlines \textit{Differential Equations} by Richard Bronson. If you are struggling with a topic from the preparation problem set, please use this list as a guideline to find related practice problems.
+
+\begin{center}
+\begin{tabular}{|l|c|l|l|l|l|}
+\hline
+Concept&Sec&Suggestions&Relevant Problems\\ \hline
+Vocabulary of ODEs&8*&33-35&1-3,33-35\\ \hline
+2nd Order Homogeneous&9*&1,7,12,21,27,40&1-15, 17-45\\ \hline
+nth Order Homogeneous&10*&3,7,8,9,12,18,37,41,44,49&All\\ \hline
+IVPs (Homogeneous)&13&9&4,9,13\\ \hline
+Applications&14&2,3,5,29,31,34,41-43&1-8,26-43\\ \hline
+Laplace Transforms&21*&26, 54&14(c),15(b),25,26,54-58,\\ \hline
+Inverse Transforms&22*&7, 34-36,38,read 12 and 18,44&6-10,15-19,29-30,32-53\\ \hline
+Solving ODES&24&26,44&5,26,31,36,43,44\\ \hline
+Wronskian and Theory&8*&9,10,18,20,43,48,53,58&5-10, 13-20, 31,36-64\\ \hline
+\end{tabular}
+\end{center}
+
+*The problems in these sections are quick problems. It is important to do lots of them to learn the pattern used to solve ODEs. You may be able to finish 7 problem in under 30 minutes or less.  Please do more, so that when you encounter these kinds of problems in the future you can immediately give an answer and move forward.
+
+
+\section{An Example - Hooke's Law}
+Let's start by considering two physical models. For our first model, we'll look at how we can obtain the position of an object from knowledge about the acceleration and velocity.  You've solve this problem before, but the solution required neglecting air resistance.  We could talk about sky diving (risky), dropping bombs (deadly), throwing math books off a roof (illegal), or dropping a pebble from the top of a waterfall (head to Yellowstone and try it - sounds like we need a field trip).  
+\begin{problem}
+ Joe hikes up to the top of Lower Falls in Yellowstone.  His hope is to gauge the height $h$ of the waterfall.  He plans to drop a pebble from the top, and time how long it takes for the pebble to hit the ground. He'll need a model that predicts the height of the pebble at any time $t$.
+
+ For this to work, Joe has to make some assumptions.  His assumptions might be way off, but that's how science works. We start with assumptions and then turn those assumptions into differential equations. Here's what Joe assumes:
+\begin{itemize}
+ \item He assumes Newton's second law of motion, namely that $F=ma$ (the total force is the mass times the acceleration).
+ \item He assumes that the total force is comprised of two parts.  
+ \item The first force $F_G$ comes from a constant acceleration due to gravity. He assumes that gravity is constant $a=-g$. The negative sign comes because the acceleration causes a decrease in height.
+ \item The second part comes from air resistance. He assumes that the faster the pebble goes, the greater this force will be. If the pebble's speed were to double, then this force should double.  So he assumes that the force due to air resistance $F_R$ is proportional to the pebble's velocity.
+\end{itemize}
+Let $y(t)$ represent the height, above ground, of the pebble after $t$ seconds. Use Joe's assumptions to answer the following:
+\begin{enumerate}
+ \item Rewrite Newton's second law of motion in terms of $y$, $y'$, and/or $y''$. 
+ \item What is the constant force $F_G$ due to gravity?
+ \item Rewrite Joe's assumption about air resistance in terms of $y$, $y'$ and/or $y''$. 
+ \item The total force $F$ is the sum of the two forces, i.e. we can write $F = F_G+F_R$. Use this fact, together with your answers from the previous two parts, to obtain a second order ODE.  You don't have to solve the ODE, rather you just need to obtain it.
+\end{enumerate}
+
+If you need any hints, try googline 
+\end{problem}
+
+
+The force $F$ of a spring is proportional to the distance $y$ of the spring from the equilibrium point $y=0$, and the force acts opposite the direction of motion. This is represented by the equation $F=-ky$ for a positive constant $k$, called the spring constant.  Since force equals mass times acceleration (one of Newton's laws of motion), we have $my^{\prime\prime}=-ky$ or $my^{\prime\prime}+ky=0$. This is our introductory example of a 2nd order ODE.  If a damper (called a dashpot) is placed in a mass-spring system , then the damper applies a force (via friction) which is proportional to the velocity of the spring.  This gives the 2nd order ODE $my^{\prime\prime}+cy^\prime+ky=0$ for some constants $m,c,$ and $k$.  We will develop general methods of solving 2nd order linear ODEs, and then return to mass-spring systems to study the applications.
+
+\section{Basic Notation and Vocabulary}
+A second order linear differential equation is an ODE which can be written in the form $y^{\prime\prime}+p(x)y^\prime+q(x)y=r(x)$. It is linear in $y$ and its derivatives, and the coefficients of the linear ODE are $p(x)$ and $q(x)$.  A higher order linear ODE can be written in the same form $y^{(n)}+a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y^\prime+a_0(x)y=r(x)$. If $r(x)=0$, we say the linear ODE is homogeneous, otherwise we say it is non homogeneous.
+
+{\bf Superposition principle:} If $y_1$ and $y_2$ are two solutions of a homogeneous linear ODE (on some interval $J$), then so is $y_1+y_2$. In particular, any linear combination $c_1y_1+c_2y_2$ of $y_1$ and $y_2$ are solutions to the homogeneous linear ODE. The general solution of an $n$th order homogeneous linear ODE is all linear combinations $y=c_1y_1+c_2y_2+\cdots+c_n y_n$ of $n$ linearly independent solutions $y_1, y_2,\ldots,y_n$ (called a basis of solutions). To solve a 2nd order homogeneous linear ODE, all that must be done is find 2 linearly independent solutions and then the general solution is all linear combinations of these two solutions. To solve an $n$th order homogeneous linear ODE, you just have to find $n$ linearly independent solutions, and then a general solution is all linear combinations of these two solutions.  In other words, the set of solutions of a homogeneous linear ODE is the span of $n$ linearly independent solutions (this is very similar to what we learned about column and row spaces, where pivot columns served as a basis of solutions, and the other columns are all linear combinations of the pivot columns). 
+
+
+
+\section{Laplace Transforms}
+The theory of Laplace transforms will give us a simple way to solve linear ODEs of any order. We will start by adding one new transform rule, the $s$-shifting theorem, to our list of rules, and then we will use Laplace transforms to solve some higher order ODEs.
+\subsection{The $s$-shifting theorem}
+
+In Table \ref{laplacetable2}, we add one more Laplace transform to what we learned in the first order ODE section.
+The $s$-shifting theorem states that $$L(e^{at}f(t))=F(s-a)$$ or alternatively $L^{-1}(F(s-a)) = e^{at}f(t)$. For example,
+we compute $$L(e^{3t}\cos(\pi t)) = \frac{s-3}{(s-3)^2+\pi^2}$$ (replace $s$ in $L(\cos \pi t)=\frac{s}{s^2+\pi^2}$ with $s-3$) and $$L(t^2e^{-5t}) = \frac{2!}{(s+5)^3}$$ (replace $s$ in $L(t^2)=\frac{2!}{s^3}$ with $s+5$). In other words, multiplication of the function $f(t)$ by $e^{at}$ results in replace $s$ with $s-a$ when you compute the transform. 
+
+The reason the $s$-shifting theorem is true is because (here's the 3 step proof) $$ L(e^{at}f(t)) = \int_0^\infty e^{-st}(e^{at}f(t))dt = \int_0^\infty e^{-(s-a)t}f(t)dt = F(s-a).$$ 
+
+
+We need to compute inverse Laplace transforms using the $s$ shifting theorem. The following examples illustrate how this is done.
+
+\begin{table}
+\begin{center}
+\begin{tabular}[t]{|c|cc|}
+\hline
+$f(t)$ & $F(s)$ & provided\\
+\hline\hline
+$1$					&$\dfrac{1}{s}$ 							&$s>0$\\\hline
+$t^n$				&$\dfrac{n!}{s^{n+1}}$ 			&$s>0$\\\hline
+$e^{at}$		&$\dfrac{1}{s-a}$ 			&$s>a$\\\hline
+$f'$					&$sL(f)-f(0)$ 						&\\\hline
+$e^{at}f(t)$  &$F(s-a)$ 						&\\\hline
+\end{tabular}
+\quad
+\begin{tabular}[t]{|c|cc|}
+\hline
+$f(t)$ & $F(s)$ & provided\\
+\hline\hline
+$\cos(wt)$  &$\dfrac{s}{s^2+\omega^2}$ 			&$s>0$\\\hline
+$\sin(wt)$  &$\dfrac{\omega}{s^2+\omega^2}$ 			&$s>0$\\\hline
+$\cosh(wt)$ &$\dfrac{s}{s^2-\omega^2}$ 			&$s>|\omega|$\\\hline
+$\sinh(wt)$ &$\dfrac{\omega}{s^2-\omega^2}$ 			&$s>|\omega|$\\\hline
+\end{tabular}
+
+\caption{Table of Laplace Transforms}
+\label{laplacetable2}
+\end{center}
+\end{table}
+
+\begin{example}
+The inverse Laplace transform of $\frac{3}{(s-4)^3}$ is related to the inverse transform of $\frac{3}{s^3}$. The transform of $t^2$ is $\frac{2}{s^3}$, so the inverse transform of $\frac{3}{s^3}=\frac{3}{2}\frac{2}{s^3}$ is $\frac{3}{2}t^2$.  Because there was an $s-4$ in the original denominator, we have to multiply by $e^{4t}$ to obtain the inverse Laplace transform of $\frac{3}{(s-4)^3}$ as $\frac{3}{2}t^2e^{4t}$.  
+\end{example}
+
+\begin{example}
+The inverse Laplace transform of $\frac{s-2}{(s-4)^2+1}$ is found by first obtaining an $s-4$ in the numerator and then breaking the fraction into two parts, $\frac{s-4+4-2}{(s-4)^2+1} = \frac{s-4}{(s-4)^2+1}+2\frac{1}{(s-4)^2+1}$. We then compute the inverse transform as $e^{4t}\cos(t) + 2e^{4t}\sin(t)$.  
+\end{example}
+
+To use the $s$ shifting theorem, you have to get good at adding zero to a problem (as I did in the previous example with $-4+4$). You may also have to complete the square in the denominator. 
+
+
+
+\begin{example}
+To find the inverse transform of $\ds \frac{s+2}{s^2+4s+13}$, first complete the square in the denominator $s^2+4s+13 = s^2+4s+4-4+13 = (s+2)^2+9$. Since the transform of $\cos 3t$ is $\frac{s}{s^2+9}$, the inverse transform of $\frac{s+2}{(s+2)^2+9}$ is simply $e^{-2t}\cos 3t$ (using the shifting theorem). 
+
+\end{example}
+
+
+\subsection{Solving ODEs with Laplace transforms}
+In the first order ODE unit, we showed that the Laplace transform of a derivative is, using integration by parts, $$L(f^\prime)=\int_0^\infty e^{-st}f^\prime (t)dt = (e^{-st}f(t))\big|_0^\infty + s\int_0^\infty e^{-st}f (t)dt  = sL(f)-f(0).$$  We can use this formula to get the following rules for higher order derivatives. 
+\begin{align*}
+L(f^{\prime\prime}) &= sL(f^\prime)-f^\prime(0) = s[sL(f)-f(0)]-f^\prime(0) = s^2L(f) - sf(0)-f^\prime(0)\\
+L(f^{\prime\prime\prime}) &= s^3L(f) - s^2f(0)-sf^\prime(0)-f^{\prime\prime}(0)\\
+L(f^{\prime\prime\prime\prime}) &= s^4L(f) - s^3f(0)-s^2f^\prime(0)-sf^{\prime\prime}(0)-f^{\prime\prime\prime}(0)
+\end{align*} 
+We'll use these formulas to solve ODEs and help us discover patterns which will greatly simplify solving higher order linear ODEs. 
+
+\begin{example}
+To solve the ODE $y^{\prime\prime}+8y^\prime+15y=0$ (no initial conditions are given), we start by taking the Laplace transform of both sides. This gives $s^2Y-sy(0)-y^\prime(0) + 8(sY-y(0))+15Y=0$.  Solving for $Y$ gives $$Y = \frac{sy(0)+y^\prime(0)+8y(0)}{s^2+8s+15}.$$  The denominator factors into the product $(s+5)(s+3)$, so we use a partial fraction decomposition to write 
+$$Y = \frac{sy(0)+y^\prime(0)+8y(0)}{(s+5)(s+3)} = \frac{A}{s+3}+\frac{B}{s+5}.$$
+Without initial conditions, we will avoid solving the problem in general. However, the inverse transform of the right side is simply $Ae^{-3x}+Be^{-5x}$ (if $x$ is the independent variable instead of $t$). A general solution to the ODE is just $y=Ae^{-3x}+Be^{-5x}$ for some constants $A$ and $B$. Letting $A=0$ or $B=0$, we have found two solutions to our ODE, namely $y_1=e^{-3x}$ and $y_2=e^{-5x}$. These two solutions form a basis for solutions, and a general solution is all linear combinations of them, namely $y=c_1e^{-3x}+c_2e^{-5x}$. If we had been given initial conditions, we could have use them to find $c_1$ and $c_2$.  
+\end{example}
+
+Notice in the example above that the solution involves the sum of two exponential functions. 
+The powers in the exponents came from the roots of the denominator when performing a partial fraction decomposition.  We can find the denominator quickly by replacing each derivative of $y$ with $s$ to the same power.  Notice that $y''+8y'+15y$ became
+$s^{2}+8s+15$. We will find that for all homogeneous ODEs of any order, the solution will involve sums of exponential and trigonometric functions, obtained by analyzing the roots of this polynomial. 
+
+
+\section{Homogeneous Constant Coefficient ODEs}
+We now consider the homogeneous linear ODE $y^{\prime\prime}+ay^\prime+by=0$ (the coefficients $p(x)$ and $q(x)$ are constants). The solution method begins by guessing the solution is of a certain form (thanks to the Laplace transform method above), and then observing how close our guess was. A solution to $y^\prime + ay=0$ is an exponential function $y=e^{-ax}$, so perhaps a solution to  $y^{\prime\prime}+ay^\prime+by=0$ is $g=e^{\lambda x}$ for some constant $\lambda$ ($\lambda$ is the standard notation because eventually we will see that this number is an eigenvalue of a matrix).  We calculate $g^\prime = \lambda e^{\lambda x}$ and $g^{\prime\prime} = \lambda^2 e^{\lambda x}$.  The function $g$ is a solution to our ODE if and only if $g^{\prime\prime}+ag^\prime+by=e^{\lambda x}(\lambda^2+a\lambda+b)=0$. So $g=e^{\lambda x}$ is a solution if an only if $\lambda$ is a zero of the \textbf{characteristic equation}\marginpar{characteristic equation} $\lambda^2+a\lambda+b=0$. This same principle applies to higher order linear homogeneous ODEs. Factoring polynomials (and using the quadratic equation) are important tools in solving homogeneous linear ODEs with constant coefficients. We will start by focusing on 2nd order homogeneous ODEs, but the principles we learn generalize to any order ODE. Recall that there are three possible cases for roots of a quadratic equation: two real, one double, or two complex conjugate roots. After illustrating the solution technique in each case, we'll show why that solution technique is valid by using Laplace transforms.
+
+
+
+\begin{example}[Two real roots]
+For the differential equation, $y^{\prime\prime}+8y^\prime+15y=0$, the characteristic equation is $\lambda^2+8\lambda+15 = (\lambda+5)(\lambda +3)$.  The roots of this equation are $\lambda=-5,-3$ so both $y_1=e^{-5x}$ and $y_2=e^{-3x}$ are solutions of the ODE (compare this with the example in the Laplace transform section). Since these two solutions are linearly independent (neither is a multiple of the other), a general solution to this ODE is $y=c_1e^{-5x}+c_2e^{-3x}$. 
+
+If the initial conditions are $y(0)=-3$ and $y^\prime(0)=2$, then we can find the constants $c_1$ and $c_2$.  First, let's compute the derivative $y^\prime = -5c_1e^{-5x}-3c_2e^{-3x}$.  We know that if $x=0$ then $y=-3$ and $y'=2$, so plugging these into our equations for $y$ and $y'$ gives the system of equations $-3=c_1+c_2$ and $2=-5c_1-3c_2$. Using Gaussian elimination or Cramer's rule, the solution to this system is $c_1=7/2$ and $c_2=-13/2$. Hence the solution to the IVP is $y=\frac72  e^{-5x}-\frac{13}{2}\ e^{-3x}$. 
+
+Alternatively, we can use Laplace transforms if we know the initial conditions.  
+The Laplace transform of both sides of $y^{\prime\prime}+8y^\prime+15y=0$ with $y(0)=-3$ and $y^\prime(0)=2$ is $$s^2Y-s(-3)-2+8(sY-(-3))+15Y=0.$$  Solving for $Y$ gives $\ds Y=\dfrac{-3s -22}{s^2+8s+15}$. Using a partial fraction decomposition, we write  $\ds \frac{-3s -22}{s^2+8s+15} = \frac{A}{s+3}+\frac{B}{s+5}$ or $-3s-22=A(s+5)+B(s+3)$, which means $-3=A+B, -22=5A+3B$.  Cramer's rule gives the solution $A=\begin{vmatrix}-3&1\\ -22&3 \end{vmatrix}/\begin{vmatrix}1&1\\5&3\end{vmatrix} = \frac{13}{-2}$ and  $B=\begin{vmatrix}1&-3\\ 5&-22 \end{vmatrix}/\begin{vmatrix}1&1\\5&3\end{vmatrix} = \frac{-7}{-2}$, so our partial fraction decomposition is $\frac{-13/2}{s+3}+\frac{7/2}{s+5}$. The inverse transform gives $y=-\frac{13}{2} e^{-3x} +\frac{7}{2}e^{-5x}$, the same as before.
+\end{example}
+
+In general, when you have two distinct real roots, a general solutions consists of the sum of two exponential functions, where the roots of the characteristic equation $\lambda_1,\lambda_2$ are the coefficients in the exponent, so a general solution is $y=c_1e^{\lambda_1 x}+c_2e^{\lambda_2 x}$. 
+
+\begin{example}[One real double root]
+For the differential equation, $y^{\prime\prime}+4y^\prime+4y=0$, the characteristic equation is $\lambda^2+4\lambda+4 = (\lambda+2)^2$.  The only root $\lambda=-2$ is a double root. One of the solutions is $y_1=e^{-2x}$. To obtain the other solution, Laplace transforms (the next paragraph) suggest that we multiply this solution by $x$ so that a solution is $y_2=xe^{-2x}$, which you can easily verify is a solution (just take two derivatives, and put them back into the ODE). Since we now have two linearly independent solutions, a general solution is $y=c_1e^{\lambda x}+c_2xe^{\lambda x} = c_1e^{-2x} + c_2xe^{-2 x}$.
+
+Why do we multiply by $x$? Take the Laplace transform of both sides of $y^{\prime\prime}+4y^\prime+4y=0$ to obtain the subsidiary equation $s^2Y-sy(0)-y^\prime(0) + 4(sY-y(0)) +4Y=0$.  Solving for $Y$ gives $Y = \ds\frac{sy(0)+4y(0)+y^\prime(0)}{s^2+4s+4} = \frac{sy(0)+4y(0)+y^\prime(0)}{(s+2)^2}$. Because there is an $s+2$ in the denominator, we need to obtain an $s+2$ in the numerator as well (to use the $s$-shifting theorem), so we write 
+$$Y=\frac{s y(0)+4y(0)+y^\prime(0)}{(s+2)^2} =\frac{A(s+2)+B}{(s+2)^2} = \frac{A}{s+2} +\frac{B}{(s+2)^2}$$ (this is a partial fraction decomposition). The Laplace inverse of the last line is $Ae^{-2x}+Bxe^{-2x}$, using the $s$-shifting theorem on the second part (since the Laplace inverse of $\frac{1}{s^2}$ is $x$, and replacing $s$ with $s-(-2)$ means I multiply $x$ by $e^{-2x}$).
+\end{example}
+
+In general, whenever the characteristic equation has a double root, the subsidiary equation will be of the form $Y=\frac{A}{s-\lambda} +\frac{B}{(s-\lambda)^2}$ which means the solution will be $Ae^{\lambda x}+Bxe^{-\lambda x}$. So if you have a double root, just remember that a second linearly independent solution is obtained by multiplying by $x$.
+
+\begin{example}[Two complex roots]
+For the differential equation, $y^{\prime\prime}+6y^\prime+13y=0$ the characteristic equation is $\lambda^2+6\lambda+13$. The roots (using the quadratic equation) are $\lambda=\frac{-6\pm\sqrt{(-6)^2-4(1)(13}}{2(1)} = -3\pm\sqrt{-16}/2 = 3\pm 2i$, which are complex roots.  
+These complex roots have an interpretation. We can verify that two solutions to our ODE are $y_1= e^{-3x}\cos(2x)$ and $y_2= e^{-3x}\sin(2x)$ (the shifting theorem from Laplace transforms shows why in the next paragraph). 
+Hence the general solution is $y=c_1e^{-3x}\cos(2x)+c_2e^{-3x}\sin(2x)$.  
+In general, if the roots of the characteristic equation are $a\pm b i$, then two solutions are 
+$$y_1= e^{a x}\cos(b x)\text{ and } y_2= e^{a x}\sin(b x).$$ A general solution is hence $y=c_1e^{ax}\cos(bx)+c_2e^{ax}\sin(bx)$.
+
+Let's use Laplace transforms to show why the above is true. The Laplace transform of both sides of $y^{\prime\prime}+6y^\prime+13y=0$ gives $s^2Y-sy(0)-y^\prime(0) + 6(sY-y(0)) +13Y=0$. Solving for $Y$ gives
+$Y = \ds\frac{sy(0)+6y(0)+y^\prime(0)}{s^2+6s+13}$. Completing the square on the denominator gives $Y = \frac{sy(0)+6y(0)+y^\prime(0)}{(s+3)^2+4}$. Because there is an $s+3$ in the denominator, we need to obtain an $s+3$ in the numerator as well (to use the $s$-shifting theorem), so we write 
+$$Y=\frac{s y(0)+6y(0)+y^\prime(0)}{(s+3)^2+4} =\frac{A(s+3)+B}{(s+3)^2+4} = \frac{A(s+3)}{(s+3)^2+4} +\frac{B}{(s+3)^2+4}$$ (this is a partial fraction decomposition). To find the Laplace inverse of the last line, recall that the inverse of $\frac{s}{s^2+4}$ is $\cos(2x)$ and the inverse of $\frac{2}{s^2+4}$ is $\sin(2x)$, so the inverse of  $\frac{A(s+3)}{(s+3)^2+4} +\frac{B}{(s+3)^2+4} =  A\frac{(s+3)}{(s+3)^2+4} +\frac{B}{2}\frac{2}{(s+3)^2+4}$ is $Ae^{-3x}\cos(2x)+\frac{B}{2}e^{-3x}\sin(2x)$, using the $s$-shifting theorem. Since $B$ is just a constant anyway, we ignore the division by $2$ to obtain a general solution $y=c_1e^{-3x}\cos(2x)+c_2e^{-3x}\sin(2x)$.   
+\end{example}
+
+In general, whenever the characteristic equation has two complex roots $a\pm bi$, the subsidiary equation will be of the form $Y=\frac{A(s-a)}{(s-a)^2+b^2} +\frac{B}{(s-a)^2+b^2}$ which means the solution will be $Ae^{ax}\cos(bx)+\frac{B}{2}e^{ax}\sin(bx)$. So if you have a complex pair of roots, just remember that two linearly independent solutions are $e^{ax}\cos(bx)$ and $e^{ax}\sin(bx)$.  
+ 
+%How was this discovered?  The idea comes from looking at infinite series, in particular something called a Taylor series.  Euler discovered that $e^{\alpha+\beta i}=e^{\alpha}(\cos(\beta)+i\sin(\beta))$ by considering the Taylor series for $e^x$. We will return to this idea when we study series solutions to differential equations. For now, one can verify that $y_1= e^{\alpha x}\cos(\beta x)$ and $y_2= e^{\alpha x}\sin(\beta x)$  are solutions of the ODE by differentiation. Deriving these formulas will have to wait.
+
+\subsection{Summary}
+To find the solution of a 2nd order homogeneous ODE with constant coefficients, find the roots of the characteristic equation and then the general solution is given in the following table.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Root type& General solution \\\hline
+Two real roots $\lambda_1,\lambda_2$ & $y=c_1e^{\lambda_1 x}+c_2e^{\lambda_2 x}$\\ \hline
+One real root $\lambda$ & $y=c_1e^{\lambda x}+c_2xe^{\lambda x}$\\ \hline
+Two complex conjugate roots $\lambda=a\pm b i$ & $y=c_1e^{a x}\cos(b x)+c_2e^{a x}\sin(b x)$\\\hline
+\end{tabular}
+\end{center}
+
+To find the solution to a higher order homogeneous ODE with constant coefficients, just factor the characteristic equation. Each distinct real root contributes an exponential function $e^{\lambda x}$ to the solution. If a root appears $k$ times, then $e^{\lambda x},xe^{\lambda x},\ldots, x^{k-1}e^{\lambda x}$ are $k$ linearly independent solutions to the ODE (Laplace transforms gives this result). Remember, just keep multiplying by $x$ until you have $k$ different solutions. Each complex root will appear in conjugate pairs, so each complex root contributes two solutions $e^{a x}\cos(b x)$ and $e^{a x}\sin(b x)$ to a general solution. If a complex root appears $k$ times, then multiply the previous two solutions by $x$ until you have $k$ pairs of solutions. Laplace Transforms show why these results are valid. 
+
+\begin{example}
+Suppose the characteristic equation of your ODE is $$\lambda^4(\lambda-2)^3(\lambda^2+4)^2(\lambda^2+2\lambda+10)=0.$$ 
+First notice that the degree of this polynomial is 13, so there should be 13 linearly independent solutions.
+The zeros of this equation are $0$, $2$, $\pm 2i$, $-1\pm 3i$ (counting multiplicities there are 13 roots). The root $\lambda = 0$ yields the solution $e^{0x} = 1$. 
+Since $\lambda = 0$ has multiplicity 4, the four functions $e^{0x}=1$, $x(1)$, $x^2(1)$, and $x^3(1)$ are all terms in a general solution.  The root $\lambda = 2$ adds the three terms $e^{2x}$, $xe^{2x}$, and $x^2e^{2x}$. The pair $\pm 2i$ adds the terms $\cos 2x$, $\sin 2x$, $x\cos 2x$, and $x\sin 2x$ (the last two come become the roots are repeated). The last pair $-1\pm 3i$ adds the terms $e^{-x}\cos 3x$ and $e^{-x}\sin 3x$.  A general solution is (notice there are 13 terms)
+\begin{align*}
+y&=c_1+ c_2 x +c_3 x^2 +c_4 x^3 \\
+&+c_5 e^{2x} +c_6 xe^{2x} +c_7 x^2e^{2x} \\
+&+c_8 \cos 2x+c_9 \sin 2x+c_{10} x\cos 2x+c_{11}x\sin 2x\\
+&+c_{12}e^{-x}\cos 3x+c_{13}e^{-x}\sin 3x.\\
+\end{align*}
+\end{example}
+
+\section{Hooke's law again}
+Recall the setup from the introduction. The ODE $my^{\prime\prime}+cy^\prime+ky=0$ models the motion of a mass-spring system, giving the distance $y(t)$ from equilibrium at time $t$ of an object with mass $m$ that is placed on the end of a spring with modulus $k$ (spring constant). A dashpot applies a frictional force proportional to the speed of motion, its strength represented by the coefficient of friction $c$. Let's start by examining the mass-spring system where friction is neglected (without a damper), and then what happens with damping.
+
+\subsection{Free Oscillation - Two imaginary roots}
+The mass-spring system satisfies the differential equation $my^{\prime\prime}+ky=0$. Since $m$ and $k$ are both positive, the roots of the equation $m\lambda^2 +k=0$ will always be imaginary, namely $\lambda = \pm\sqrt{\frac{-k}{m}} =  \pm i\sqrt{\frac{k}{m}} $.  So the position of the end of the spring can be written as $y=A \cos(\omega t)+B\sin(\omega t)$ where $\omega=\sqrt{\frac{k}{m}}$ and $A$ and $B$ are constants.  
+
+Recall from trigonometry the fact that we can always write the sum of two sine or cosine functions with the same period as a a single trigonometric function with a new amplitude and possibly a shift.  
+In symbols, we write $$A \cos(\omega t)+B\sin(\omega t) = C\cos(\omega t-\phi),$$ where the amplitude is $C=\sqrt{A^2+B^2}$ with a phase shift $\phi=\arctan(B/A)$.  
+In the language of linear algebra, a linear combination of sine and cosine functions is a single trigonometric function with amplitude $A$ and phase shift $\phi$. 
+This makes it easy to see that the solution of a mass spring system is in fact a harmonic oscillation, with a fixed amplitude, period, and phase shift. 
+However, the equation $A \cos(\omega t)+B\sin(\omega t)$ is much easier to work with when trying to find solutions to initial value problems.
+
+\begin{example}
+Let's solve the IVP $y''+4y=0, y(0)=2,y'(0)=3$, giving the period and amplitude of the solution, and writing the solution in the form $y=C\cos(\omega t-\phi)$.  The characteristic equation is $\lambda^2+4=0$ whose roots are $\pm 2i$.  A general solution is $y=A\cos2t+B\sin2t$. Since $y(0)=2$, we know that $2=A\cos0+B\sin0 = A$ which means $A=2$. We compute $y'=-2A\sin 2t+2B\cos2t$ and then plug $y'(0)=3$ into $y'$ to obtain $3=-2A\sin0 +2B\cos0 =2B$ which means $B=3/2$. The previous two calculations give the solution as $$y=2\cos 2t +\frac 32 \sin 2t.$$       
+The period is $T=2\pi/\omega = 2\pi/2=\pi$. 
+\marginpar{Recall the period of a sine or cosine curve of the form $\sin(\omega t)$ or $\cos(\omega t)$ is $T=\frac{2\pi}{\omega}$.} 
+The amplitude is $C=\sqrt{A^2+B^2} = \sqrt{4+9/4} = \sqrt{25/4} = 5/2$.  The phase shift is $\phi = \arctan(3/4) \approx .6435$ rad or $36.87^\circ$. We can now write our solution in the form 
+$$y = \frac{5}{2}\cos\left(2t-\arctan \frac{3}{4}\right).$$
+
+Remember that with any problem, you can always check your answer by taking derivatives, and plugging in the initial conditions.  Using the single trigonometric form of our solution, we compute $y'=-5\sin(2t-\arctan(3/4))$ and $y''=-10\cos(2t-\arctan(3/4))$ and plug them into the ODE to obtain $y''+4y = -10\cos(2t-\arctan(3/4)) + 10\cos(2t-\arctan(3/4)) = 0$. Plugging in the initial conditions we obtain $y(0) = \frac{5}{2}\cos\left(-\arctan \frac{3}{4}\right) = \frac 52\cos \arctan \frac 34$. Note that $\arctan\frac34$ is the angle of a triangle whose opposite edge is length 3, and adjacent edge is length 4.  The hypotenuse of this triangle is $5$, and its cosine is $\frac45$ while its sine is $\frac 35$. This means $y(0) = \frac52\frac45 = 2$ and $y'(0) = -5\sin(-\arctan\frac34) = 5\sin\arctan\frac34=5\frac35 = 3$ as desired. We have shown that our solution satisfies both the ODE and the initial conditions, hence is the solution to our IVP.   
+
+\end{example}
+
+\subsection{Damped Motion - Three cases}
+If friction is present (possibly in the form of a damper or a dashpot), then the mass-spring system satisfies the differential equation $my^{\prime\prime}+cy^\prime+ky=0$. The constant $c$ must always be positive, just as $m$ and $k$ are positive. The characteristic equation in this present setup yields one of three possible solution types shown in Table \ref{dampedtable}. We will just illustrate each type and then compare the graphical solutions.
+
+\begin{table}%
+\begin{tabular}{ccc}
+\hline
+Over Damped & Critically Damped & Under Damped\\\hline\hline
+Two distinct real roots & One double root & Two complex roots\\
+$y = c_1 e^{\lambda_1t}+ c_2 e^{\lambda_2t}$ &$y = c_1 e^{\lambda t}+ c_2 t e^{\lambda t}$ &$y = c_1 e^{\alpha t}\cos \beta t+ c_2 e^{\alpha x}\sin \beta t$
+\\\hline
+\end{tabular}
+\caption{The three cases of damped motion.}
+\label{dampedtable}
+\end{table}
+
+\begin{example}
+If $m=10, c=80, k=150$, then the differential equation becomes $y^{\prime\prime}+8y^\prime+15y=0$.  The general solution is $y=c_1e^{-5t}+c_2e^{-3t}$. This case is called over damping, and occurs whenever there are two distinct roots of the characteristic polynomial. Both roots are negative, so the position of the spring will exponentially approach zero (equilibrium).  The term corresponding to the root which is furthest from zero vanishes very quickly, so the root closer to zero determines how quickly the spring returns to equilibrium.
+\end{example}
+
+\begin{example}
+If $m=10, c=40, k=40$, then the differential equation becomes  $y^{\prime\prime}+4y^\prime+4y=0$. There is only one real root, and the general solution is $y= c_1e^{-2t} + c_2te^{-2 t}$. 
+The solution approaches zero rapidly, essentially following the exponential function towards zero. This kinds of system is called critically damped. Such systems appear rarely in nature because the combinations of $m,c$, and $k$ must be perfectly aligned to obtain a double root.  Most real life systems are either over damped or under damped.
+\end{example}
+
+\begin{example}
+If $m=10, c=60, k=130$, then the differential equation becomes  $y^{\prime\prime}+6y^\prime+13y=0$. With two complex roots, a general solution is $y=e^{-3t}(c_1\cos(2t)+c_2\sin(2t))$. A system with two imaginary zeros is said to be under damped, because the damping is not enough to prevent oscillation.   We can rewrite the position in an under damped system as $y=Ce^{-\alpha x}\cos(\omega t-\phi)$, which shows that the spring will oscillate, with a decreasing amplitude following a multiple of the exponential function $e^{-3x}$. The oscillation will eventually become so small as to ignore it all together.
+\end{example}
+
+%I need some pictures here to help illustrate what is happening.  Currently this section is subpar.
+
+To understand the difference between these three types of damping, imagine for a moment that you just installed new shocks on your car (they are over damped).  As you drive along the freeway, any bumps that you feel are immediately damped away so that you hardly feel them (your car slowly returns to equilibrium).  As time passes on, your shocks wear out (the damping force is reduced) and you find that when you hit bumps on the road your car more quickly returns to equilibrium (you feel a more rapid jolt). Eventually, the shocks in your car wear out enough that when you hit a bump in the road you feel an up and down motion in the car.  At this point your shocks are now under damped.
+
+\section{Existence and Uniqueness - the Wronskian}
+A second order homogeneous linear ODE of the form $y^{\prime\prime}+p(x)y^\prime+q(x)y=0$ with variable coefficients $p(x)$ and $q(x)$ satisfies some interesting properties. If the coefficients are continuous functions on some interval, and $x_0$ is in that interval, then an initial value problem $y(x_0)=K_0, y^\prime(0)=K_1$ (1) always has a solution, and (2) that solution is unique. This theorem is crucial because it means there always is a solution, and if you find the solution then it is unique.  In addition, if the coefficients are continuous functions on some interval, then the ODE will always have a general solution, and it can be found by taking all possible linear combinations of two linearly independent solutions (which are called a basis of solutions).  Again this means that a general solution exists, and is in some sense unique.
+
+We now focus on how to determine if two solutions are linearly independent.  If $y_1$ and $y_2$ are two solutions of a 2nd order homogeneous linear ODE, then their Wronskian is $W(y_1,y_2) = \det\begin{bmatrix}y_1&y_2\\y_1^\prime&y_2^\prime \end{bmatrix}$. Two solutions on an interval are linearly dependent on that interval if and only if their Wronskian is zero at some point in that interval (and hence the Wronskian is equal to zero at every point on the interval).   We will prove this fact, using linear algebra and the uniqueness theorems of differential equations. If the solutions are linearly dependent, then one solution is a multiple of the other, hence the Wronskian is zero immediately.  Now suppose the Wronskian is zero at some point $x_0$, and then show the solutions are linearly dependent on the entire interval. Using facts learned from linear algebra, the determinant being zero means that there is a nontrivial solution $k_1,k_2$ to the system of equations $k_1y_1(x_0)+k_2y_2(x_0)=0, k_1y_1^\prime(x_0)+k_2y_2^\prime(x_0)=0$. Let $y= k_1y_1(x)+k_2y_2(x)$. This is a solution to the the ODE, and it satisfies  $k_1y_1(x_0)+k_2y_2(x_0)=0$.  Since the function $y=0$ satisfies the initial conditions $y(x_0)=0, y^\prime(x_0)$ as well, we see that $y= k_1y_1(x)+k_2y_2(x)=0$ for all $x$ by the uniqueness of a solution to an IVP.  Hence we have a nontrivial solution to the equation $k_1y_1(x)+k_2y_2(x)=0$ for all $x$, and so $y_1$ and $y_2$ are linearly dependent.
+
+\begin{example}
+Two solutions of the differential equation $y^{\prime\prime}+4y^\prime+4y=0$ are $y_1=e^{-2x}$ and $y_2=xe^{-2x}$.  The Wronskian is 
+\begin{align*}
+W(y_1,y_2) 
+&= \begin{vmatrix}e^{-2x}&xe^{-2x}\\
+-2e^{-2x}&-2xe^{-2x}+e^{-2x} \end{vmatrix} \\
+&= (e^{-2x})(-2xe^{-2x}+e^{-2x}) - (xe^{-2x})(-2e^{-2x})\\
+&= e^{-4x}(-2x+1+2x) \\
+&= e^{-4x}
+\end{align*} 
+which is never zero. Because the two functions are both solutions to an ODE, and because the Wronskian is not zero, the two solutions are linearly independent. This idea generalizes to higher order ODEs.
+\end{example}

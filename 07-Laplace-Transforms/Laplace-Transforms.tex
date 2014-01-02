@@ -1,0 +1,182 @@
+
+\chapter{Laplace Transforms}
+
+%Notes to self:  The order here needs revamping.  Here is a suggestion.  Try starting with talking about the general idea (we convert an ODE to something we can solve with algebra, then solve it, and then convert back).  Give them the Laplace transform of $1, t, e^t, \sin t, \cos t$. Then give them the derivative rules through 2nd derivative, and solve 2 ODEs (one first order and one second order).  Show how the process is carried out in general.  Then postpone any more ODE problems until after you get in the first and second shifting theorems and the Dirac-delta distribution.  Then focus on IVP's which require partial fractions or completing the square.  After some practice with all of these ideas, finally introduce the convolution theorem.  This will probably take 5 days.  It took me 6 plus to get it all out when I do it in the wrong order.
+
+%Based upon the way students study in my class, it might be nice to have a quiz on this stuff immediately after introducing the Laplace transform, and then add in solving ODEs. However, this would just help those who procrastinate doing homework until the day before the quiz. Maybe that is not what is needed.  Doing problems in class requires that students recognize patterns, and will only be doable once students have practiced the material. In other words, class time will be severely affected by students who do not practice.
+
+%What I have noticed is that students do not attempt the material until right before the quiz.  Hence, if you start with ODEs, then they are lost with the Laplace Transform part, and can't even start on the ODEs.  Hence, this section can be a time sink in the course, because students didn't practice things right away. Pattern recognition here becomes crucial.  The problems in our text perhaps need some work as well, so that students can practice taking Laplace Transforms. (More simple pattern recognition problems would be nice.)
+
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{07-Laplace-Transforms/Laplace-Transforms-objectives}
+
+
+\section{The big idea}
+The Laplace transform is a tool which became popular in the last 100 years because of the work of engineers.  The Laplace transform has the ability to convert a differential equation into an algebraic equation which can be solved purely with algebra.  The Laplace transform can be applied to functions which are not continuous, which makes it extremely useful in real world applications. For example, if a hammer hits a mass-spring system, or an electrical switch is turned on or off, the Laplace transform can handle the complications which these simple changes bring to an ODE.  The methods we have learned before require that our driving forces are continuously differentiable functions.
+
+The big idea in this unit is a three step process.
+\begin{enumerate}
+	\item Convert and ODE into an algebraic equation using the Laplace transform.
+	\item Solve the corresponding algebraic equation (which often means you have to use a partial fraction decomposition and completing the square).
+	\item Use an inverse Laplace transform to find the solution of the ODE.
+\end{enumerate}
+The first part of this unit will focus on finding Laplace transforms and their inverses. The second part will focus on solving ODEs. The third part will focus on what happens when we apply impulses to a system (such as a hammer blow, or a bolt of lightning). The fourth part will focus on some theoretical aspects of the Laplace Transform.
+ 
+
+\section{Finding Laplace Transforms and Their Inverses}
+The Laplace transform of a function $f(t)$ defined for $t\geq 0$ is $F(s)=L(f(t))=\int_0^\infty e^{-st}f(t)dt$. The function $f(t)$ is called the inverse Laplace transform of $F(s)$, and we write $f(t)=L^{-1}(F(s))$. As a notational convenience, we use lower case letters and $t$ to describe original functions, and the same capital letter and $s$ to represent the Laplace transform. Provided the function $f$ is ``nice'' (of exponential order, see pg 448), it will have a Laplace transform for large enough $s$.
+
+\subsection{Finding the Laplace Transform}
+If $f(t)=1$, then $F(s)=\int_0^\infty e^{-st}1dt= \frac{e^{-st}}{-s}\big|_0^\infty = \frac{1}{s}$, provided $s>0$. If $f(t)=e^{at}$, then $F(s)=\int_0^\infty e^{-st}e^{at}dt=\int_0^\infty e^{-(s-a)t}dt= \frac{e^{-(s-a)t}}{-(s-a)}\big|_0^\infty = \frac{1}{s-a}$, provided $s>a$. The improper integral computed with the Laplace transform will normally exist only for certain values of $s$. 
+
+Since integration can be done term by term, we have $L(af+bg)=aL(f)+bL(g)$ for functions $f,g$ and constants $a,b$.  We can use this to find many other Laplace transforms without having to do any more integration. We have $L(\cosh a t) = \frac{1}{2}L(e^{at}+L(e^{-a t}))=\frac{1}{2}\left(\frac{1}{s-a}+\frac{1}{s+a}\right) = \frac{s}{s^2-a^2}$. Similarly $L(\sinh a t) = \frac{a}{s^2-a^2}$.  
+
+\begin{wraptable}[5]{r}{0pt}
+\begin{tabular}{|c|c|c|}
+\hline
+&$D$&$I$\\\hline
+$+$&$\cos \omega t$&$e^{-st}$\\
+$-$&$-\omega \sin \omega t$&$e^{-st}/(-s)$\\
+$+$&$-\omega^2 \cos \omega t$&$e^{-st}/s^2$\\\hline
+\end{tabular}
+\end{wraptable}
+
+Integration by parts twice yields $L(\cos \omega t) = \frac{s}{s^2+\omega^2}$ and $L(\sin \omega t) = \frac{\omega}{s^2+\omega^2}$. To see this, write $L(\cos \omega t) = \int_0^\infty e^{-st}\cos \omega t dt$.  The tabular method gives $\int_0^\infty e^{-st}\cos \omega t dt = \left(\cos \omega t e^{-st}/(-s) +\omega \sin \omega te^{-st}/s^2\right)\big|_0^\infty - \int_0^\infty \omega^2 \cos \omega te^{-st}/s^2dt = 1/s - \omega^2/s^2 \int_0^\infty e^{-st}\cos \omega t dt$, which means $L(\cos \omega t) = 1/s-\omega^2/s^2L(\cos \omega t)$. This means $(1+\omega^2/s^2)L(\cos \omega t) = \frac{1}{s}$, or $(s^2+\omega^2) L(\cos \omega t)=s$ or $L(\cos \omega t)=\frac{s}{s^2+\omega^2}$. Integration by parts also shows that $L(t^n) = \frac{n!}{s^{n+1}}$ for integers $n$. 
+
+%
+%The Gamma function, defined as $\Gamma(x) = \int_0^\infty e^{-t}t^{x-1}dt$, shows up in the formula $L(t^a) = \frac{\Gamma(a+1)}{s^{a+1}}$. We can calculate $\Gamma(1)=1$. Integration by parts show that $\Gamma(n+1) = \int_0^\infty e^{-t}t^{n}dt = (-t^{n}e^{-t})\big|_0^\infty + n\int_0^\infty e^{-t}t^{n-1}dt = n\Gamma(n)$. Hence we can show that $\Gamma(2)=\Gamma(1+1)=1\Gamma(1)=1$, $\Gamma(3)=\Gamma(2+1)=2\Gamma(2)=2!$, $\Gamma(4)=\Gamma(3+1)=3\Gamma(3)=3\cdot 2! = 3!$, and $\Gamma(n+1)=\Gamma(n+1)=n\Gamma(n)=n!$. In more advanced texts, it is shown that $\Gamma(1/2)=\sqrt{\pi}$. This can be used to find Laplace Transforms of $t^{n/2}$.  For example, $L(t^{1/2})=\frac{\Gamma(1/2) }{s^{3/2}} = \frac{\sqrt{\pi}}{s^{3/2}}$.  The Laplace transform of $t^{3/2}$ requires the computation $\Gamma{3/2} = \frac{1}{2}\Gamma(\frac{1}{2}) = \frac{1}{2}\sqrt{\pi}$.
+
+For convenience, the following table summarizes the Laplace Transforms we will use most often.
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|c|c|c|}
+\hline
+$f(t)$ & $t^n$        & $t^0=1$        &$e^{at}$   & $\cos(wt)$     &$\sin(wt)$     & $\cosh(wt)$    &$\sinh(wt)$   &$u(t-a)$
+\\\hline 
+ F$(s)$& $n!/s^{n+1}$  & $1/s$  &$1/(s-a)$  & $s/(s^2+w^2)$  &$w/(s^2+w^2)$  & $s/(s^2-w^2)$  &$w/(s^2-w^2)$ &$e^{-as}/s$
+\\
+          &$s>0$         &$s>0$         &$s>a$      &$s>0$           &$s>0$          &$s>|w|$         &$s>|w|$       & $s>0$
+\\\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Finding an Inverse Laplace Transform}
+If the Laplace transforms of two functions are the same, then the two function must be the same as well. This allows us to invert the Laplace transform and obtain the only function with a given Laplace transform.  Inverting a Laplace transform often involves matching the transformed function up with a function from a table, and then using the table to invert the transform.  
+
+To find the inverse Laplace transform of $F(s) = \frac{7}{s^3}$, first notice that $\frac{2}{s^3}$ is the transform of $t^2$. We rewrite $F(s) = \frac{7}{s^3} = \frac{7}{2}\frac{2!}{s^3}$, and then find the inverse transform as $L^{-1}(F(s)) = \frac{7}{2}t^2$.
+
+To find the inverse Laplace transform of $F(s) = \frac{3s+4}{s^2+25}$, we notice that the transforms of $\cos(5t)$ and $\sin(5t)$ are $s/(s^2+5^2)$ and $5/(s^2+5^2)$.  We rewrite $F(s)  = \frac{3s+4}{s^2+25}= 3\frac{s}{s^2+25} +\frac{4}{5} \frac{5}{s^2+25} $, and then the inverse transform is $3\cos(5t)+\frac{4}{5}\sin(5t)$.
+
+To find the inverse Laplace transform of $F(s) = \frac{3s+1}{s^2+3s+2}$, we start by factoring the denominator as $(s^2+3s+2) = (s+2)(s+1)$.  We then use a partial fraction decomposition to write $\frac{3s+1}{s^2+3s+2} = \frac{A}{s+2}+\frac{B}{s+1}$. Multiplication on both sides by $s^2+3s+2$ gives $(3)s+(1) = A(s+1)+B(s+2) = (A+B)s+(A+2B)$.  Since the left and right sides are both linear equations of $s$, the coefficients must be equal so we must have $3=A+B$ and $1=A+2B$. The solution is $B=-2$ and $A=5$.  This means that $F(s) = 5\frac{1}{s+2}-2\frac{1}{s+1}$, which means the Laplace inverse is $f(t) = 5e^{-2t}-2e^{-t}$.
+
+\subsection{Shifting Theorems and The Heaviside Function}
+
+\subsubsection{$s$-shifting: Multiplication by $e^{at}$}
+
+The $s$-shifting theorem states that $$F(s-a) = L(e^{at}f(t))$$ or alternatively $L^{-1}(F(s-a)) = e^{at}f(t)$. For example, $L(e^{3t}\cos(\pi t)) = \frac{s-3}{(s-3)^2+\pi^2}$. In other words, multiplication of the function $f(t)$ by $e^{at}$ means that you first find the Laplace transform of $f$ and the replace each $s$ with $s-a$. As a quick example, we compute $L(t^2e^{-5t}) = \frac{2!}{(s+5)^3}$ (start by finding $L(t^2)=\frac{2!}{s^3}$ and the replace the $s$ with $s-(-5)$).
+
+The inverse Laplace transform of $\frac{3}{(s-4)^3}$ is related to the inverse transform of $\frac{3}{s^3}$. The transform of $t^2$ is $\frac{2}{s^3}$, so the inverse transform of $\frac{3}{s^3}=\frac{3}{2}\frac{2}{s^3}$ is $\frac{3}{t}t^2$.  Because there was an $s-4$ in the original denominator, we have to multiply by $e^{4t}$ to obtain the inverse Laplace transform of $\frac{3}{(s-4)^3}$ as $\frac{3}{t}t^2e^{4t}$.  
+
+The inverse Laplace transform of $\frac{s-2}{(s-4)^2+1}$ is found by first obtaining an $s-4$ in the numerator and then breaking the fraction into two parts, $\frac{s-4+4-2}{(s-4)^2+1} = \frac{s-4}{(s-4)^2+1}+2\frac{1}{(s-4)^2+1}$. We then compute the inverse transform as $e^{4t}\cos(t) + 2e^{4t}\sin(t)$.  
+
+To use the $s$ shifting theorem, you have to get good at adding zero to a problem (as I did in the previous example with $-4+4$). You may have to complete the square in the denominator, as $\frac{s+2}{s^2+4s+13} = \frac{s+2}{(s+2)^2+9}$ has Laplace inverse $e^{-2t}\cos 3t$. The reason the shifting theorem is true is because (here's the 3 step short proof) $$ L(e^{at}f(t)) = \int_0^\infty e^{-st}(e^{at}f(t))dt = \int_0^\infty e^{-(s-a)t}f(t)dt = F(s-a).$$ 
+
+
+\subsubsection{The Heaviside function and $t$-shifting  (Multiplication by $e^{-as}$)}
+The Heaviside function $u(t) = \begin{cases}0 &t<0 \\ 1 &t\geq 0\end{cases}$ can be though of as a function which turns  other functions on and off.  For example, the function $t^2u(t)$ is zero to the left of $0$, and then the function $t^2$ is turned on at $t=0$.  The function $t^2(u(t)-u(t-3))$ turns on the function $t^2$ at $t=0$ and then turns it off at $t=3$. The Heaviside function can be used to piece together piecewise continuous functions by using this ``on-off'' approach.  For example, the function 
+$f(t) = 
+\begin{cases}
+0 &t<0 \\ 
+t^2& 0\leq t\leq 1\\
+2-t & 1< t\leq \pi\\
+\cos t & \pi< t
+\end{cases}$ can be written using the Heaviside function as $f(t) = t^2[u(t)-u(t-1)] + (2-t)[u(t-1)-u(t-\pi)]+\cos t [u(t-\pi)]$.  This section describes how to compute Laplace transforms and inverse transforms of such piecewise defined functions.  Such functions are needed to model turning on a switch in an electrical network, modifying the driving force in a mechanical spring system, and many other practical applications.
+
+
+
+The $t$-shifting theorem states $$L(f(t-a)u(t-a))=e^{-as}F(s)$$ or $L^{-1}(e^{-as}F(s)) = f(t-a)u(t-a)$, where $F(s)=L(f(t))$. This theorem is easiest to use when computing inverse transforms, as it says that multiplication of $F(s)$ by $e^{-as}$ means that you multiply the inverse of $F(s)$ by $u(t)$ and then replace all the $t$'s with $t-a$. For example we can find the inverse transform of $F(s) = \frac{2}{s^2+4}e^{-3s}$ by first noting that the inverse transform of $\frac{2}{s^2+4}$ is $\sin(2t)$, and so we multiply by $u(t)$ and replace each $t$ with $t-3$ to obtain $L^{-1}(F(s))=\sin(2(t-3))u(t-3)$. This is just the curve $\sin(2t)$ which has been shifted $3$ units to the right and turned on at $t=3$. 
+
+Notice that the $t$-shifting theorem has an $e^{-as}$, while the $s$ shifting theorem has an $e^{at}$. Pay attention to this sign difference. The reason the $t$-shifting theorem is true is because $\int_0^{\infty}f(t-a)u(t-a)e^{-st}dt = \int_a^\infty f(t-a)e^{-st}dt$. By the substitution $w=(t-a)$, this becomes $\int_0^\infty f(w)e^{-s{w+a}}dw = e^{-as}\int_0^\infty f(w)e^{-sw}dw = e^{-as}F(s)$. Again it is a fairly short proof.
+
+To use the $t$-shifting theorem to compute forward Laplace transforms, you have to rewrite $f(t)$ in terms of $t-a$. For example, the function $t^2$ for $t>1 $ and 0 otherwise is written $f(t) = t^2 u(t-1)$. To use the second shifting theorem, we write $f(t) = t^2u(t-1) = ( (t-1)+1)^2u(t-1)= ((t-1)^2 +2(t-1)+1)2u(t-1)$. Notice how I purposefully inserted a $-1+1$ next to the $t$. The shifting theorem then gives $F(s)=\left(\frac{2}{s^3}+frac{2}{s^2}+\frac{1}{s}\right)e^{-s}$. Our function $f(t-1) =  (t-1)^2 +2(t-1)+1$ is simply $f(t) = t^2+2t+1$ whose transform is $\frac{2}{s^3}+frac{2}{s^2}+\frac{1}{s}$, which we then multiply by $e^{-s}$ to complete the transform. An alternate version of this transformation uses the formula $$L(f(t)u(t-a)) = e^{-as}L(f(t+a))$$ (meaning replace each $t$ with $t+a$ and then find the transform and multiply by $e^{-as}$).   This formula shows that $L(t^2u(t-1)) = e^{-s}L((t+1)^2) = e^{-s}L(t^2+2t+1)) = e^{-s} \left(\frac{2}{s^3}+\frac{2}{s^2}+\frac{1}{s}\right)$ as before.
+
+Both shifting theorems can be applied simultaneously.  If $F(s) =\frac{(s-3)e^{-2s}}{(s-3)^2+\omega^2} $, then without the $e^{-2s}$ the inverse transform would be $e^{3t}\cos(\omega t)$ by the $s$-shifting theorem. The $t$-shifting theorem says that the inverse transform is $e^{3(t-2)}\cos(\omega(t-2))u(t-2)$ (multiply by $u(t)$ and then replace each $t$ with $t-2$). Remember that with the $s$ shifting theorem you change the sign, but with the $t$ shifting theorem you do not. This is the most common mistake.
+
+
+\section{Solving IVPs}
+
+\subsection{The Transform of a derivative}
+The Laplace transform of a derivative is, using integration by parts, $$L(f^\prime)=\int_0^\infty e^{-st}f^\prime (t)dt = (e^{-st}f(t))\big|_0^\infty + s\int_0^\infty e^{-st}f (t)dt  = sL(f)-f(0).$$  We can use this formula to get $$L(f^{\prime\prime}) = sL(f^\prime)-f^\prime(0) = s[sL(f)-f(0)]-f^\prime(0) = s^2L(f) - sf(0)-f^\prime(0).$$  These two formulas can be used to find new Laplace transforms and (most importantly) solve ODEs.
+
+%We now find the Laplace transform of $f(t)=t\cos 3t$ using these formulas.  We have $f^\prime = -3t\sin 3t +\cos 3t$ and $f^{\prime\prime} = -9t\cos 3t -6\sin 3t$. Notice that the second derivative contains the exact same $t\cos 3t$ term .  The formula $L(f^{\prime\prime}) = s^2L(f) - sf(0)-f^\prime(0)$ gives $L(-9t\cos t -6\sin t) = sL(t\cos 3t)-s(0)-1$, or $-9L(f) -6\frac{3}{s^2+9} = s^2L(f)-1$. Hence we have $L(f) = \frac{1}{s^2+9}-\frac{18}{(s^2+9)^2} = \frac{s^2-9}{(s^2+9)^2}$.
+
+\subsection{Solving IVPs - Lots of examples}
+We can use the differentiation theorem to solve IVPs. Given an ODE, take the Laplace transform of each side, giving what is called the subsidiary equation.  This equation can be solved for $L(y)=Y(s)$ using only algebra.  You then compute $L^{-1}(Y(s))$ to find the solution to the IVP $y(t)$.  This may involve finding a partial fraction decomposition. Laplace transforms reduce many IVPs to a 3 step process (1) convert to the subsidiary equation, (2) use algebra to solve for $Y$, performing a partial fraction decomposition if needed, (3) find inverse Laplace transform.
+
+To solve the homogeneous IVP $y^\prime +2y =0, y(0)=1$ we start by taking the Laplace transform of each side. This gives the subsidiary equation $sL(y)-y(0)+2L(y) = 0$, or using the notation $L(y)=Y$, we have $sY-1+2Y=0$.  Solving for $Y$ gives the equation $Y=\frac{1}{s+2}$. The inverse Laplace transform of both sides gives $y(t) = e^{-2t}$.  
+
+To solve the nonhomogeneous IVP $y^\prime +2y =3, y(0)=1$, take the Laplace transform of each side. This gives the subsidiary equation $sY-1+2Y=\frac{3}{s}$.  Solving for $Y$ gives the equation $Y=\frac{s+3}{s(s+2)}$. The partial fraction decomposition $\frac{s+3}{s(s+2)}=\frac{A}{s}+\frac{B}{s+2}$ requires we solve $s+3 = A(s+2)+Bs$, or $1=A+B, 3=2A$ giving  $A=3/2$ and $B=-1/2$. Our subsidiary equation is now $Y = \frac{3}{2}\frac{1}{s}-\frac{1}{2}\frac{1}{s+2}$. The inverse Laplace transform of both sides gives $y(t) = \frac{3}{2}-\frac{1}{2}e^{-2t}$. These two examples represent the basic ideas used to solve pretty much every Laplace transform problem. 
+
+Now for a problem with a Heaviside function. Consider the IVP $y^{\prime\prime} +4y =u(t-5), y(0)=0,y^\prime(0)=1$, which represents a mass-spring system with no friction which has a constant driving force of magnitude 3 applied at time $t=5$. Take the Laplace transform of each side to obtain. $s^2Y-sy(0)-y^\prime(0) +4Y=\frac{e^{-4s}}{s}$ or $(s^2+4)Y=1+\frac{e^{-5s}}{s}$.  Solving for $Y$ gives the equation $Y=\frac{1}{s^2+4}+\frac{1}{s(s^2+4)}e^{-5s}$. The partial fraction decomposition $\frac{1}{s(s^2+4)}=\frac{A}{s}+\frac{Bs+C}{s^2+4}$ becomes $0s^2+0s+1 = A(s^2+4)+Bs^2+Cs = (A+B)s^2+(C)s+(4A)$. We obtain the 3 equations $0=A+B, 0=C, 1=4A$ whose solution is  $A=1/4,B=-1/4,C=0$. Our subsidiary equation is now $Y=\frac{1}{2}\frac{2}{s^2+4}+\left[\frac{1}{4}\frac{1}{s}-\frac{1}{4}\frac{s}{s^2+4}\right]e^{-5s}$. The inverse Laplace transform of both sides gives $y(t) =\frac{1}{2}\sin(2t)+[\frac{1}{4}-\frac{1}{4}\cos(2(t-5))]u(t-5)$, using the $t$-shifting theorem. 
+
+For a more involved example, to solve the IVP $y^{\prime\prime}+4y^\prime+3y=30e^{2t}, y(0)=1, y^\prime(0)=3$, take the Laplace transform of each side. This gives the subsidiary equation $s^2Y - sy(0)-y^\prime(0)+4(sY-y(0))+3Y=\frac{30}{s-2}$. Solving for $Y$ gives us $(s^2+4s+3)Y=s+7+\frac{30}{s-2}$ or 
+$$Y(s) 
+= \frac{s+7}{s^2+4s+3} + \frac{30}{(s^2+4s+3)(s-2)}
+= \frac{(s+7)(s-2)+30}{(s+1)(s+3)(s-2)} = \frac{s^2+5s+16}{(s+1)(s+3)(s-2)}.$$ A partial fraction decomposition gives $\frac{A}{s+1} +\frac{B}{s+3}+\frac{C}{s-2}$. Multiplying both sides by $(s+1)(s+3)(s-2)$ gives $s^2+5s+16 = A(s+3)(s-2)+B(s+1)(s-2)+C(s+1)(s+3) = A(s^2+s-6) +B(s^2-s-2)+C(s^2+4s+3)$.  We equate the coefficients of $x^2, x,$ and the constants on each side to get the three equations $1 = A+B+C, 5=A-B+4C, 16=-6A-2B+3C$. The solution to this system is $A=-2,B=1, C=2$, which means $Y(s) = \frac{-2}{s+1} +\frac{1}{s+3}+\frac{2}{s-2}$.  The inverse Laplace transform of $Y(s)$ is $L^{-1}(Y)= y(t) = -2e^{-t} + e^{-3t} +2e^{2t}$. An alternate way to do a partial fraction decomposition would be to consider the equation   $s^2+5s+16 = A(s+3)(s-2)+B(s+1)(s-2)+C(s+1)(s+3)$ and let $s=-3,2,-1$, which gives $10=B(10), 30=C(15), 12=A(-6)$, which gives the same numbers for $A,B,C$ as equating the coefficients.
+
+Let's consider an example where a factor appears more than once in the denominator of a partial fraction decomposition.
+To solve the ODE IVP $y^{\prime\prime}+4y^\prime+4y=0, y(0)=1, y^\prime(0)=3$, take Laplace transforms of both sides to obtain the subsidiary equation $s^2Y - sy(0) - y^\prime(0) + 4(sY - y(0)) + 4Y = 0$ or $s^2Y - s - 3 + 4(sY - 1) + 4Y = 0$. Solving for $Y$ gives $Y = \frac{s+7}{s^2+4s+4}=\frac{s+7}{(s+2)^2}$.  Since we have a double factor in the denominator, our partial fraction decomposition is $ \frac{s+7}{(s+2)^2} = \frac{A}{s+2}+\frac{B}{(s+2)^2}$, or $s+7 = A(s+2)+B = As+(2A+B)$. The solution to the system $A=1, 2A+B=7$ is $A=1,B=5$.  Hence our subsidiary equation is $Y = \frac{1}{s+2}+5\frac{1}{(s+2)^2}$.  The $t$-shifting theorem gives us the inverse transform $y=e^{-2t}+5te^{-2t}$. This is yet another reason why you multiply by $t$ when you get a repeated factor.  
+
+In solving the ODE $y^{\prime\prime}+4y^\prime+5y=e^{-2t}\cos t, y(0)=0, y^\prime(0)=1$, our subsidiary equation would be $s^2Y-1+4sY+5Y = \frac{s+2}{(s+2)^2+1}$. Solving for $Y$ gives $Y = \frac{1(s^2+4s+5)+(s+2)}{((s+2)^2+1)^2} =  \frac{s^2+5s+7}{((s+2)^2+1)^2}$.  A partial fraction decomposition would be $\frac{s^2+5s+7}{((s+2)^2+1)^2} = \frac{As+B}{(s+2)^2+1}+ \frac{Cs+D}{((s+2)^2+1)^2}$, or $s^2+5s+7 = (As+B)(s^2+4s+5)+(Cs+D) = (A)s^3+(4A+B)s^2+(5A+4B+C)s+(5B+D)$.  This gives the system of equations $0=A,1=4A+B,5=5A+4B+C,5B+D=7$ which has solutions $A=0,B=1,C=1,D=2$. The subsidiary equation is hence $Y=\frac{1}{(s+2)^2+1}+ \frac{s+2}{((s+2)^2+1)^2}$ which has Laplace inverse $y=e^{-2t}\sin(t) + e^{-2t}\frac{t}{2}\sin(t)$ using the table of Laplace transforms on the front cover of your book. I would not expect you to carry out this last inverse without access to a table.
+
+\subsection{How to handle initial conditions that are not at $t=0$}
+If the initial conditions are not stated in terms of $t_0=0$, then change variables $\hat t = t-t_0$ so that the initial conditions are at $\hat t_0 =0$.  For example, to solve the IVP $y^{\prime\prime}+y=3, y(2)=0, y^\prime(2) = 1,$ let $\hat t = t-2,y(\hat t) = \hat y$ so that the IVP becomes $\hat y^{\prime\prime}+\hat y=1, \hat y(0)=0, \hat y^\prime(0) = 3$ where derivatives in this latter equation are with respect to $\hat t$.  The subsidiary equation is (taking Laplace transforms) $s^2\hat Y - 0s -1 +\hat Y=\frac{3}{s}$, or $\hat Y=\frac{1}{s^2+1} + \frac{3}{(s^2+1)s}$.  A partial fraction decomposition of the latter term $\frac{3}{(s^2+1)s} = \frac{A}{s}+\frac{Bs+C}{s^2+1}$ gives the equation $3 = A(s^2+1)+(Bs+C)s$. Equating coefficients gives $0=A+B,0=C,3=A$, so $\hat Y = \frac{1}{s^2+1}+\frac{3}{s}+\frac{-3s}{s^2+1}$.  The inverse Laplace transform is (looking at a short table of transforms which you should either memorize or put on your 3 by 5 card) $\hat y = \sin \hat t +3 - 3\cos \hat t$. Change variables back to obtain $y(t) = \sin(t-2) +3 - 3\cos( t-2)$.
+
+
+
+
+\section{Impulses and the Dirac Delta function $\delta(t-a)$}
+
+The Dirac delta function is defined as the ``function'' $\delta(t-a) = \begin{cases}0 &t\neq a\\\infty &t=a\end{cases}$, which satisfies $\int_0^\infty \delta(t-a)dt = 1$, and has the sifting property $\int_0^\infty g(t)\delta(t-a)dt = g(a)$.  I put ``function'' in quotes because Dirac delta is really a ``distribution,'' and is technically studied using limits. Consider the function $f_k(t-a)$ which has value $k$ for $a<t<t+\frac{1}{k}$, yet is zero elsewhere. The integral $\int_0^\infty f_k(t)dt = \int_{a}^{a+1/k}kdt = 1$ for all $k$, so the function $f_k(t-a)$ is essentially a short impulse of magnitude $k$ over a time interval of length $1/k$ (so that the total area under the curve is 1). The Dirac delta distribution is studied by considering limits of $f_k$ as $k\to \infty$. The limit $\ds\lim_{k\to\infty}f_k(t-a)$ is point-wise the zero function, so it should have no area underneath. The Dirac delta function is defined so that it behaves like the limit of the $f_k$ functions, but has a positive area under it when your integral bounds include $a$. The reason we study this function is because it is used to describe events which happen instantaneously as in a hammer blow, flickering a light switch, when lightning strikes, or if a driving force is applied instantaneously at $t=a$. In other words, if the force is turned on and then off essentially instantaneously, then the Dirac delta ``function'' is used instead of the Heaviside function. The Laplace transform of the Dirac delta distribution comes easily from the ``sifting'' property, as $\int_0^\infty e^{-st}\delta(t-a)dt = e^{-as}$.
+
+One way of thinking about the Dirac delta distribution is that it represents derivative of the unit impulse function.  The IVP $y^\prime = \delta(t-3),y(0)=0$ has subsidiary equation $sY=e^{-3s}$ or $Y=\frac{1}{s}e^{-3s}$.  The Laplace inverse is $y(t) = u(t-3)$. In other words, at time 3 a hammer hits the constant solution $y(t)=0$ and causes a jump upwards of 1 unit. The derivative of such a jump is undefined in terms of what we learned in first semester calculus, but the Dirac delta distribution allows us to define the ``derivative'' of a jump discontinuity.  The IVP $y^\prime = 4\delta(t-3),y(0)=0$ would have solution $y=4u(t-3)$ which would result in a jump upwards of 4 units.
+
+%The textbook solves many IVPs involving circuits and mass spring systems using these functions.  Please look at the examples in the text. Some of the details are much too involved to attempt by hand, so read the text realizing that a computer or calculator may be needed to follow the examples (mostly when solving large systems).  You will notice that whenever an input involves a Dirac delta distribution, the solution $y$ will involve a Heaviside function (the change in the solution will be turned on when the hammer blow occurs).  
+
+As an example, the IVP $y^{\prime\prime}+2y^\prime +2y=(1-u(t-3))e^t +30\delta(t-6),y(0)=0,y^\prime(0)=0$ has an input force equal to $e^t$ for $0<t<3$, and then at $t=6$ it receives an impulse of 30 units.  The corresponding subsidiary equation is $s^2Y-0s-0+2sY-0+2Y = \frac{1}{s-1}+e^{-3s}L(e^{t+3}) + 30 e^{-6s}$, or $(s^2+2s+2)Y = \frac{1}{s-1}-e^{-3s}e^3\frac{1}{s-1} + 30 e^{-6s}$.  Since the zeros of $s^2+2s+2$ are imaginary, we cannot factor it any further and so we complete the square to obtain $s^2+2s+2 = (s+1)^2+1$.  We have $$Y(s) = \frac{1}{(s-1)((s+1)^2+1)}-e^{-3s}e^3\frac{1}{(s-1)((s+1)^2+1)} + 30 e^{-6s}\frac{1}{(s+1)^2+1}.$$
+Partial fractions gives $\ds \frac{1}{(s-1)((s+1)^2+1)} = \frac{A}{s-1}+\frac{B(s+1)+C}{(s+1)^2+1}$, where I purposefully wrote $B(s+1)+C$ as we will have to get a multiple of $s+1$ in the numerator anyways when we compute the inverse transform which will involve the first shifting theorem and a cosine. Multiplying both sides by the denominator on the left gives $1 = A(s^2+2s+2)+(B(s+1)+C)(s-1)=s^2(A+B)+s(2A+B+C)+(2A-B-C)$, which means $0=A+B, 0=2A+C, 1=2A-B-C$.  So $B=-A, C=-2A,$ and the solution is $A=1/5,B=-1/5,C=-2/5$.  This means we can write 
+\begin{center}
+\begin{tabular}{l|l}
+$Y(s)=\left(\frac{1}{5(s-1)}-\frac{(s+1)}{5((s+1)^2+1)}-\frac{2}{5((s+1)^2+1)}\right)$&
+$y(t)=\left(\frac{1}{5}e^{t} - \frac{1}{5}e^{-t}\cos(t) - \frac{2}{5}e^{-t}\sin(t)\right)$ \\
+$-e^{-3s}e^3\left(\frac{1}{5(s-1)}-\frac{(s+1)}{5((s+1)^2+1)}-\frac{2}{5((s+1)^2+1)}\right)$ &
+$- e^3u(t-3)\left(\frac{1}{5}e^{t-3} - \frac{1}{5}e^{-(t-3)}\cos(t-3) - \frac{2}{5}e^{-(t-3)}\sin(t-3)\right)$\\
+$+ 30 e^{-6s}\frac{1}{(s+1)^2+1}$&
+$+ 30e^{-(t-6)}\sin(t-6)$
+\end{tabular}
+\end{center}
+
+I will be creating more problems for you to practice these ideas.  Once the problems are made, I will email you and let you know where to get them. Most of the problems related to the Dirac delta distribution will involve mass spring systems, or electrical networks.
+
+\section{Convolutions, and Transfer Theorems}
+
+\subsection{Convolutions}
+The Laplace transform of the product $f\cdot g$ of two functions is not the product of the Laplace transforms of each ($L(fg)\neq L(f)L(g)$).  Instead, the Laplace inverse of $H(s) = L(f)L(g)$ is equal to a quantity $h(t) = f * g (t) = \int_0^t f(p)g(t-p)dp$ called the convolution of $f$ and $g$ (the proof involves interchanging the order of integration on a double integral). The variable $p$ is a dummy variable of integration, and could be called anything else (some books uses $\tau$, but I find it really hard to distinguish between $t$ and $\tau$ when I'm writing on paper, so I use $p$ instead). The convolution satisfies various properties (commutative, distributive, associative), however $f* 1\neq f$, and $f * f$ may be negative.
+
+If $H(s) = \frac{1}{s^2(s-1)} = \frac{1}{s^2}\frac{1}{s-1} = F(s)G(s)$, where $f(t)=t$ and $g(t)=e^t$, then the inverse Laplace transform of $H(s)$ is the convolution of $f$ and $g$. We compute $h(t) = \int_0^t p e^{t-p}dp= e^t\int_0^tpe^{-p}dp = e^t\left(-pe^{-p}-e^{-p}\right)\big|_0^t=e^t\left(-te^{-t}-e^{-t}+1\right) = -t-1+e^t$.  The convolution is an alternate approach (instead of a partial fraction decomposition) to finding inverse Laplace transforms. A mass-spring system with ODE $my^{\prime\prime}+cy^\prime+ky=f(t),y(0)=0,y^\prime(0)=0$ has subsidiary equation $s^2mY+scY+kY=F(s)$ or $Y=\frac{1}{ms^2+cs+k}F(s)=W(s)F(s)$, where $W(s)$ is called the transfer function of the system.  Engineers often study mass-spring systems by letting $w(t)=L^{-1}(W(s))$ (called the weight function) and then writing the solution using the convolution $y(t)=w(t)*f(t)$. This gives an extremely easy way to represent the solution of a mass-spring system, with a single integral (though the integral may be rather complex). This formula is called Duhamel's principle for the system. 
+
+\subsection{Transform Theorems}
+The transfer theorems we will focus on essentially give us rules for computing transforms and inverse transforms of derivatives an integrals.  The key transform theorem we have already been using is $L(y^\prime) = sY-y(0)$. We will now look at $L(\int y dt), L^{-1}(F^\prime (s)),$ and $L^{-1}(\int F(s) ds)$.
+
+The Laplace transform of $f*1 = \int_0^t f(p)1 dp$ is $\frac{F(s)}{s}$, which is immediate by the convolution theorem since $L(1)=\frac{1}{s}$. This can be used to find transforms of integrals, namely $L(\int_0^t f(t) dt) = \frac{F}{s}$ (remember that the transform of a derivative resulted in multiplying by $s$, so it seems reasonable the transform of an integral should involve division by $s$).
+Remember that the voltage drop due to a capacitor is $V=\frac{Q}{C}$, where $Q(t) = \int_0^t I(t)dt$ for the current $I(t)$.  Hence the charge is $Q(t)=I(t)*1$, the convolution of $i$ and $1$, which means that $\frac{Q(s)}{C} = \frac{I}{sC}$.  Hence the subsidiary equation of the ODE $LI^{\prime} + RI + \frac{Q}{C}=E(t)$ for a power source supplying $E(t)$ volts with $I(0)=0$ and $Q(0)=0$ is $L(sI-I(0))+RL(I)+\frac{L(I)}{sC} = L(E)$.
+
+The derivative of a transform satisfies the rule $L(-tf(t))=F^\prime(s)$.  This can be used to show that $L(-t\cos(t)) = \frac{d}{ds}\frac{s}{s^2+1} = \frac{1-s^2}{(s^2+1)^2}$, or that $L(-t\sin(wt)) = \frac{d}{ds}\frac{w}{s^2+w^2} = \frac{2ws}{(s^2+w^2)^2}$ (which we used in one of the examples early on in the unit).
+
+The integral of a transform satisfies the rule $L\left(\frac{f(t)}{t}\right)=\int_s^\infty F(p)dp$, provided $\lim_{t\to 0^+}\frac{f(t)}{t}$ exists and is finite. I will provide more examples of this as time goes on.
+
+There are many other things known about Laplace transforms.  This is just an introduction to the subject. 
+Laplace transforms replace ODEs with equations which can be solved algebraically.  Some people argue that for this reason Laplace transforms are more advantageous than the classical methods we previously learned.  You trade the method of undetermined coefficients for a partial fraction decomposition.  You trade solving the homogeneous system for factoring the denominator before performing the partial fraction decomposition.  Initial values are automatically taken care of which is nice when using Laplace transforms.  In addition, Laplace transforms increase the types of functions you can include as inputs to an ODE, so that non continuous functions and impulses can be included. 
+
+

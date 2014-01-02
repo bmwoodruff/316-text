@@ -1,0 +1,213 @@
+
+\section{Preparation}
+
+\noindent  
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{11-Fourier-Series/Fourier-Series-objectives}
+
+\begin{center}
+\begin{tabular}{ll}
+&Preparation Problems 
+(\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/11-Fourier-Series-Preparation-Solutions.pdf}{click for solutions})
+\\
+\hline\hline
+Day 1& 
+1a,
+3f,
+3i,
+4c
+\\\hline
+Day 2&
+4e,
+6a,
+7f,
+8f
+\\\hline
+Day 3&
+7m,
+9m,
+10b,
+11b
+\\\hline
+\end{tabular}
+\end{center}
+
+
+Use the Mathematica technology introduction from the course website to check all your answers. I will create a solutions guide as time permits. Make sure you complete some of each type of problem.
+
+\section{Problems}
+
+\begin{enumerate}
+	\item Find the fundamental period of the following functions.
+	
+\begin{enumerate}
+	\item $\sin x$, $\sin 2x$, $\sin \frac{x}{3}$, $\sin kx$, $\sin \frac{n\pi x}{2}$
+	\item $\tan x$, $\tan 2x$, $\tan \frac{x}{3}$, $\tan kx$, $\tan \frac{n\pi x}{2}$
+\end{enumerate}
+	\item Show $y=c$ is $p$-periodic for each positive $p$, but has no fundamental period.
+
+	\item Compute the Fourier series of each function below (assume the function is $2\pi$-periodic). Write your solution using summation notation. Then graph at least 3 periods of the function and compare the graph of the function with a graph of a truncated Fourier series.
+	\begin{multicols}{2}
+\begin{enumerate}
+	\item $f(x) = \sin 2x$
+	\item $f(x) = \cos 3x$
+	\item $f(x) = \sin 2x + \cos 3x$
+	\item $f(x) = 4$
+	\item $f(x) = 4+5\sin 2x -7\cos 3x$
+	\item $f(x) = 
+	\begin{cases}
+	0 & -\pi<x<0\\
+	1 & 0<x<\pi
+	\end{cases}$
+	\item $f(x) = 
+	\begin{cases}
+	-1 & -\pi<x<0\\
+	1 & 0<x<\pi
+	\end{cases}$
+	\item $f(x) = 
+	\begin{cases}
+	-2 & -\pi<x<0\\
+	3 & 0<x<\pi
+	\end{cases}$
+	\item $f(x) = x$ for $-\pi<x<\pi$
+	\item $f(x) = |x|$ for $-\pi<x<\pi$
+	\item $f(x) = x$ for $0<x<2\pi$
+	\item $f(x) = x^2$ for $-\pi<x<\pi$
+	\item $f(x) = 
+	\begin{cases}
+	0 & -\pi<x<-\pi/2\\
+	1 & -\pi/2<x<\pi/2\\
+	0 & \pi/2<x<\pi\\
+	\end{cases}$
+	\item $f(x) = 
+	\begin{cases}
+	0 & -\pi<x<0\\
+	x & 0<x<\pi\\
+	\end{cases}$
+	\item $f(x) = 
+	\begin{cases}
+	\pi+x & -\pi<x<0\\
+	\pi-x & 0<x<\pi\\
+	\end{cases}$
+	
+	\end{enumerate}
+	\end{multicols}
+	
+	\item Compute the Fourier series of each function below (assume the function is $p$-periodic). Write your solution using summation notation. Then graph at least 3 periods of the function and compare the graph of the function with a graph of a truncated Fourier series.
+	\begin{multicols}{2}
+\begin{enumerate}
+	\item $f(x) = 
+	\begin{cases}
+	-1 & -2<x<0\\
+	1 & 0<x<2\\
+	\end{cases}$, $p=4$
+	\item $f(x) = 
+	\begin{cases}
+	0 & -2<x<0\\
+	2 & 0<x<2\\
+	\end{cases}$, $p=4$
+	\item $f(x) =x $ for $-1<x<1$, $p=2$
+	\item $f(x) =|x| $ for $-1<x<1$, $p=2$
+	\item $f(x) =1-|x| $ for $-1<x<1$, $p=2$
+	\item $f(x) =x^2 $ for $-1<x<1$, $p=2$
+	\item $f(x) =x^2 $ for $-2<x<2$, $p=4$
+	\item $f(x) =1-x^2 $ for $-1<x<1$, $p=2$
+	\item $f(x) =x^3 $ for $-1<x<1$, $p=2$
+	\item $f(x) =\sin(\pi x) $ for $0<x<1$, $p=1$
+	\item $f(x) =\cos(\pi x) $ for $-\frac12<x<\frac12$, $p=1$
+	\item $f(x) = 
+	\begin{cases}
+	0 & -1<x<0\\
+	x & 0<x<1\\
+	\end{cases}$, $p=2$
+	\item $f(x) = 
+	\begin{cases}
+	0 & -2<x<0\\
+	1 & 0<x<1\\
+	0 & 1<x<2
+	\end{cases}$, $p=4$
+\end{enumerate}
+	\end{multicols}
+	
+	
+	\item Decide if each function is even, odd, or neither.	
+\begin{enumerate}
+	\item $x,x^2,x^3,x^4,\sqrt{x},\sqrt[3]{x}, x^2+x+1, x^3+x, x^2+1, x^4+x^5$.
+	\item $\sin x, \cos x,\cos 3x, \tan x, \cot x, \sec x, \csc x, \sin x \cos x, \sin^2 x, \sin x+\cos 3x$.
+	\item If $f$ is even and $g$ is odd, $f^2, g^2, f^3, g^3, fg, f+g, 3f, xf, xg,f^ng^m$ (where $n$ and $m$ are integers).
+\end{enumerate}
+
+	\item Rewrite each function $f$ as the sum of an even $f_e$ and an odd $f_o$ function, so that $f=f_e+f_0$. Make sure you show that $f_e(-x)=f_e(x)$ and $f_o(-x)=-f_o(x)$. Then plot $f$, $f_e$, and $f_o$ on the same axes.
+\begin{enumerate}
+	\item $f(x)=e^x$ (your answer should involve hyperbolic functions).
+	\item $f(x)=x^2+3x+2$
+	\item $f(x)=\dfrac{1}{x-1}$ (since $f(1)$ is undefined, the even and odd functions are not defined at $x=-1$).
+\end{enumerate}
+
+	\item \label{cosineseries} For each function defined on $[0,L]$, find the Fourier cosine series of the even periodic extension to $[-L,L]$. Write your solution using summation notation. Then graph at least 3 periods of the function and compare the graph of the function with a graph of a truncated series.
+	\begin{multicols}{2}
+\begin{enumerate}
+	\item $f(x) = 1$ for $0<x<1$
+	\item $f(x) = 1$ for $0<x<\pi$
+	\item $f(x) = x$ for $0<x<1$
+	\item $f(x) = x$ for $0<x<\pi$
+	\item $f(x) = 1-x$ for $0<x<1$
+	\item $f(x) = 2-x$ for $0<x<2$
+	\item $f(x) = \pi-x$ for $0<x<\pi$
+	\item $f(x) = x^2$ for $0<x<1$
+	\item $f(x) = x^3$ for $0<x<1$
+	\item $f(x) = 
+	\begin{cases}
+	0 & 0<x<1\\
+	1 & 1<x<2\\
+	\end{cases}$
+	\item $f(x) = 
+	\begin{cases}
+	1 & 0<x<1\\
+	2 & 1<x<2\\
+	\end{cases}$
+	\item $f(x) = 
+	\begin{cases}
+	1-x & 0<x<1\\
+	0 & 1<x<2\\
+	\end{cases}$
+	\item (Sawtooth Wave) $f(x) = 
+	\begin{cases}
+	x & 0<x<1\\
+	2-x & 1<x<2\\
+	\end{cases}$
+	
+\end{enumerate}
+	\end{multicols}
+	
+	
+	\item For each function from \ref{cosineseries}, find the Fourier sine series of the odd periodic extension to $[-L,L]$. Write your solution using summation notation. Then graph at least 3 periods of the function and compare the graph of the function with a graph of a truncated series.
+	
+	
+	\item For a function $f(x)$ defined on $[0,L]$, a half wave rectifier extends $f$ to be $0$ on $[-L,0)$, and then periodically extends the function to all real numbers. If $f_e$ and $f_o$ represent the even and odd periodic extentsions, then $g=\dfrac{f_e+f_o}{2}$ represents the half wave rectifier. For each function from \ref{cosineseries}, find the Fourier series of the half wave rectifier of $f$. Write your solution using summation notation. Then graph at least 3 periods of the half wave rectifier and compare it to a graph of a truncated series. 
+
+	\item Compute the following integrals, where $n$ and $m$ are positive integers. You will need the product to sum trig identitites.
+	
+\begin{enumerate}
+	\item $\ds \int_{-\pi}^{\pi} \cos(nx)\sin(mx)dx$.
+	\item $\ds \int_{-\pi}^{\pi} \sin(nx)\sin(mx)dx$.
+	\item $\ds \int_{-\pi}^{\pi} \cos(nx)\cos(mx)dx$.	
+\end{enumerate}
+
+
+\item Use Fourier series to prove the following identities.
+\begin{multicols}{2}
+\begin{enumerate}
+	\item $\ds \sin^2x = \frac12 -\frac12 \cos(2x)$
+	\item $\ds \sin^3x = \frac34\sin x -\frac14 \sin(3x)$
+	\item $\ds \sin^4x = \frac38-\frac12\cos(2x) +\frac18 \cos(4x)$
+	\item $\ds \cos^2x = \frac12 +\frac12 \cos(2x)$
+	\item $\ds \cos^3x = \frac34\cos x +\frac14 \cos(3x)$
+	\item $\ds \cos^4x = \frac38+\frac12\cos(2x) +\frac18 \cos(4x)$
+\end{enumerate}
+\end{multicols}
+
+\item (Gibb's Phenomenon) Pick a discontinuous function from any of the previous exercises. Use a computer to graph the partial sums $$f_k(x) = \ds a_0+\sum_{n=1}^k \left( a_n\cos\left(\frac{n\pi x}{L}\right) + b_n\cos\left(\frac{n\pi x}{L}\right)\right)$$ for $k=5,10,50,100$. What do you notice happening near the point where $f$ is discontinuous?  Does increasing $k$ make this ``bump'' disappear? Try letting $k$ be 1000 (it may take little while for the computer to construct your solution). 
+
+\end{enumerate}

@@ -1,0 +1,1351 @@
+%
+\chapter{Systems of ODEs}
+
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{10-Systems-of-ODEs/Systems-of-ODEs-objectives}
+
+
+
+\section{Definitions and Theory for Systems of ODEs}
+Problems in the real world often involving combining many differential equations which interact with each other, resulting in a system of ODEs. Before embarking on a description of the solution techniques and real world applications, let's look at an example. In what follows, we will generally let $t$ be the independent variable, as $\vec x$ we'll use for talking about eigenvectors. 
+
+Consider the system of ODE's $y_1^\prime(t)=2y_1(t)+y_2(t)$ and $y_2^\prime(t) = y_1(t)+2y_2(t)$.  This system can be written in matrix form as 
+$
+\begin{bmatrix}y_1^\prime\\y_2^\prime\end{bmatrix} 
+= 
+\begin{bmatrix}2&1\\1&2\end{bmatrix} 
+\begin{bmatrix}y_1\\y_2\end{bmatrix}
+$. 
+We can summarize this in vector and matrix form by writing $\vec y^\prime =A\vec y$. 
+Since the system of ODEs $\vec y^\prime =A\vec y$ is similar to the ODE $y^\prime=Ay$ whose solution involves an exponential function, we can guess that a solution to $\vec y^\prime =A\vec y$ will be of the form $\begin{bmatrix}x_1\\x_2\end{bmatrix}e^{\lambda t}$ for some constant vector $\vec x=\begin{bmatrix}x_1\\x_2\end{bmatrix}$ and constant $\lambda$.  
+Differentiating and substituting into the ODE gives $\lambda \vec x e^{\lambda t}=A\vec x e^{\lambda t} $, or $\lambda \vec x =A\vec x $. In other words, we need a scalar $\lambda$ and a vector $\vec x$ such that multiplying $\vec x$ on the left by a matrix $A$ is equivalent to multiplying by a constant $\lambda$.  This is an eigenvalue and eigenvector problem. The matrix 
+$A=\begin{bmatrix}2&1\\1&2\end{bmatrix}$ has eigenvalues $\lambda_1 = 1$ and $\lambda_2= 3$, with corresponding eigenvectors $\vec x_1=\begin{bmatrix}1\\-1\end{bmatrix}$ and $\vec x_2=\begin{bmatrix}1\\1\end{bmatrix}$ (check this is true). Hence, two solutions to the system of ODE's are 
+$ \begin{bmatrix}y_1\\y_2\end{bmatrix} = \begin{bmatrix}1\\-1\end{bmatrix}e^t$ and 
+$ \begin{bmatrix}y_1\\y_2\end{bmatrix} = \begin{bmatrix}1\\1\end{bmatrix}e^{3t}$.  The general solution to this ODE is found using the superposition principle, and considering any linear combination of these two solutions.  In other words, the general solution is $ \begin{bmatrix}y_1\\y_2\end{bmatrix} 
+= c_1\begin{bmatrix}1\\-1\end{bmatrix}e^t 
++ c_2\begin{bmatrix}1\\1\end{bmatrix}e^{3t}
+=
+\begin{bmatrix}c_1e^t + c_2e^{3t}\\-c_1e^t + c_2e^{3t}\end{bmatrix}$. 
+
+We now discuss the general case. A first order system of $n$ ODEs can be written $$y_1^\prime=f_1(t,y_1,\ldots, y_n),y_2^\prime =f_2(t,y_1,\ldots, y_n),\ldots, y_n^\prime = f_n(t,y_1,\ldots, y_n),$$ or equivalently $\vec y^\prime = \vec f(t,\vec y)$. It is said to be linear if it can be written in the form $y_1^\prime=a_{11}(t)y_1 + a_{12}(t)y_2 +\cdots + a_{1n}(t)y_n+g_1(t), \ldots, y_n^\prime=a_{n1}(t)y_1 + a_{n2}(t)y_2 +\cdots + a_{nn}(t)y_n+g_n(t)$, or equivalently $\vec y^\prime = A\vec y +\vec g$. An initial value problem for a system consists of a system of ODEs and $n$ given initial conditions of the form $y_1(t_0)=K_1, \ldots, y_n(t_0)=K_n$. Provided all $f_i$ are continuous, or $a_{ij}$ are continuous, then the solution to an IVP exists and is unique. 
+
+We will focus on linear systems. We say a linear system $\vec y^\prime = A\vec y +\vec g$ is homogeneous if $\vec g =\vec 0$ ($\vec y^\prime -A\vec y =\vec 0$). The superposition principle says that any linear combination of two solutions to a homogeneous linear system of ODEs is again a solution.  A basis of solutions, written $\vec y_{1},\vec y_{2},\ldots, \vec y_{n}$, is a set of $n$ linearly independent solutions. The general solution is $\vec y = c_1\vec y_{1}+c_2\vec y_{2}+\cdots+c_n \vec y_{n} = Y\vec c$, where $Y$ is a matrix whose columns are the vectors $\vec y_{i}$.  The Wronskian of $n$ solutions is the determinant of $Y$ (the matrix whose columns are the solutions). If the Wronskian is ever zero on an interval, then it is identically zero and the solutions are dependent.  If it is nonzero at a point in an interval, then the solutions are linearly independent.
+
+
+\subsection{The Eigenvalue approach to Solving Linear systems of ODEs}
+
+If a homogeneous linear system of ODEs has constant coefficients, then the system can be written in the form $\vec y^\prime = A\vec y$, where $A$ is a matrix with constants.  Following the key example in the Definitions and Theory section, we can guess that a solution is of the form $\vec xe^{\lambda t}$ for some $\lambda$ and vector $\vec x$. Hence we have $\lambda \vec x e^{\lambda t}=A\vec x e^\lambda t $, or $\lambda \vec x =A\vec x $, which is an eigenvalue problem. We find that $\vec x e^{\lambda t}$ is a solution of the systems of ODEs for any eigenvalue $\lambda$ with a corresponding eigenvector $\vec x$. This is the general theory.  In particular, if the eigenvalues are $\lambda_1,\ldots,\lambda_n$ (whether there are repeats or not), and there are $n$ linearly independent eigenvectors $\vec x_{i}$, then the general solution is $\vec y = c_1\vec x_{1} e^{\lambda_1 t} + \cdots + c_n\vec x_{n} e^{\lambda_n t}$. 
+
+\begin{example}
+Consider the system of ODEs $y_1^\prime = 2y_1+y_2, y_2^\prime= y_1+2y_2$ from the key example, but add in the initial conditions $y_1(0)=3,y_2(0)=4$. Since the eigenvalues are 1 and 3 with eigenvectors $[1,-1],[1,1]$, the general solution is 
+$
+\begin{bmatrix}y_1\\y_2\end{bmatrix} 
+= c_1\begin{bmatrix}1\\-1\end{bmatrix}e^t 
++ c_2\begin{bmatrix}1\\1\end{bmatrix}e^{3t}
+=
+\begin{bmatrix}1 &1\\-1&1\end{bmatrix}
+\begin{bmatrix}e^t&0\\0&e^{3t}\end{bmatrix}
+\begin{bmatrix}c_1\\c_2\end{bmatrix} 
+$. 
+The initial conditions give us the matrix equation 
+$
+\begin{bmatrix}3\\4\end{bmatrix} 
+= 
+\begin{bmatrix}1 &1\\-1&1\end{bmatrix}
+\begin{bmatrix}1&0\\0&1\end{bmatrix}
+\begin{bmatrix}c_1\\c_2\end{bmatrix} 
+=
+\begin{bmatrix}1 &1\\-1&1\end{bmatrix}
+\begin{bmatrix}c_1\\c_2\end{bmatrix} 
+$, which can be solved using Cramer's rule (which we have done for much of the semester) or by using an inverse matrix.  If we let $Q = \begin{bmatrix}1 &1\\-1&1\end{bmatrix}$, then the constants $c_1$ and $c_2$ are found by writing $\vec c = Q^{-1} \vec y(0)$, or 
+$$
+\begin{bmatrix}c_1\\c_2\end{bmatrix} 
+=
+\begin{bmatrix}1 &1\\-1&1\end{bmatrix}^{-1}
+\begin{bmatrix}3\\4\end{bmatrix} 
+=
+\frac{1}{2}
+\begin{bmatrix}1 &-1\\1&1\end{bmatrix}
+\begin{bmatrix}3\\4\end{bmatrix} 
+=
+\frac{1}{2}
+\begin{bmatrix}-1 \\7\end{bmatrix}
+,$$ or $c_1=-\frac12, c_2=\frac72$.  Hence the solution to our IVP is 
+$ \begin{bmatrix}y_1\\y_2\end{bmatrix} 
+= -\frac12\begin{bmatrix}1\\-1\end{bmatrix}e^t 
++ \frac72\begin{bmatrix}1\\1\end{bmatrix}e^{3t}
+=
+\begin{bmatrix}-\frac12e^t + \frac72e^{3t}\\\frac12e^t + \frac72e^{3t}\end{bmatrix}$.
+\end{example}
+
+\subsection{Using an Inverse Matrix}
+In the applications unit (the last page) it gives a formula for the inverse of a 2 by 2 matrix:  
+$$\begin{bmatrix}a&b\\ c&d\end{bmatrix} = \frac{1}{|A|}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}. $$ We'll be using this fact often in most of what follows.
+
+In the previous example, we used the inverse matrix to find our constants from our initial conditions.  Notice that the general solution was written in the form $\vec y = QD\vec c$ where $Q$ is a matrix whose columns are the eigenvectors of $A$, and $D$ is a diagonal matrix with $e^{\lambda t}$ on the diagonals for our eigenvalues $\lambda$.  We then wrote $\vec c = Q^{-1}\vec y(0)$, which means we could write our solution in the form 
+$\vec y = QDQ^{-1}\vec y(0)$. The matrix $QDQ^{-1}$ is called the matrix exponential of $At$, and we will soon show that it equals $e^{At}$, where we place a matrix in the exponent of $e$. If we are given initial conditions, then we can find a solution to our IVP system $\vec y^\prime = A\vec y$ by using the following 4 step process: 
+\begin{enumerate}
+	\item Find the eigenvalues of $A$ to create $D$ (put $e^{\lambda t}$ on the diagonals).
+	\item Find the eigenvectors to create $Q$ (put your eigenvectors in the columns).
+	\item Find the inverse of $Q$ (quick for 2 by 2 matrices, use a computer for anything larger).
+	\item Compute the product $\vec y = QDQ^{-1}\vec y(0) = e^{At}\vec y(0)$ and you're done. 
+\end{enumerate}
+This will solve every homogeneous ODE we have encountered all semester, provided the roots of our characteristic equation are distinct and real. Most of the rest of this document deals with what to do in the case of a double root, complex roots, and nonhomogeneous systems. We will use the ideas in the next section on Jordan form to develop a powerful solution technique which combines all the ideas we have learned throughout the entire semester.  
+
+
+
+\section{Jordan Canonical Form}
+The matrix $\begin{bmatrix} 2&1\\1&2\end{bmatrix} $ has eigenvalues $\lambda=1,3$ and eigenvectors $\begin{bmatrix} -1\\1\end{bmatrix} $, $\begin{bmatrix} 1\\1\end{bmatrix} $ (check this). Let $Q = \begin {bmatrix} -1&1\\1&1\end {bmatrix} $ be a matrix whose columns are linearly independent eigenvectors of $A$.  Then the product $Q^{-1}AQ = \begin {bmatrix} 1&0\\0&3\end {bmatrix}$ is a diagonal matrix whose entries are the eigenvalues of $A$ (written in the same order in which the eigenvectors were listed in $Q$.  This process (finding $Q$ and multiplying $J=Q^{-1}AQ$) is called diagonalizing a matrix, and is always possible for an $n\times n$ matrix which has $n$ linearly independent eigenvectors. Notationally we often write $Q^{-1}AQ=J$ for the diagonal matrix $J$, and $J$ is called a Jordan canonical form for $A$.  
+
+\begin{wraptable}{r}{0pt}
+$\begin{bmatrix}
+2&1&0&0\\
+0&2&1&0\\
+0&0&2&0\\
+0&0&0&3\\
+\end{bmatrix}$
+\end{wraptable}
+If $A$ has an eigenvalue $\lambda$ which occurs $k$ times (we say it's algebraic multiplicity is $k$), but does not have $k$ linearly independent eigenvectors (the geometric multiplicity is less than $k$), then we call the eigenvalue defective. In this case, it is impossible to diagonalize $A$. However, it is possible to find a matrix $J$ whose diagonal entries are the eigenvalues and the only nonzero terms are a few 1's which are found directly above the defective eigenvalues. The matrix on the right 
+ is a Jordan canonical form for a matrix whose eigenvalues are $2,2,2,$ and $3$ where $2$ is a defective eigenvalue. To find this matrix $J$, we need to find generalized eigenvectors, which are vectors which satisfy $(A-\lambda I)^r\vec x=\vec 0$ for some $r$.  If $\vec x$ is a vector which satisfies this equation for $r$ but not for $r-1$, then we call $r$ the rank of the eigenvector $\vec x$. We will focus our examples on $2\times 2$ and $3\times 3$ matrices. It can be shown that if the algebraic multiplicity of an eigenvector is $k$, then there will be $k$ linearly independent generalized eigenvalues, which we can then use to obtain the Jordan form.
+
+This paragraph explains a method for finding generalized eigenvectors.  The examples which follow illustrate this idea. Skim read this paragraph, try the examples, and then come back and read it again. A generalized eigenvector $\vec v_r$ of rank $r$ satisfies $(A-\lambda I)^r\vec v_r=\vec 0$ but not $(A-\lambda I)^{r-1}\vec v_r=\vec 0$.  If we let $\vec v_{r-1}= (A-\lambda I)\vec v_r$, then $\vec v_{r-1}$ is a generalized eigenvector of rank $r-1$. The equation $\vec v_{r-1}=(A-\lambda I)^r\vec v_r$ gives us a way of solving for $\vec v_{r}$ based upon $\vec v_{r-1}$. Similarly, we could use $\vec v_{r-2}$ to obtain $\vec v_{r-1}$.   If we repeat this process until we get back to $\vec v_1$ (which is an actual eigenvector), then we can write all of the generalized eigenvectors in terms of a basis of eigenvectors. If $\vec v_1$ is an eigenvector, then we solve $(A-\lambda I)\vec v_2 =\vec v_1$ to find $\vec v_2$. We then solve  $(A-\lambda I)\vec v_3 =\vec v_2$ to find $\vec v_3$. Continue this process to obtain a chain of generalized eigenvectors $\vec v_1, \vec v_2, \ldots, \vec v_r$ which are then inserted in the matrix $Q$ to obtain Jordan form.
+
+\begin{example}
+Let $A=\begin {bmatrix} 0&1\\-1&-2\end {bmatrix}$. The characteristic polynomial is $\begin {vmatrix} -\lambda&1\\-1&-2-\lambda\end {vmatrix}= \lambda^2+2\lambda+1=(\lambda+1)^2$. A double eigenvalue is $\lambda=-1$.  To find the eigenvectors we compute {$A-\lambda I = \begin {bmatrix} 1&1\\-1&-1\end {bmatrix} $}. The only eigenvectors are multiples of $\vec v_1 = \begin {bmatrix} 1\\-1\end {bmatrix}$. Hence there is only one linearly independent eigenvector for the double root $-1$, which means $-1$ is a defective eigenvalue. In order to find Jordan Form, we must find a generalized eigenvector of rank 2. 
+
+We solve the equation 
+$(A-\lambda I)\vec v_2=\vec v_1$ by row reducing the matrix 
+$\begin {bmatrix}[cc|c] 1&1&1\\-1&-1&-1\end {bmatrix}$, which gives the solution $x_1+x_2=1$ (notice we just augmented $A-\lambda I$ by our eigenvector).  The vectors $[1,0]$ and $[0,1]$ both satisfy this system, so we can pick either vector as $\vec v_2$ (it doesn't matter which one you pick). Now let $Q=\begin{bmatrix}\vec v_1 &\vec v_2\end{bmatrix}$. The Jordan form is then $Q^{-1}AQ = =\begin {bmatrix} -1&1\\0&-1\end {bmatrix}$.  
+\end{example}
+
+The example above gives a general method for finding Jordan form. Start by finding the eigenvalues. For each eigenvalue, find a basis of eigenvectors.  For each eigenvector in this basis, use the equation $\vec v_{k-1}=(A-\lambda I)^r\vec v_k$ to obtain a chain of generalized eigenvectors $\{\vec v_1,\vec v_2, \ldots, \vec v_r\}$ corresponding to that eigenvector (the chain stops when the equation $\vec v_{k-1}=(A-\lambda I)^r\vec v_k$ has no solution, which will always occur). Once you have completed this, you will find that the total number of generalized eigenvectors you have obtained matches the size of the matrix, and that the vectors are linearly independent (proving this is not difficult, but beyond the scope of our class). Place the vectors into the columns of $Q$ (keeping the chains together) and then the product $Q^{-1}AQ=J$ will give you a Jordan form, where each chain of vectors corresponds to a block matrix on the diagonal whose diagonal entries are the eigenvalue and 1's above the main diagonal.
+
+\begin{example}
+Consider the matrix 
+$A=
+\begin{bmatrix}
+4&-4&10\\
+1&0&5\\
+0&0&2
+\end{bmatrix}
+$. The characteristic polynomial is $-\lambda^3+6\lambda^2-12 t+8 = (2-\lambda)^3$, so $A$ has one eigenvalue, namely $\lambda=2$.  We compute $A-2I = \begin{bmatrix} 2&-4&10\\1&-2&5
+\\0&0&0\end{bmatrix} 
+$.  Row reduction gives $\begin{bmatrix} 1&-2&5\\0&0&0
+\\0&0&0\end{bmatrix} 
+$, so two linearly independent eigenvectors are $\begin{bmatrix}2\\1\\0\end{bmatrix}$   and $\begin{bmatrix}-5\\0\\1\end{bmatrix}$.  We currently have only 2 linearly independent vectors, so we have to find a third.  We solve $(A-2I)v_2= \begin{bmatrix}2\\1\\0\end{bmatrix}$ by row reducing $ \begin{bmatrix} 2&-4&10&2\\1&-2&5&1
+\\0&0&0&0\end{bmatrix} 
+$ to obtain $\begin{bmatrix} 1&-2&5&1\\0&0&0&0
+\\0&0&0&0\end{bmatrix}$, which means $\vec v_2=\begin{bmatrix}1\\0\\0\end{bmatrix}$ is a generalized eigenvector since $1-2(0)+5(0)=1$. We now have three independent vectors, so we can use them to form the matrix $Q$.
+We have $Q= \begin{bmatrix} 2&1&-5\\1&0&0
+\\0&0&1\end{bmatrix}$.  The inverse of $Q$ is 
+$\begin{bmatrix} 0&1&0\\1&-2&5
+\\0&0&1\end{bmatrix}
+$ (using a computer). Matrix multiplication gives $Q^{-1}AQ = \begin{bmatrix} 2&1&0\\0&2&0
+\\0&0&2\end{bmatrix}
+$ as the Jordan Form.
+
+As a side note, if we try to find any more generalized eigenvectors, we will fail because we will get inconsistent systems. Reduction of the matrix 
+$ \begin{bmatrix} 2&-4&10&1\\1&-2&5&0
+\\0&0&0&0\end{bmatrix} 
+$ gives $\begin{bmatrix} 1&-2&5&0\\0&0&0&1
+\\0&0&0&0\end{bmatrix}$ which means there is no rank 3 eigenvector in the first chain. Row reduction of the matrix 
+$ \begin{bmatrix} 2&-4&10&-5\\1&-2&5&0
+\\0&0&0&1\end{bmatrix} 
+$ gives $\begin{bmatrix} 1&-2&5&0\\0&0&0&1
+\\0&0&0&0\end{bmatrix}$ which has no solution, meaning that the second chain is only one long, and there are no generalized eigenvectors of rank 2 for the second eigenvector.  
+\end{example}
+
+\begin{example}
+Consider the matrix 
+$ \begin{bmatrix} 
+1&2&2\\
+0&1&0\\
+0&0&1
+\end{bmatrix} 
+$.  Because it is upper triangular, the eigenvalues are the entries on the diagonal, namely $\lambda = 1$ is an eigenvalue with algebraic multiplicity 3. To find the eigenvectors, we note that the matrix 
+$A-I= \begin{bmatrix} 
+0&2&2\\
+0&0&0\\
+0&0&0
+\end{bmatrix} 
+$
+has only 1 pivot, so it has 2 free variable, or two linearly independent eigenvectors 
+$\begin{bmatrix} 
+1\\
+0\\
+0
+\end{bmatrix}$ 
+and
+$\begin{bmatrix} 
+0\\
+1\\
+-1
+\end{bmatrix}$. 
+Since there are only 2 linearly independent eigenvectors, we need to find a third.  Row reduction of $\begin{bmatrix} 
+0&2&2&1\\
+0&0&0&0\\
+0&0&0&0
+\end{bmatrix}$ 
+shows that  
+$\begin{bmatrix} 
+0\\
+1/2\\
+0
+\end{bmatrix}$ is a generalized eigenvector.  Hence we let $Q=\begin{bmatrix} 
+1&0&0\\
+0&1/2&1\\
+0&0&-1
+\end{bmatrix} 
+$ and then compute $Q^{-1} = \begin{bmatrix} 
+1&0&0\\
+0&2&2\\
+0&0&-1
+\end{bmatrix} 
+$. 
+Then a Jordan Canonical form is $J=Q^{-1}AQ=\begin{bmatrix} 
+1&1&0\\
+0&1&0\\
+0&0&1
+\end{bmatrix} 
+$. 
+
+\end{example}
+
+
+
+
+
+\begin{example}
+Consider the matrix 
+$ A=\begin{bmatrix} 
+1&2&2\\
+0&1&2\\
+0&0&1
+\end{bmatrix} 
+$.  Because it is upper triangular, $\lambda = 1$ is a triple eigenvalue. To find the eigenvectors, we note that the matrix 
+$A-I= \begin{bmatrix} 
+0&2&2\\
+0&0&2\\
+0&0&0
+\end{bmatrix} 
+$
+has 2 pivots, so one linearly independent eigenvector 
+$\begin{bmatrix} 
+1\\
+0\\
+0
+\end{bmatrix}$. 
+Since there is only one linearly independent eigenvector, we need to find two linearly independent generalized eigenvectors. Row reduction of $\begin{bmatrix} 
+0&2&2&1\\
+0&0&2&0\\
+0&0&0&0
+\end{bmatrix}$ 
+shows that  
+$\begin{bmatrix} 
+0\\
+1/2\\
+0
+\end{bmatrix}$ is a rank 2 generalized eigenvector. Replacing the 4th column of the previous calculation with this rank 2 eigenvector gives us the matrix 
+$\begin{bmatrix} 
+0&2&2&0\\
+0&0&2&1/2\\
+0&0&0&0
+\end{bmatrix}$, which shows that $\begin{bmatrix} 
+0\\
+-1/4\\
+1/4
+\end{bmatrix}$ is a rank 3 generalized eigenvector (just reduce the matrix to discover this).
+Let $Q=\begin{bmatrix} 
+1&0&0\\
+0&1/2&-1/4\\
+0&0&1/4
+\end{bmatrix} 
+$ and then compute $Q^{-1} = \begin{bmatrix} 
+1&0&0\\
+0&2&2\\
+0&0&4
+\end{bmatrix} 
+$. 
+Jordan Canonical form is $J=Q^{-1}AQ=\begin{bmatrix} 
+1&1&0\\
+0&1&1\\
+0&0&1
+\end{bmatrix} 
+$. 
+
+
+
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The Matrix Exponential}
+What we are about to learn in this unit is a very powerful tool which essentially encompasses and explains almost every idea in an introductory ODE class.  Before we start learning about the matrix exponential, let's first review the solution of a linear ODE of the form $y^\prime =a y+f(t)$, where $a$ is a constant.  To solve this ODE, we need to find an integrating factor, so we rewrite the ODE in differential form as $(-ay-f(t))dt + dy=0$.  We compute $(M_y-N_t)/N = -a$, so our integrating factor is $e^{\int -a\ dt} = e^{-at}$.  Multiplying both sides of our differential equation by this integrating factor gives the exact ODE $(-e^{-at}ay-e^{-at}f(t))dt+e^{-at}dy=0$.  A potential is $e^{-at}y-\int e^{-at}f(t)\ dt$.  So a general solution is $e^{-at}y-\int e^{-at}f(t)\ dt=c$ or $$y=e^{at}c+e^{at}\int e^{-at}f(t)\ dt.$$ 
+In this unit we will replace the functions $y$ and $f$ with vector-valued functions, and the constant $a$ with a square matrix $A$. The system of ODEs $\vec y^\prime =A \vec y+\vec f(t)$ will then have as its solution 
+$$\vec y=e^{At}\vec c+e^{At}\int e^{-At}\vec f(t)\ dt.$$ 
+The proof that this is true can be obtained in essentially the exact same manner, provided you are willing to work with finding potentials of vector-valued functions. The key thing we need to learn before we can proceed any more with this discussion is to understand what the matrix exponential $e^{At}$ means. This is our first goal.
+
+Recall that the MacLaurin series of $e^x$ is
+$$e^x = \sum_{n=0}^\infty \frac{1}{n!}x^n = 1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\cdots.$$
+We now introduce the exponential of a matrix $A$ by using the exact same idea, namely we define $e^A$ as the infinite series
+$$e^A = exp(A) = \sum_{n=0}^\infty \frac{1}{n!}A^n = 1+x+\frac{1}{2!}A^2+\frac{1}{3!}A^3+\frac{1}{4!}A^4+\cdots.$$
+We will use the following facts without proof.
+\begin{enumerate}
+	\item The matrix exponential exists for every square matrix. In other words, the infinite sum will always converge.
+	\item The inverse of the matrix exponential of $A$ is the matrix exponential of $-A$, i.e. $(e^A)^{-1}=e^{-A}$. 
+	\item If two matrices commute (meaning $AB=BA$), then  $e^{A+B}=e^Ae^B = e^Be^A$.
+\end{enumerate}
+Essentially, these facts mean that the laws of exponents with numbers are the same as the laws of exponents with matrices.
+
+
+\subsection{The Matrix Exponential for Diagonal Matrices - exponentiate the diagonals}
+We'll start by computing the matrix exponential for a few diagonal matrices.  Let's start with the zero matrix
+$A=
+\begin{bmatrix}
+ 0 & 0 \\
+ 0 & 0
+	\end{bmatrix}
+$. 
+ Every power of $A$ is the zero matrix, expect the zeroth power which is the identity matrix.  Hence we have
+$$e^A = 
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 1
+	\end{bmatrix}
++
+\begin{bmatrix}
+ 0 & 0 \\
+ 0 & 0
+	\end{bmatrix}
++\cdots = 
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 1
+	\end{bmatrix}
+.$$
+This shows us that $e^{0} = I$, the identity matrix.
+
+Now let's compute the exponential of the identity matrix, $A=
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 1
+\end{bmatrix}
+$
+Every power will still be I, so we have 
+$$e^A = 
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 1
+\end{bmatrix}
++
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 1
+\end{bmatrix}
++
+\begin{bmatrix}
+ \frac{1}{2!} & 0 \\
+ 0 & \frac{1}{2!}
+\end{bmatrix}
++
+\begin{bmatrix}
+ \frac{1}{3!} & 0 \\
+ 0 & \frac{1}{3!}
+\end{bmatrix}
++\cdots = 
+\begin{bmatrix}
+ 1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots & 0 \\
+ 0 & 1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots
+\end{bmatrix}
+.$$
+In summary, we have $e^I = 
+\begin{bmatrix}
+ e^1 & 0 \\
+ 0 & e^1
+\end{bmatrix}
+$. For the diagonal matrix 
+$A=
+\begin{bmatrix}
+ a & 0 \\
+ 0 & b
+\end{bmatrix}
+$, a similar computation shows that $e^{A} = 
+\begin{bmatrix}
+ e^a & 0 \\
+ 0 & e^b
+\end{bmatrix}
+.$  If we multiply $A$ by $t$ and then exponentiate, we obtain 
+$e^(At) = 
+\begin{bmatrix}
+ e^{at} & 0 \\
+ 0 & e^{bt}
+\end{bmatrix}
+.$ 
+The ideas above generalize immediately to all $n\times n$ matrices. If $A$ is a diagonal matrix, then its matrix exponential is found by exponentiating all the terms on the diagonal.  
+
+
+
+\subsection{Nilpotent Matrices - Matrices where $A^n=0$ for some $n$}
+A nilpotent matrix is a matrix for which $A^n=0$ for some $n$. This means that the infinite sum involved in the matrix exponential eventually terminates. We will only look at a few examples of nilpotent matrices, in particular the kinds that show up when calculating Jordan form. 
+
+The matrix $A=
+\begin{bmatrix}
+ 0 & t \\
+ 0 & 0
+\end{bmatrix}
+$ is nilpotent because 
+$
+\begin{bmatrix}
+ 0 & t \\
+ 0 & 0
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 0 & 0 \\
+ 0 & 0
+\end{bmatrix}
+$. 
+The matrix exponential is hence 
+$$e^A = 
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 1
+\end{bmatrix}
++
+\begin{bmatrix}
+ 0 & t \\
+ 0 & 0
+\end{bmatrix}
++
+\begin{bmatrix}
+ 0 & 0 \\
+ 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 1 & t \\
+ 0 & 1
+\end{bmatrix}
+.
+$$
+
+The matrix $A=
+\begin{bmatrix}
+ 0 & t & 0 \\
+ 0 & 0 & t \\
+ 0 & 0 & 0
+\end{bmatrix}
+$ satisfies $A^2 = 
+\begin{bmatrix}
+ 0 & 0 & t^2 \\
+ 0 & 0 & 0 \\
+ 0 & 0 & 0
+\end{bmatrix}
+$ and
+$A^3 = 
+\begin{bmatrix}
+ 0 & 0 & 0 \\
+ 0 & 0 & 0 \\
+ 0 & 0 & 0
+\end{bmatrix}
+$, hence it is nilpotent. Its matrix exponential is
+$e^A=
+\begin{bmatrix}
+ 1 & 0 & 0 \\
+ 0 & 1 & 0 \\
+ 0 & 0 & 1
+\end{bmatrix}
++
+\begin{bmatrix}
+ 0 & t & 0 \\
+ 0 & 0 & t \\
+ 0 & 0 & 0
+\end{bmatrix}
++\frac{1}{2}
+\begin{bmatrix}
+ 0 & 0 & t^2 \\
+ 0 & 0 & 0 \\
+ 0 & 0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 1 & t & \frac{1}{2}t^2 \\
+ 0 & 1 & t \\
+ 0 & 0 & 1
+\end{bmatrix}
+$
+
+
+The 4 by 4 matrix $A=
+\begin{bmatrix}
+ 0 & t & 0 & 0 \\
+ 0 & 0 & t & 0 \\
+ 0 & 0 & 0 & t \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}
+$ satisfies
+$A^2 = 
+\begin{bmatrix}
+ 0 & 0 & t^2 & 0 \\
+ 0 & 0 & 0 & t^2 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}
+,
+A^2 = 
+\begin{bmatrix}
+ 0 & 0 & 0 & t^3 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}
+,$ and
+$A^4 = 0,$ so it is nilpotent. Its matrix exponential is
+$
+\begin{bmatrix}
+ 1 & t & \frac{1}{2!}t^2 & \frac{1}{3!}t^3 \\
+ 0 & 1 & t & \frac{1}{2!}t^2 \\
+ 0 & 0 & 1 & t \\
+ 0 & 0 & 0 & 1
+\end{bmatrix}
+$. 
+
+The point to these last few examples is to help you see a pattern. If there are not all $t$'s on the upper diagonal, then each block of $t$'s will contribute a similar matrix.  For example, the exponential of the matrix 
+$
+\begin{bmatrix}[ccc|cccc]
+ 0 & t & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & t & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\hline
+ 0 & 0 & 0 & 0 & t & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & t & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & t \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$ is
+$
+\begin{bmatrix}[ccc|cccc]
+ 1 & t & \frac{1}{2}t^2 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & t & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\hline
+ 0 & 0 & 0 & 1 & t & \frac{1}{2}t^2 & \frac{1}{3!}t^3 \\
+ 0 & 0 & 0 & 0 & 1 & t & \frac{1}{2}t^2 \\
+ 0 & 0 & 0 & 0 & 0 & 1 & t \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+$
+
+\subsection{Matrices in Jordan Form}
+If a matrix is in Jordan form, then it can be written as $J=D+N$, where $D$ is a diagonal matrix and $N$ is a nilpotent matrix similar to the matrices from the last section. Since $e^{D+N}=e^De^N$, all we have to do is multiply the two matrix exponential together to find the matrix exponential of $J$. We will almost always be working with matrices of the form $Jt$, so we need the matrix exponential of $Dt$ and $Nt$.  Let's look at an example.
+
+Consider the matrix $J=
+\begin{bmatrix}
+ 2 & 1 \\
+ 0 & 2
+\end{bmatrix}
+$, which is already in Jordan form.  We write $Jt=Dt+Nt$ as
+$
+\begin{bmatrix}
+ 2t & t \\
+ 0 & 2t
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 2t & 0 \\
+ 0 & 2t
+\end{bmatrix}
++
+\begin{bmatrix}
+ 0 & t \\
+ 0 & 0
+\end{bmatrix}
+$.  The matrix exponentials are $e^{Dt}= 
+\begin{bmatrix}
+ e^{2t} & 0 \\
+ 0 & e^{2t}
+\end{bmatrix}
+$ and $e^{Nt} = 
+\begin{bmatrix}
+ 1 & t \\
+ 0 & 1
+\end{bmatrix}
+$. The product of these two matrices is the matrix exponential of $Jt$, namely $e^{Jt} = 
+\begin{bmatrix}
+ e^{2 t} & e^{2 t} t \\
+ 0 & e^{2 t}
+\end{bmatrix}
+$.  Similar computations shows that the matrix exponential of 
+$
+\begin{bmatrix}
+ 2 t & t & 0 \\
+ 0 & 2 t & t \\
+ 0 & 0 & 2 t
+\end{bmatrix}
+$ is 
+$
+\begin{bmatrix}
+ e^{2 t} & e^{2 t} t & \frac{1}{2} e^{2 t} t^2 \\
+ 0 & e^{2 t} & e^{2 t} t \\
+ 0 & 0 & e^{2 t}
+\end{bmatrix}
+$, and the matrix exponential of 
+$
+\begin{bmatrix}
+ 2 t & t & 0 & 0 \\
+ 0 & 2 t & t & 0 \\
+ 0 & 0 & 2 t & t \\
+ 0 & 0 & 0 & 2 t
+\end{bmatrix}
+$ is $
+\begin{bmatrix}
+ e^{2 t} & e^{2 t} t & \frac{1}{2} e^{2 t} t^2 & \frac{1}{3!} e^{2 t} t^3
+   \\
+ 0 & e^{2 t} & e^{2 t} t & \frac{1}{2} e^{2 t} t^2 \\
+ 0 & 0 & e^{2 t} & e^{2 t} t \\
+ 0 & 0 & 0 & e^{2 t}
+\end{bmatrix}
+$.  The pattern that you see continues. If you change the eigenvalues on the diagonal, then the 2 in the exponent will change.  If there are multiple eigenvalues, then each block of eigenvalues will contribute a block matrix to the matrix exponential. For a large example, we compute 
+$$exp 
+\begin{bmatrix}[ccc|cccc]
+ 3 t & t & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 3 t & t & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 3 t & 0 & 0 & 0 & 0 \\\hline
+ 0 & 0 & 0 & 2 t & t & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 2 t & t & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 2 t & t \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 2 t
+\end{bmatrix}
+=
+\begin{bmatrix}[ccc|cccc]
+ e^{3 t} & e^{3 t} t & \frac{1}{2} e^{3 t} t^2 & 0 & 0 & 0 & 0 \\
+ 0 & e^{3 t} & e^{3 t} t & 0 & 0 & 0 & 0 \\
+ 0 & 0 & e^{3 t} & 0 & 0 & 0 & 0 \\ \hline
+ 0 & 0 & 0 & e^{2 t} & e^{2 t} t & \frac{1}{2} e^{2 t} t^2 & \frac{1}{3!} e^{2 t} t^3 \\
+ 0 & 0 & 0 & 0 & e^{2 t} & e^{2 t} t & \frac{1}{2} e^{2 t} t^2 \\
+ 0 & 0 & 0 & 0 & 0 & e^{2 t} & e^{2 t} t \\
+ 0 & 0 & 0 & 0 & 0 & 0 & e^{2 t}
+\end{bmatrix}
+.$$
+
+\subsection{Jordan form gives the matrix exponential for any matrix.}
+
+We now consider the matrix exponential of any matrix $A$.  Start by finding $Q$ and $J$ so that $Q^{-1}AQ=J$ is a Jordan form for $A$.  This means that $A=Q J Q^{-1}$.  Notice that 
+$A^2 = Q J Q^{-1}Q J Q^{-1} = Q J^2 Q^{-1}$, 
+$A^3 = Q J Q^{-1}Q J Q^{-1}Q J Q^{-1} = Q J^3 Q^{-1}$, and 
+$A^n = Q J^n Q^{-1}$.  This means that the matrix exponential of $A$ is 
+$$e^A = \sum_{n=0}^\infty \frac{1}{n!}A^n = \sum_{n=0}^\infty \frac{1}{n!}Q J^nQ^{-1} = Q\left(\sum_{n=0}^\infty \frac{1}{n!}J^n\right)Q^{-1} = Q e^J Q^{-1}.$$ So if we can find the matrix exponential of a matrix in Jordan form, and we can compute $Q$ and $Q^{-1}$, then we can find the matrix exponential of any matrix.  We will never go beyond 2 by 2 and 3 by 3 matrices when we do problems in class, but theoretically you now have the tools for computing matrix exponentials of any matrix.
+If we need to find the matrix exponential of $At$, then we can find the matrix exponential of $Jt$ and get $exp(At)=Q\ exp(Jt)\ Q^{-1}$.  
+
+As an example, let's consider the matrix 
+$A=
+\begin{bmatrix}
+ 2 & 1 \\
+ 1 & 2
+\end{bmatrix}
+$ whose eigenvalues are 1 and 3, with eigenvectors $[-1,1],[1,1]$.
+We then have 
+$Q=
+\begin{bmatrix}
+ -1 & 1 \\
+ 1 & 1
+\end{bmatrix}
+$ and 
+$J=
+\begin{bmatrix}
+ 1 & 0 \\
+ 0 & 3
+\end{bmatrix}
+$ 
+so $exp(Jt) = 
+\begin{bmatrix}
+ e^{t} & 0 \\
+ 0 & e^{3t}
+\end{bmatrix}
+$ and the matrix exponential of $At$ is 
+$$exp(At) = Q e^{Jt}Q^{-1} =
+\begin{bmatrix}
+ -1 & 1 \\
+ 1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+ e^{t} & 0 \\
+ 0 & e^{3t}
+\end{bmatrix}
+\left(-\frac{1}{2}\right)
+\begin{bmatrix}
+ 1 & -1 \\
+ -1 & -1
+\end{bmatrix}
+=
+\left(-\frac{1}{2}\right)
+\begin{bmatrix}
+ -e^t-e^{3 t} & e^t-e^{3 t} \\
+ e^t-e^{3 t} & -e^t-e^{3 t}
+\end{bmatrix}
+$$
+
+For an example with a repeated eigenvalue, let's consider the matrix 
+$A=
+\begin{bmatrix}
+ 0 & 1 \\
+ -9 & 6
+\end{bmatrix}
+$.  We can compute 
+$Q=
+\begin{bmatrix}
+ 1 & -\frac{1}{3} \\
+ 3 & 0
+\end{bmatrix}
+$
+and
+$J=
+\begin{bmatrix}
+ 3 & 1 \\
+ 0 & 3
+\end{bmatrix}
+$. The matrix exponential of $Jt$ is 
+$
+\begin{bmatrix}
+ e^{3 t} & e^{3 t} t \\
+ 0 & e^{3 t}
+\end{bmatrix}
+$. We then have
+$$exp\left(A t\right) = exp\left(
+\begin{bmatrix}
+ 0 & 1t \\
+ -9t & 6t
+\end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+ 1 & -\frac{1}{3} \\
+ 3 & 0
+\end{bmatrix}
+\begin{bmatrix}
+ e^{3 t} & e^{3 t} t \\
+ 0 & e^{3 t}
+\end{bmatrix}
+\begin{bmatrix}
+ 0 & \frac{1}{3} \\
+ -3 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+ e^{3 t}-3 e^{3 t} t & e^{3 t} t \\
+ -9 e^{3 t} t & 3 e^{3 t} t+e^{3 t}
+\end{bmatrix}
+.
+$$
+
+If the eigenvalues are irrational or complex, the computations are still the same. When the eigenvalues are complex, Euler's formula $e^{ix}=\cos x+i\sin x$ or the identities $\cosh ix = \cos x, \sinh ix = i\sin x$ can be used to simplify the matrix exponential so that it contains no imaginary components.  Consider the matrix 
+$A=
+\begin{bmatrix}
+ 0 & 1 \\
+ -4 & 0
+\end{bmatrix}
+$.  We can compute 
+$Q=
+\begin{bmatrix}
+ 1 & 1 \\
+ 3i & -3i
+\end{bmatrix}
+$
+and
+$J=
+\begin{bmatrix}
+ 3i & 0 \\
+ 0 & -3i
+\end{bmatrix}
+$. The matrix exponential of $Jt$ is 
+$
+\begin{bmatrix}
+ e^{i t} & 0 \\
+ 0 & e^{-i t}
+\end{bmatrix}
+$. We then have
+$$exp\left(A t\right) = exp\left(
+\begin{bmatrix}
+ 0 & 1t \\
+ -9t & 0
+\end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+ 1 & 1 \\
+ 3i & -3i
+\end{bmatrix}
+\begin{bmatrix}
+ e^{3i t} & 0 \\
+ 0 & e^{-3i t}
+\end{bmatrix}
+\frac{1}{-6i}
+\begin{bmatrix}
+ -3i & -1 \\
+ -3i & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos(3t)&\frac{1}{3}\sin 3t\\
+-3\sin(3t)&\cos 3t\\
+\end{bmatrix}
+.
+$$ Due to time constraints, we'll have to finish this example in class.
+
+
+
+
+
+
+\section{Systems of ODEs}
+\subsection{Dilution - Tank Mixing Problems}
+Before we start solving systems, let's look at an example application to see why they are useful. Systems are used to understand the motion of moving parts in a machine, the flow of electricity in a complex network, and many more places. Lets focus on a dilution problem with multiple tanks, so we can see how the systems of ODEs are created. We won't be solving any of the ODEs below by hand, rather we will just set them up and let the computer solve them.
+
+Suppose that two tanks are connected via tubes so that the water in the tanks can circulate between each other.  Both tanks contain 50 gallons of water. The first tank contains 100lbs of salt, while the second tank is pure water.  The tubes connecting the tanks allow 3 gallons of water to flow from the first tank to the second tank each minute.  Similarly, 3 gallons of water are allowed to flow from tank 2 to tank 1 each minute. As soon as water enters either tank, a mixing blade ensures that the salt content is perfectly mixed into the tank.  The problem we want to solve is this: how much salt is in each tank at any given time $t$.  We know that after sufficient time, we should have 50lbs in each tank (since 100 lbs spread evenly between two tanks will give 50 lbs in each tank).
+
+Let $y_1(t)$ be the salt content in lbs in tank 1, and $y_2(t)$ be the salt content in tank 2, where $t$ is given in minutes and $y_1$ and $y_2$ are given in lbs. We know that 3 gallons of water flows out of each tank each minute, and 3 gallons flows in each minute.  Let's focus on tank 1 for a minute and determine it's outflow and inflow rates.  The only water coming into tank 1 each minute comes from tank 2.  We know that 3 out of the 50 gallons from tank 2 will enter tank 1, so the fraction $\frac{3}{50}$ represents the proportion of water leaving tank 2 and entering tank 1. This means that the inflow rate for tank 1 is $\frac{3}{50}y_2$.  Similarly, the outflow rate for tank 1 is $\frac{3}{50}y_2$.  Combining these gives a differential equation $y_1^\prime = \frac{3}{50}y_2 - \frac{3}{50}y_1$.  Examining tank 2 gives the equation $y_2^\prime = \frac{3}{50}y_1 - \frac{3}{50}y_2$.  We now have a system of ODEs 
+$\begin{cases}
+y_1^\prime = \frac{3}{50}y_2 - \frac{3}{50}y_1\\
+y_2^\prime = \frac{3}{50}y_1 - \frac{3}{50}y_2
+\end{cases}$ or in matrix form 
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+-3/50&3/50\\
+3/50&-3/50
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
++
+\begin{bmatrix}
+0\\
+0
+\end{bmatrix}$, which a first order homogeneous linear system of ODEs. The intial conditions are $y_1(0)=100$ and $y_2(0)=0$.
+
+
+Consider a similar problem, with these modifications.  Each tank still has 50 galls, with 100 lbs of salt in tank 1.  Each minute, 2 gallons of water containing 4lbs per gallon are dumped into tank 1 from an outside source. The pump in tank 1 causes 5 gallons per minute to leave tank 1 and enter tank 2.  The pump in tank 2 cause only 3 gallons per minute to flow back into tank 1. The extra 2 gallons per minute which flow into tank 2 from the tank 1 pipes flow out of the system via a drainage pipe.  How much water is in each tank at any given time?
+
+The flow into tank 1 comes from 2 parts. Each minute 2 gallons containing 4 lbs/gal enters the tank, so 8 lbs will enter.  In addition, 3/50 ths of the salt in tank 2 will enter tank 1.  The outflow is 5/50 ths the salt in tank 1, since 5 gal are flowing toward tank 2 each minute.  This gives the ODE $y_1^\prime = 8+3/50 y_2 - 5/50 y_1$.  The inflow in the second tank is 5/50 ths of $y_1$, and the outflow is 3/50 ths of $y_2$ toward tank 1 plus 2/50 ths of $y_2$ toward drainage.  This means we have $y_2^\prime = 5/50 y_1 -5/50 y_2$.  In matrix form we can write the system as 
+$\begin{cases}
+y_1^\prime = \frac{3}{50}y_2 - \frac{3}{50}y_1\\
+y_2^\prime = \frac{3}{50}y_1 - \frac{3}{50}y_2
+\end{cases}$ or in matrix form 
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+-5/50&3/50\\
+5/50&-5/50
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
++
+\begin{bmatrix}
+8\\
+0
+\end{bmatrix}$, which is a nonhomogeneous linear system of ODEs, with intial conditions $y_1(0)=100$ and $y_2(0)=0$.  In general, a non homogeneous system will occur when the rates of change are influenced by things outside the system, like extra salt being dumped into the system from somewhere else.
+
+Now let's change the size of the tanks, to see how size affects the problem.  Let tank 1 contain 100 gallons and tank 2 contain 50 gallons. Dump 3 gallons, with 5lbs of salt per gallon, into tank 1 each minute.  Pumps cause 6 gallons to flow from tank 1 to tank 2, and 3 gallons to flow from tank 2 to tank 1.  This leaves 3 gallons per minute to leave via a drain pipe in tank 2. The corresponding system of ODEs would be $y_1^\prime = (3)(5) + 3/50 y_2 - 6/100 y_1$ and $y_2^\prime = 6/100 y_1 - 6/50 y_2$. In matrix form we can write this as  
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+-6/100&3/50\\
+6/100&-6/50
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
++
+\begin{bmatrix}
+15\\
+0
+\end{bmatrix}$.
+
+As a final example, let's consider 3 tanks.  Suppose tank 1 contains 100 gallons with 300 lbs of salt.  Tank 2 contains 50 gallons with 20 lbs of salt, and tank 3 contains 30 gallons of pure water.  Pumps allows 2 gallons per minute to flow each direction between tank 1 and tank 2.  Another set of pumps allows 3 gallons per minute to flow between tanks 1 and 3.  There are no pumps connecting tank 2 and tank 3. Let's set up a system of ODEs in matrix form whose solution would give us the salt content in each tank at any given time.  For tank 1, we have an inflow of 2/50 $y_2$ plus 3/40 $y_3$. The outflow is 5/100 $y_1$ (2 gal toward tank 2 and 3 toward tank 3).  Continuing in this fashion, we eventually obtain the matrix equation
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime\\
+y_3^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+-5/100&2/50 &3/40\\
+2/100 &-2/50&0\\
+3/100 &0    &-3/40
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2\\
+y_3
+\end{bmatrix}
+$, which is a homogeneous linear first order system of ODEs.
+
+
+
+\subsection{Solving a system of ODEs}
+We are now ready to solve systems of ODEs.  Recall at the beginning of the unit that the solution to the ODE 
+ $y^\prime =a y+f(t)$ is $y=e^{at}c+e^{at}\int e^{-at}f(t)\ dt.$ In terms of systems, we can solve the linear system of ODEs with constant coefficient matrix $A$ given by $\vec y^\prime =A \vec y+\vec f(t)$ using the solution
+$$\vec y=e^{At}\vec c+e^{At}\int e^{-At}\vec f(t)\ dt.$$ If the system is homogeneous, meaning $\vec f(t)=\vec 0$, then the solution is simply $\vec y=e^{At}\vec c$. If the initial conditions are $\vec y(0)=\vec y_0$, then the constant vector $\vec c$ must equal the initial conditions. If the system is nonhomogeneous, then we will have to use the initial conditions to find $\vec c$. Let's look at a few examples.
+
+
+\subsubsection{Homogeneous: $f\vec (t)=0$}
+Let's start by solving the system of ODEs given by 
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+3&1\\
+0&3
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+$. Since the coefficient matrix $A = \begin{bmatrix}
+3&1\\
+0&3
+\end{bmatrix}
+$ is already in Jordan form, we know the matrix exponential of $A$ times $t$ is 
+$exp(At) = 
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+$.  Hence we have as a solution to our ODE 
+$
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+\begin{bmatrix}
+c_1\\
+c_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+c_1e^{3t}+c_2te^{3t}\\
+c_2e^{3t}
+\end{bmatrix}$. Without using matrix form, a general solution would be $y_1=c_1e^{3t}+c_2te^{3t}, y_2=c_2e^{3t}$.  To check our solution, we compute $y_1^\prime = 3c_1e^{3t}+3c_2te^{3t}+c_2e^{3t}$ and $y_2^\prime = 3c_2e^{3t}$.  The system of ODEs requires that $y_1^\prime = 3y_1+y_2 = 3(c_1e^{3t}+c_2te^{3t})+(c_2e^{3t})$ (which is correct), and that $y_2^\prime = 3y_2 = 3(c_2e^{3t})$ (which is also correct). 
+
+In the previous problem, let's add the initial conditions $y_1(0)=2$ and $y_2(0)=7$. Recall that $e^0=I$, so plugging in $t=0$ into our vector equation $\vec y = e^{At}\vec c$ means 
+$
+\begin{bmatrix}
+y_1(0)\\
+y_2(0)
+\end{bmatrix}
+=I
+\begin{bmatrix}
+c_1\\
+c_2
+\end{bmatrix}
+$, or 
+$
+\begin{bmatrix}
+2\\
+7
+\end{bmatrix}
+=
+\begin{bmatrix}
+c_1\\
+c_2
+\end{bmatrix}
+$. Hence the solution of our initial value problem is simply the matrix exponential times the initial conditions, i.e.
+$
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+\begin{bmatrix}
+2\\
+7
+\end{bmatrix}
+$.
+
+The only complication which occurs with homogeneous ODEs is finding the matrix exponential.
+
+
+
+\subsubsection{Nonhomogeneous: $f\vec (t)\neq 0$}
+To see what happens in the nonhomogeneous case, let's look at the same example from the previous section, but add on a nonzero vector. We will solve the nonhomogeneous system of ODEs given by
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+3&1\\
+0&3
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
++
+\begin{bmatrix}
+t\\
+2
+\end{bmatrix}
+$.
+We already know that $exp(At) = 
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+$, however we will need the inverse of this matrix as well, which is $exp(-At) = 
+\begin{bmatrix}
+e^{-3t}&-te^{-3t}\\
+0&e^{-3t}
+\end{bmatrix}
+$ (just replace each $t$ with a $-t$).
+
+We now use the formula $\vec y=e^{At}\vec c+e^{At}\int e^{-At}\vec f(t)\ dt.$  This gives us
+$$\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+\begin{bmatrix}
+c_1\\
+c_2
+\end{bmatrix}
++
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+\left(\int 
+\begin{bmatrix}
+e^{-3t}&-te^{-3t}\\
+0&e^{-3t}
+\end{bmatrix}
+\begin{bmatrix}
+t\\
+2
+\end{bmatrix}
+dt\right).$$
+Before integrating, we compute the product 
+$\begin{bmatrix}
+e^{-3t}&-te^{-3t}\\
+0&e^{-3t}
+\end{bmatrix}
+\begin{bmatrix}
+t\\
+2
+\end{bmatrix}
+ = 
+\begin{bmatrix}
+te^{-3t}-2te^{-3t}\\
+2e^{-3t}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-te^{-3t}\\
+2e^{-3t}
+\end{bmatrix}
+$.
+We can now integrate each entry in this matrix to obtain (using integration by parts)
+$
+\begin{bmatrix}
+\int -te^{-3t} dt\\
+\int 2e^{-3t} dt
+\end{bmatrix}
+=
+\begin{bmatrix}
+te^{-3t}/3 +e^{-3t}/9\\
+-2e^{-3t}/3
+\end{bmatrix}
+$.
+Currently we have our general solution as 
+\begin{align*}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+&=
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+\begin{bmatrix}
+c_1\\
+c_2
+\end{bmatrix}
++
+\begin{bmatrix}
+e^{3t}&te^{3t}\\
+0&e^{3t}
+\end{bmatrix}
+\left(
+\begin{bmatrix}
+te^{-3t}/3 +e^{-3t}/9\\
+-2e^{-3t}/3
+\end{bmatrix}
+\right) 
+\\
+&=
+\begin{bmatrix}
+c_1e^{3t}+c_2te^{3t}\\
+c_2e^{3t}
+\end{bmatrix}
++
+\begin{bmatrix}
+1&t\\
+0&1
+\end{bmatrix}
+\begin{bmatrix}
+t/3 +1/9\\
+-2/3
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+c_1e^{3t}+c_2te^{3t}\\
+c_2e^{3t}
+\end{bmatrix}
++
+\begin{bmatrix}
+t/3+1/9-2t/3\\
+-2/3
+\end{bmatrix}
+\\
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+&=
+\begin{bmatrix}
+c_1e^{3t}+c_2te^{3t}-t/3+1/9\\
+c_2e^{3t}-2/3
+\end{bmatrix}
+.
+\end{align*}
+
+We can check our solution by calculating $y_1^\prime = 3c_1e^{3t}+3c_2te^{3t}+c_2e^{3t}-1/3$ and $y_2^\prime = 3c_2e^{3t}$.  We then compute $3y_1+y_2+t = 3(c_1e^{3t}+c_2te^{3t}-t/3+1/9)+(c_2e^{3t}-2/3)+t =
+3c_1e^{3t}+3c_2te^{3t}-t+1/3+c_2e^{3t}-2/3+t = y_1^\prime$, and $3y_2+2 =3(c_2e^{3t}-2/3)+2 = 3c_2e^{3t} = y_2^\prime$.
+
+If the initial conditions are  $y_1(0)=1$ and $y_2(0)=0$, then to find $c_1$ and $c_2$ we have to solve the system of equations
+$
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+c_1+1/9\\
+c_2-2/3
+\end{bmatrix}
+$.  We immediately see that $c_1=8/9$ and $c_2=2/3$.
+
+You have all the tools you need to solve ODEs. We now just need to practice.
+
+
+
+
+
+
+\subsection{Higher Order ODEs - Solved via a system}
+A second order linear ODE can always be converted to a first order linear system of two ODEs.  Similarly a third order ODEs can be converted to a system of 3 ODEs.  In this section I will illustrate how this is done, by considering a few examples.  
+
+Consider the 2nd order homogeneous linear ODE $y^{\prime\prime} +3y^\prime+2y=0$.  Make the substitutions $y_1 = y$ and $y_2=y_1^\prime$.  Since $y_2^\prime = y^{\prime\prime}$, we can now remove the 2nd order derivative from the problem. The 2nd order ODE can now be written in the form $y_2^\prime +3y_2+2y_1=0$, or $y_2^\prime = -2y_1 - 3y_2$.  Combining this equation with the equation $y_1^\prime = y_2$, we have the matrix equation 
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&1\\
+-2&-3
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
+$.
+
+Let's convert the 2nd order ODE $y^{\prime\prime} +ty^\prime-5y=\sin t$ to a system of ODEs.  We use the substitution $y_1=y$ and $y_2=y_1^\prime$ (this second equation becomes the first row in our matrix). Substitution gives us $y_2^\prime+xy_2-y_1=\sin t$ or $y_2^\prime = 5y_1-xy_2+\sin t$.  In matrix form  we write 
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&1\\
+5&-t
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2
+\end{bmatrix}
++
+\begin{bmatrix}
+0\\
+\sin t
+\end{bmatrix}
+$.
+
+For a higher order ODE such as $y^{(4)}-2y^{\prime\prime\prime}+7y^\prime -4y=0$, we use the substitutions $y_1=y, y_2=y_1^\prime=y^\prime, y_3=y_2^\prime=y^{\prime\prime}, y_4=y_3^\prime=y^{\prime\prime\prime}$ (essentially you just rename each of the derivatives of $y$ except for the highest one).  Substitution into the ODE gives us $y_4^\prime =y^{(4)}= 4y_1-7y_2+2y_4$.  The other 3 equations we need are $y_1^\prime = y_2,y_2^\prime = y_3,y_3^\prime = y_4.$ Combining these 4 ODEs into matrix format gives us
+$
+\begin{bmatrix}
+y_1^\prime\\
+y_2^\prime\\
+y_3^\prime\\
+y_4^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&1&0&0\\
+0&0&1&0\\
+0&0&0&1\\
+4&-7&0&2
+\end{bmatrix}
+\begin{bmatrix}
+y_1\\
+y_2\\
+y_3\\
+y_4
+\end{bmatrix}
+$. Notice the pattern of 1's which occur above the diagonal of the matrix.  This pattern will occur any time you convert a higher order ODE into a system.
+
+If we have a system of higher order ODEs, such as $y_1^{\prime\prime} = 2y_1-3y_2^\prime$ and $y_2^{\prime\prime}= 4y_1+5y_2$, then we can convert this to a system of first order ODEs in a similar fashion.  Since both functions $y_1$ and $y_2$ have 2nd order terms, we'll create new variables for the 0th and 1st derivatives of each, namely $a_1 = y_1, a_2=y_1^\prime, b_1=y_2, b_2=y_2^\prime$. We then have $a_1^\prime = a_2, a_2^\prime = y_1^\prime = 2a_1-3b_2, b_1^\prime = b_2, b_2^\prime = y_2^\prime = 4a_1+5b_1$.  In matrix form we can write 
+$$
+\begin{bmatrix}
+a_1^\prime\\
+a_2^\prime\\
+b_1^\prime\\
+b_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&1&0&0\\
+2&0&0&-3\\
+0&0&0&1\\
+4&0&5&0
+\end{bmatrix}
+\begin{bmatrix}
+a_1\\
+a_2\\
+b_1\\
+b_2
+\end{bmatrix}.
+$$  
+The solution to this system $\vec y^\prime = A\vec y$ is simply $\vec y = e^{At}\vec c$. 
+
+
+\subsection{Spring Systems}
+When two or more springs are connected to each other in a system, how do we model the corresponding motion?  The answer is to simply use a system.  
+
+Suppose we attach a spring with spring constant $k_1$ from the ceiling. Attach to the free end of this spring an object with mass $m_1$.  Then attach to the object another spring with spring constant $k_2$.  Attach to the end of this spring an object with mass $m_2$. Let $y_1$ and $y_2$ be the displacement of objects 1 and 2 from equilibrium (with positive $y_i$ representing downward displacement). We'll assume for now that there is no friction on the spring. The spring forces on the first spring are precisely $m_1 y_1^{\prime\prime}= -k_1(y_1) + k_2(y_2-y_1)$.  The spring forces on the second spring are precisely $m_2 y_2^{\prime\prime} = -k_2(y_2-y_1)$.  This is a system of 2nd order ODEs.  making the substitutions $a_1 = y_1, a_2=y_1^\prime, b_1=y_2, b_2=y_2^\prime$, we then have $a_1^\prime = a_2, a_2^\prime = -\frac{k_1}{m_1}a_1 + \frac{k_2}{m_1}(b_1-a_1), b_1^\prime = b_2, b_2^\prime = -\frac{k_2}{m_2}(b_1-a_1)$.  In matrix form we can write 
+$$
+\begin{bmatrix}
+a_1^\prime\\
+a_2^\prime\\
+b_1^\prime\\
+b_2^\prime
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&1&0&0\\
+-\frac{k_1}{m_1}-\frac{k_2}{m_1}&0&\frac{k_2}{m_1}&0\\
+0&0&0&1\\
+\frac{k_2}{m_2}&0&-\frac{k_2}{m_2}&0
+\end{bmatrix}
+\begin{bmatrix}
+a_1\\
+a_2\\
+b_1\\
+b_2
+\end{bmatrix}.
+$$  
+The solution to this system $\vec y^\prime = A\vec y$ is simply $\vec y = e^{At}\vec c$. The process above generalizes to any mass spring system.
+
+
+
+
+
+\subsection{Electrical Systems}
+When multiple loops occur in an electrical system involving resistors, inductors, and capacitors, how do we model the corresponding current?  We use a system.  Remember that Kirchoff's current law states that at each node, the current in equals the current out.  In addition, Kirchoff's voltage laws states that along each loop, the voltage supplied equals the voltage suppressed. Each resistor contributes a voltage drop of $RI$ ohms, each capacitor a drop of $\frac{1}{C}\int I dt$ farads, and each inductor a voltage drop of $LI^\prime$ Henrys.
+
+\begin{wrapfigure}{r}{0pt}
+%\includegraphics[height=1in]{../10-Systems-of-ODEs/ec1}
+\end{wrapfigure}
+Consider the electrical network on the right, where $R_1=1,R_2=2,R_3=3, L=4, C=\frac{1}{5}, E=12$.  Kirchoff's current law states that $I_1=I_2+I_3$.  On the left loop, Kirchoff's voltage law states that $E = R_1I_1+R_2I2+LI_1^\prime$ or using the given numbers we have $12 = I_1+2I_2+4I_1^\prime$.  On the right loop, Kirchoff's voltage law states that $0=I_3R_3 +\frac{1}{C}\int I_3 dt - R_2I_2$ or differentiating and using the given numbers we have $0 = 3I_3^\prime+5I_3-2I_2^\prime$.  We now need to solve this system for $I_1^\prime, I_2^\prime,$ and $I_3^\prime$. Solving the second equation for $I_1^\prime$ gives $I_1^\prime = \frac{1}{4}(12-I_1-2I_2)$.  Taking derivatives of the first equation gives $I_1^\prime = I_2^\prime+I_3^\prime$, which means we can replace $I_2^\prime$ in the third equation with $I_2^\prime = I_1^\prime - I_3^\prime =  \frac{1}{4}(12-I_1-2I_2) - I_3^\prime$. This gives us the equation $0 = 3I_3^\prime+5I_3-2I_2^\prime = 3I_3^\prime+5I_3-2\left(\frac{1}{4}(12-I_1-2I_2) - I_3^\prime\right)$. Solving for $I_3^\prime$ gives us $I_3^\prime = \frac{1}{5}\left(-5I_3+\frac{1}{2}(12-I_1-2I_2)\right)$.  Since $I_2^\prime = I_1^\prime - I_3^\prime$, we now use the information we have for $I_1^\prime$ and $I_3^\prime$ to write $I_2^\prime = \frac{1}{4}(12-I_1-2I_2) - \frac{1}{5}\left(-5I_3+\frac{1}{2}(12-I_1-2I_2)\right)$.  This gives us the system of ODEs in matrix form as 
+$$
+\begin{cases} 
+I_1^\prime = \frac{1}{4}(12-I_1-2I_2)\\
+I_2^\prime = \frac{1}{4}(12-I_1-2I_2) - \frac{1}{5}\left(-5I_3+\frac{1}{2}(12-I_1-2I_2)\right)\\
+I_3^\prime = \frac{1}{5}\left(-5I_3+\frac{1}{2}(12-I_1-2I_2)\right)
+\end{cases} 
+\quad
+\begin{bmatrix}
+I_1^\prime \\
+I_2^\prime \\
+I_3^\prime 
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\frac{1}{4} & -\frac{1}{2} & 0 \\
+-\frac{1}{4}+\frac{1}{10} & -\frac{1}{2}+\frac{1}{10} &1\\
+-\frac{1}{10}  & -\frac{1}{5} & -1
+\end{bmatrix}
+\begin{bmatrix}
+I_1 \\
+I_2 \\
+I_3 
+\end{bmatrix}
++
+\begin{bmatrix}
+3 \\
+3-\frac65 \\
+\frac65 
+\end{bmatrix}
+$$
+Since we have written our ODE in the form $\vec y ^\prime = A \vec y + \vec f$, the solution is simply $\vec y = e^{At}\vec c+e^{At}\int e^{-At} \vec f dt$.  A computer can quickly solve this system.
+
+
+

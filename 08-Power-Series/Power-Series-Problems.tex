@@ -1,0 +1,170 @@
+
+\section{Preparation}
+
+\noindent  
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{08-Power-Series/Power-Series-objectives}
+
+Here are the preparation problems for this unit. Chapter numbers precede the problems from Schaum's.
+\begin{center}
+\begin{tabular}{ll}
+&Preparation Problems 
+(\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/08-Power-Series-Preparation-Solutions.pdf}{click for solutions})
+\\
+\hline\hline
+Day 1& 1, 11, 18, 20
+\\\hline
+Day 2& 25, 29, 43, Schaum's 27:3
+\\\hline
+Day 3& 46, Schaum's 27:29, Schaum's 27:36, Schaum's 27:41
+\\\hline
+\end{tabular}
+\end{center}
+
+
+The homework for this unit comes from the Power Series chapter in this online book.  Please make sure you print the appropriate pages from the problem book, as well as the corresponding section from the textbook.  
+
+Make sure you try a few of each type of problem, ASAP. I suggest that the first night you try one of each type of problem. It's OK if you get stuck and don't know what to do, as long as you decide to learn how to do it and then return to the ones where you got stuck. Eventually do enough of each type to master the ideas.  The only section in Schaum's with relevant problems is chapter 27.  
+
+Most engineering textbooks assume you have seen Taylor series and power series before (in math 113), but many of you have not. If you have your old Math 215 book, you can find many relevant problems and explanations from section 11.5 (Ratio Test) and 11.8 (Taylor Series).  
+
+For reference, here are a few key functions and their Taylor series centered at $x=0$ (so their MacLaurin series).
+
+\begin{enumerate}
+	\item $\ds e^x = \sum_{n=0}^\infty \frac{1}{n!}x^n$, $R=\infty$
+	\item $\ds \cos(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}$, $R=\infty$
+	\item $\ds \sin(x) = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}$, $R=\infty$
+	\item $\ds \frac{1}{1-x} = \sum_{n=0}^\infty x^n$, $R=1$
+	\item $\ds \cosh(x) = \sum_{n=0}^\infty \frac{1}{(2n)!}x^{2n}$, $R=\infty$
+	\item $\ds \sinh(x) = \sum_{n=0}^\infty \frac{1}{(2n+1)!}x^{2n+1}$, $R=\infty$
+\end{enumerate}
+
+\section{Problems}
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item [(I)] For each of the following, find a Talyor polynomial of degree $n$ centered at $x=c$ of the function $f(x)$.
+\begin{multicols}{2}
+\item $e^{4x}, n=3, c=0$
+\item $\cos(x), n=4, c=\pi$
+\item $\cos(2x), n=4, c=0$
+\item $\sin(\frac12 x), n=5, c=0$
+\item $\frac{1}{x}, n=3, c=1$
+\item $\ln x, n=3, c=1$
+\item $\ln (1-x), n=4, c=0$
+\item $\ln (1+x), n=4, c=0$
+\end{multicols}
+
+
+
+
+
+
+\item [(II)] Find the radius of convergence of each power series.
+\begin{multicols}{2}
+\item $\ds \sum_{n=0}^\infty \frac{1}{3^n}x^n$
+\item $\ds \sum_{n=0}^\infty \frac{(-1)^n}{4^{n+1}}x^{n}$
+\item $\ds \sum_{n=0}^\infty \frac{n}{2^n}x^{3n}$
+\item $\ds \sum_{n=0}^\infty \frac{3n+1}{n^2+4}x^n$
+\item $\ds \sum_{n=0}^\infty \frac{(-4)^n n}{n^2+1}x^{2n}$
+\item $\ds \sum_{n=0}^\infty \frac{n}{2^n}x^{2n}$
+\item $\ds \sum_{n=0}^\infty \frac{(-1)^n}{n!}x^{n}$
+\item $\ds \sum_{n=0}^\infty \frac{n!}{10^n}x^{2n}$
+\end{multicols}
+
+
+
+
+
+\item [(III)] For each function, find the MacLaurin series and state the radius of convergence.
+\begin{multicols}{2}
+\item $f(x)=e^x$
+\item $f(x)=\cos x$
+\item $f(x)=\sin x$
+\item $\ds f(x)=\frac{1}{1-x}$
+\item $\ds f(x)=\frac{1}{1+x}$
+\item $f(x)=\cosh x$
+\item $f(x)=\sinh x$
+\end{multicols}
+
+
+
+
+
+
+\item [(IV)] Prove the following formulas are true by considering power series. These formulas will allow us to eliminate complex numbers in future sections.
+\item $e^{ix}=\cos x + i\sin x$ (called Euler's formula)
+\begin{multicols}{2}
+\item $\cosh(ix) = \cos x$
+\item $\cos(ix) = \cosh x$
+\item $\sinh(ix) = i\sin x$
+\item $\sin(ix) = i\sinh x$
+\end{multicols}
+
+
+
+
+
+
+
+\item [(V)] Use MacLaurin series of known functions to find the MacLaurin series of these functions (by integrating, differentiating, composing, or multiplying together two power series). Then state the radius of convergence.
+\item $f(x)={x^2}{e^{3x}}$
+\item $f(x)=\frac{x^2}{e^{3x}}$ [hint, use negative exponents]
+\item $f(x)=\cos 4x$
+\item $f(x)=x\sin(2x)$ 
+\item $f(x)=\frac{x}{1+x}$
+\item $f(x)=\frac{1}{1+x^2}$
+\item $f(x)=\arctan x$ [hint, integrate the previous]
+\item $f(x)=\arctan (3x)$ 
+
+
+
+
+
+\item [(VI)] Shift the indices on each sum so that it begins at $n=0$.
+\begin{multicols}{2}
+\item $\ds\sum_{n=3}^6 n+2$ 
+\item $\ds\sum_{n=2}^8 n^2$ 
+\item $\ds\sum_{n=4}^\infty 2^n$ 
+\item $\ds\sum_{n=2}^\infty x^n$ 
+\item $\ds\sum_{n=1}^\infty n a_n x^{n}$ 
+\item $\ds\sum_{n=2}^\infty n (n-1) a_n x^{n-2}$ 
+\end{multicols}
+
+
+
+
+
+
+\item [(VII)] Solve the following ODEs by the power series method. With some, initial conditions are given (meaning you know $y(0)=a_0$ and $y^\prime(0)=a_1$). Identify the function whose MacLaurin series equals the power series you obtain.
+\item $y^{\prime}=3y$
+\item $y^{\prime}=2xy$
+\item $y^{\prime\prime}+4y=0$
+\item $y^{\prime\prime}-9y=0, y(0)=2, y^\prime(0)=3$
+\item $y^{\prime\prime}+4y^{\prime}+3y=0, y(0)=1, y^\prime(0)=-1$
+
+
+
+\item [(VII)] Determine whether the given values of $x$ are ordinary points or singular points of the given ODE.
+\item Chapter 27, problems 26-34 (these are really quick).
+
+
+\item [(VIII)] Solve the following ODEs by the power series method.  State the recurrence relation used to generate the terms of your solution, and write out the first 5 nonzero terms of your solution.
+\item Chapter 27, problems 35-47 (or from the worked problems).
+
+
+
+
+
+
+\end{enumerate}
+
+\section{Solutions}
+Handwritten solutions are available online.  \href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/08-Power-Series-Preparation-Solutions.pdf}{Click for solutions.}
+
+\end{multicols}
+
+

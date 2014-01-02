@@ -1,0 +1,833 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     32485,        823]
+NotebookOptionsPosition[     31266,        778]
+NotebookOutlinePosition[     31888,        802]
+CellTagsIndexPosition[     31845,        799]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Forced Oscillator with Damping", "Section",
+ CellFrameColor->RGBColor[
+  0.6449835965514611, 0.758632791638056, 0.2516823071641108],
+ FontColor->RGBColor[
+  0.6449835965514611, 0.758632791638056, 0.2516823071641108]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DPPlot", "[", 
+   RowBox[{
+   "bb_", ",", "mm_", ",", "kk_", ",", "xinit_", ",", "AA_", ",", 
+    "\[Omega]\[Omega]_", ",", "tfinal_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Clear", "[", 
+      RowBox[{
+      "t", ",", "x", ",", "A", ",", "\[Omega]", ",", "k", ",", "b", ",", 
+       "m"}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"sol", "=", 
+         RowBox[{"First", "@", 
+          RowBox[{"NDSolve", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"bb", "/", "mm"}], ")"}], " ", 
+                 RowBox[{
+                  RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"kk", "/", "mm"}], ")"}], 
+                 RowBox[{"x", "[", "t", "]"}]}]}], "\[Equal]", 
+               RowBox[{"AA", " ", 
+                RowBox[{"Cos", "[", 
+                 RowBox[{"\[Omega]\[Omega]", " ", "t"}], "]"}]}]}], ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"x", "'"}], "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+              RowBox[{
+               RowBox[{"x", "[", "0", "]"}], "\[Equal]", "xinit"}]}], "}"}], 
+            ",", "x", ",", 
+            RowBox[{"{", 
+             RowBox[{"t", ",", "0", ",", "tfinal"}], "}"}]}], "]"}]}]}], 
+        "}"}], ",", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"Evaluate", "[", 
+          RowBox[{
+           RowBox[{"x", "[", "t", "]"}], "/.", "sol"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "tfinal"}], "}"}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "tfinal"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"425", ",", "350"}], "}"}]}], ",", 
+         RowBox[{"ImagePadding", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"35", ",", "35"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"20", ",", "40"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"AxesLabel", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<t\>\"", ",", "14", ",", "Bold", ",", "Italic"}], 
+             "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<x(t)\>\"", ",", "14", ",", "Italic", ",", "Bold"}], 
+             "]"}]}], "}"}]}], ",", 
+         RowBox[{"PlotLabel", "\[Rule]", 
+          RowBox[{"TraditionalForm", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"m", " ", 
+              RowBox[{
+               RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+             RowBox[{"b", " ", 
+              RowBox[{
+               RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+             RowBox[{"k", " ", 
+              RowBox[{"x", "[", "t", "]"}]}]}], "\[Equal]", 
+            RowBox[{"A", " ", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"\[Omega]", " ", "t"}], "]"}]}]}], "]"}]}]}], "]"}]}], 
+      "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36848418241526*^9, 3.36848418435805*^9}, {
+   3.36848424318264*^9, 3.36848424957183*^9}, {3.3714939386418*^9, 
+   3.37149393935104*^9}, {3.37149457945182*^9, 3.37149458297807*^9}, {
+   3.371495011843*^9, 3.37149501886554*^9}, {3.371509189097865*^9, 
+   3.371509208507269*^9}, {3.3757938036698103`*^9, 3.3757938824979353`*^9}, {
+   3.377317346297296*^9, 3.377317353557736*^9}, {3.3773177558010216`*^9, 
+   3.377317756643323*^9}, {3.3797026982371874`*^9, 3.379702700665512*^9}, {
+   3.386472827014683*^9, 3.3864728271645236`*^9}},
+ CellID->225476673],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DPPhasePlot", "[", 
+   RowBox[{
+   "bb_", ",", "mm_", ",", "kk_", ",", "xinit_", ",", "AA_", ",", 
+    "\[Omega]\[Omega]_", ",", "zoom_", ",", "tfinal_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "t"}], "}"}], ",", 
+    RowBox[{"With", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"sol", "=", 
+        RowBox[{"First", "@", 
+         RowBox[{"NDSolve", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"bb", "/", "mm"}], ")"}], " ", 
+                RowBox[{
+                 RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"kk", "/", "mm"}], ")"}], 
+                RowBox[{"x", "[", "t", "]"}]}]}], "\[Equal]", 
+              RowBox[{"AA", " ", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"\[Omega]\[Omega]", " ", "t"}], "]"}]}]}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"x", "'"}], "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+             RowBox[{
+              RowBox[{"x", "[", "0", "]"}], "\[Equal]", "xinit"}]}], "}"}], 
+           ",", "x", ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "0", ",", "tfinal"}], "}"}]}], "]"}]}]}], "}"}],
+       ",", 
+      RowBox[{"ParametricPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Evaluate", "[", 
+           RowBox[{
+            RowBox[{"x", "[", "t", "]"}], "/.", "sol"}], "]"}], ",", 
+          RowBox[{"Evaluate", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "t", "]"}], "/.", "sol"}], "]"}]}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "tfinal"}], "}"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "zoom"}], ",", "zoom"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "zoom"}], ",", "zoom"}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"425", ",", "350"}], "}"}]}], ",", 
+        RowBox[{"AxesLabel", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<x(t)\>\"", ",", "14", ",", "Italic", ",", "Bold"}], 
+            "]"}], ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<x'(t)\>\"", ",", "Italic", ",", "14", ",", "Bold"}], 
+            "]"}]}], "}"}]}]}], "]"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36848419083737*^9, 3.36848419118787*^9}, {
+   3.37149394868114*^9, 3.37149394946032*^9}, {3.37149409216888*^9, 
+   3.3714941096803*^9}, {3.3715091807467265`*^9, 3.3715091839233556`*^9}, {
+   3.371509214700697*^9, 3.3715092213636265`*^9}, {3.3715092608717036`*^9, 
+   3.3715092612213326`*^9}, {3.3757938934979353`*^9, 
+   3.3757939081385603`*^9}, {3.3757940264979353`*^9, 
+   3.3757940310291853`*^9}, {3.377317359956938*^9, 3.3773173808870335`*^9}, {
+   3.3773177607144475`*^9, 3.3773177610252967`*^9}, {3.383747267359375*^9, 
+   3.383747267625*^9}, {3.386472832868471*^9, 3.386472833018312*^9}},
+ CellID->378994988],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Column", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Switch", "[", 
+        RowBox[{"plottype", ",", "\"\<position\>\"", ",", 
+         RowBox[{"DPPlot", "[", 
+          RowBox[{
+          "bb", ",", "mm", ",", "kk", ",", "xinit", ",", "AA", ",", 
+           "\[Omega]\[Omega]", ",", "time"}], "]"}], ",", "\"\<phase\>\"", 
+         ",", 
+         RowBox[{"DPPhasePlot", "[", 
+          RowBox[{
+          "bb", ",", "mm", ",", "kk", ",", "xinit", ",", "AA", ",", 
+           "\[Omega]\[Omega]", ",", "zoom", ",", "time"}], "]"}]}], "]"}], 
+       ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<mass = \>\"", ",", "mm", ",", 
+            RowBox[{"Spacer", "[", "20", "]"}], ",", "\"\<|\>\"", ",", 
+            RowBox[{"Spacer", "[", "20", "]"}], ",", 
+            "\"\<spring constant = \>\"", ",", "kk", ",", 
+            RowBox[{"Spacer", "[", "20", "]"}], ",", "\"\<|\>\"", ",", 
+            RowBox[{"Spacer", "[", "30", "]"}], ",", "\"\<damping = \>\"", 
+            ",", "bb"}], "}"}], "]"}], ",", "\"\<Label\>\""}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<driving amplitude = \>\"", ",", "AA", ",", 
+            RowBox[{"Spacer", "[", "20", "]"}], ",", "\"\<|\>\"", ",", 
+            RowBox[{"Spacer", "[", "20", "]"}], ",", 
+            "\"\<driving frequency = \>\"", ",", "\[Omega]\[Omega]"}], "}"}], 
+          "]"}], ",", "\"\<Label\>\""}], "]"}]}], "}"}], ",", "Center"}], 
+    "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mm", ",", "4", ",", "\"\<mass\>\""}], "}"}], ",", "1", ",", 
+     "10", ",", ".01", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"kk", ",", "3", ",", "\"\<spring constant\>\""}], "}"}], ",", 
+     "0", ",", "10", ",", ".01", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"bb", ",", "1", ",", "\"\<damping\>\""}], "}"}], ",", 
+     RowBox[{"-", "5"}], ",", "5", ",", ".01", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xinit", ",", "8", ",", "\"\<initial position\>\""}], "}"}], 
+     ",", "0", ",", "10", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", "Delimiter", 
+   ",", "\"\<forcing function\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"AA", ",", "3", ",", "\"\<amplitude\>\""}], "}"}], ",", "0", 
+     ",", "10", ",", ".01", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Omega]\[Omega]", ",", "2", ",", "\"\<frequency\>\"", ",", 
+       RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", "0", ",", 
+     RowBox[{"2", "Pi"}], ",", ".01", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", "Delimiter", ",",
+    
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"plottype", ",", "\"\<position\>\"", ",", "\"\<plot type\>\""}],
+       "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<position\>\"", ",", "\"\<phase\>\""}], "}"}]}], "}"}], ",",
+    
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"zoom", ",", "10"}], "}"}], ",", ".5", ",", "20", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"Enabled", "\[Rule]", 
+      RowBox[{"plottype", "\[Equal]", "\"\<phase\>\""}]}]}], "}"}], ",", 
+   "Delimiter", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"time", ",", "50"}], "}"}], ",", "10", ",", "200", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}], ",", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3", ",", "5"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35757176568782*^9, 3.36848412614435*^9, {3.36848484695916*^9, 
+   3.36848488926512*^9}, {3.36849547104891*^9, 3.36849551368022*^9}, 
+   3.36849556682664*^9, 3.37149384973849*^9, {3.37149392388745*^9, 
+   3.37149392857248*^9}, {3.37149398530228*^9, 3.37149399024704*^9}, {
+   3.3714941206187*^9, 3.37149422806468*^9}, {3.37149455630638*^9, 
+   3.37149455674591*^9}, {3.3714947574829*^9, 3.37149477241706*^9}, {
+   3.37149494150763*^9, 3.37149499498089*^9}, {3.3714950313423*^9, 
+   3.37149503627707*^9}, {3.371508955625608*^9, 3.3715089892798967`*^9}, {
+   3.3715227404229455`*^9, 3.371522772088478*^9}, {3.3757937714354353`*^9, 
+   3.3757937732479353`*^9}, {3.377298114027564*^9, 3.3772981164916234`*^9}, {
+   3.377317407805741*^9, 3.3773174132135167`*^9}, {3.3773176075960493`*^9, 
+   3.3773176078868437`*^9}, {3.3782433203282685`*^9, 
+   3.3782433205085278`*^9}, {3.3824859919181166`*^9, 3.3824860112158656`*^9}},
+ 
+ CellID->1496021318]
+}, Open  ]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`AA$$ = 3, $CellContext`bb$$ = 
+    1, $CellContext`kk$$ = 3, $CellContext`mm$$ = 4, $CellContext`plottype$$ =
+     "position", $CellContext`time$$ = 50, $CellContext`xinit$$ = 
+    8, $CellContext`zoom$$ = 10, $CellContext`\[Omega]\[Omega]$$ = 2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`mm$$], 4, "mass"}, 1, 10, 0.01}, {{
+       Hold[$CellContext`kk$$], 3, "spring constant"}, 0, 10, 0.01}, {{
+       Hold[$CellContext`bb$$], 1, "damping"}, -5, 5, 0.01}, {{
+       Hold[$CellContext`xinit$$], 8, "initial position"}, 0, 10}, {
+      Hold["forcing function"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`AA$$], 3, "amplitude"}, 0, 10, 0.01}, {{
+       Hold[$CellContext`\[Omega]\[Omega]$$], 2, "frequency", ImageSize -> 
+       Tiny}, 0, 2 Pi, 0.01}, {{
+       Hold[$CellContext`plottype$$], "position", "plot type"}, {
+      "position", "phase"}}, {{
+       Hold[$CellContext`zoom$$], 10}, 0.5, 20}, {{
+       Hold[$CellContext`time$$], 50}, 10, 200}}, Typeset`size$$ = {
+    425., {187.5, 192.5}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`mm$5998$$ = 
+    0, $CellContext`kk$5999$$ = 0, $CellContext`bb$6000$$ = 
+    0, $CellContext`xinit$6001$$ = 0, $CellContext`AA$6002$$ = 
+    0, $CellContext`\[Omega]\[Omega]$6003$$ = 
+    0, $CellContext`plottype$6004$$ = False, $CellContext`zoom$6005$$ = 
+    0, $CellContext`time$6006$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`AA$$ = 3, $CellContext`bb$$ = 
+        1, $CellContext`kk$$ = 3, $CellContext`mm$$ = 
+        4, $CellContext`plottype$$ = "position", $CellContext`time$$ = 
+        50, $CellContext`xinit$$ = 8, $CellContext`zoom$$ = 
+        10, $CellContext`\[Omega]\[Omega]$$ = 2}, "ControllerVariables" :> {
+        Hold[$CellContext`mm$$, $CellContext`mm$5998$$, 0], 
+        Hold[$CellContext`kk$$, $CellContext`kk$5999$$, 0], 
+        Hold[$CellContext`bb$$, $CellContext`bb$6000$$, 0], 
+        Hold[$CellContext`xinit$$, $CellContext`xinit$6001$$, 0], 
+        Hold[$CellContext`AA$$, $CellContext`AA$6002$$, 0], 
+        Hold[$CellContext`\[Omega]\[Omega]$$, \
+$CellContext`\[Omega]\[Omega]$6003$$, 0], 
+        Hold[$CellContext`plottype$$, $CellContext`plottype$6004$$, False], 
+        Hold[$CellContext`zoom$$, $CellContext`zoom$6005$$, 0], 
+        Hold[$CellContext`time$$, $CellContext`time$6006$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Switch[$CellContext`plottype$$, "position", 
+          $CellContext`DPPlot[$CellContext`bb$$, $CellContext`mm$$, \
+$CellContext`kk$$, $CellContext`xinit$$, $CellContext`AA$$, $CellContext`\
+\[Omega]\[Omega]$$, $CellContext`time$$], "phase", 
+          $CellContext`DPPhasePlot[$CellContext`bb$$, $CellContext`mm$$, \
+$CellContext`kk$$, $CellContext`xinit$$, $CellContext`AA$$, $CellContext`\
+\[Omega]\[Omega]$$, $CellContext`zoom$$, $CellContext`time$$]], 
+         Style[
+          Row[{"mass = ", $CellContext`mm$$, 
+            Spacer[20], "|", 
+            Spacer[20], "spring constant = ", $CellContext`kk$$, 
+            Spacer[20], "|", 
+            Spacer[30], "damping = ", $CellContext`bb$$}], "Label"], 
+         Style[
+          Row[{"driving amplitude = ", $CellContext`AA$$, 
+            Spacer[20], "|", 
+            Spacer[20], 
+            "driving frequency = ", $CellContext`\[Omega]\[Omega]$$}], 
+          "Label"]}, Center], 
+      "Specifications" :> {{{$CellContext`mm$$, 4, "mass"}, 1, 10, 0.01, 
+         ImageSize -> Tiny}, {{$CellContext`kk$$, 3, "spring constant"}, 0, 
+         10, 0.01, ImageSize -> Tiny}, {{$CellContext`bb$$, 1, "damping"}, -5,
+          5, 0.01, ImageSize -> 
+         Tiny}, {{$CellContext`xinit$$, 8, "initial position"}, 0, 10, 
+         ImageSize -> Tiny}, Delimiter, 
+        "forcing function", {{$CellContext`AA$$, 3, "amplitude"}, 0, 10, 0.01,
+          ImageSize -> 
+         Tiny}, {{$CellContext`\[Omega]\[Omega]$$, 2, "frequency", ImageSize -> 
+          Tiny}, 0, 2 Pi, 0.01, ImageSize -> Tiny}, 
+        Delimiter, {{$CellContext`plottype$$, "position", "plot type"}, {
+         "position", "phase"}}, {{$CellContext`zoom$$, 10}, 0.5, 20, 
+         ImageSize -> Tiny, Enabled -> 
+         Dynamic[$CellContext`plottype$$ == "phase"]}, 
+        Delimiter, {{$CellContext`time$$, 50}, 10, 200, ImageSize -> Tiny}}, 
+      "Options" :> {AutorunSequencing -> {2, 3, 5}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{629., {215., 220.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>(({$CellContext`DPPlot[
+          Pattern[$CellContext`bb, 
+           Blank[]], 
+          Pattern[$CellContext`mm, 
+           Blank[]], 
+          Pattern[$CellContext`kk, 
+           Blank[]], 
+          Pattern[$CellContext`xinit, 
+           Blank[]], 
+          Pattern[$CellContext`AA, 
+           Blank[]], 
+          Pattern[$CellContext`\[Omega]\[Omega], 
+           Blank[]], 
+          Pattern[$CellContext`tfinal, 
+           Blank[]]] := 
+        Module[{}, 
+          Clear[$CellContext`t, $CellContext`x, $CellContext`A, $CellContext`\
+\[Omega], $CellContext`k, $CellContext`b, $CellContext`m]; 
+          With[{$CellContext`sol = First[
+               
+               NDSolve[{
+                Derivative[
+                   2][$CellContext`x][$CellContext`t] + \
+($CellContext`bb/$CellContext`mm) 
+                   Derivative[
+                    1][$CellContext`x][$CellContext`t] + \
+($CellContext`kk/$CellContext`mm) $CellContext`x[$CellContext`t] == \
+$CellContext`AA Cos[$CellContext`\[Omega]\[Omega] $CellContext`t], 
+                 Derivative[1][$CellContext`x][0] == 
+                 0, $CellContext`x[
+                  0] == $CellContext`xinit}, $CellContext`x, {$CellContext`t, 
+                 0, $CellContext`tfinal}]]}, 
+            Plot[
+             Evaluate[
+              ReplaceAll[
+               $CellContext`x[$CellContext`t], $CellContext`sol]], \
+{$CellContext`t, 0, $CellContext`tfinal}, 
+             PlotRange -> {{0, $CellContext`tfinal}, {-10, 10}}, 
+             ImageSize -> {425, 350}, ImagePadding -> {{35, 35}, {20, 40}}, 
+             AxesLabel -> {
+               Style["t", 14, Bold, Italic], 
+               Style["x(t)", 14, Italic, Bold]}, PlotLabel -> 
+             TraditionalForm[$CellContext`m 
+                 Derivative[
+                  2][$CellContext`x][$CellContext`t] + $CellContext`b 
+                 Derivative[
+                  1][$CellContext`x][$CellContext`t] + $CellContext`k \
+$CellContext`x[$CellContext`t] == $CellContext`A 
+                Cos[$CellContext`\[Omega] $CellContext`t]]]]], 
+        Attributes[Derivative] = {NHoldAll, ReadProtected}, 
+        Attributes[PlotRange] = {ReadProtected}, $CellContext`DPPhasePlot[
+          Pattern[$CellContext`bb, 
+           Blank[]], 
+          Pattern[$CellContext`mm, 
+           Blank[]], 
+          Pattern[$CellContext`kk, 
+           Blank[]], 
+          Pattern[$CellContext`xinit, 
+           Blank[]], 
+          Pattern[$CellContext`AA, 
+           Blank[]], 
+          Pattern[$CellContext`\[Omega]\[Omega], 
+           Blank[]], 
+          Pattern[$CellContext`zoom, 
+           Blank[]], 
+          Pattern[$CellContext`tfinal, 
+           Blank[]]] := Module[{$CellContext`x, $CellContext`t}, 
+          With[{$CellContext`sol = First[
+              
+              NDSolve[{
+               Derivative[
+                  2][$CellContext`x][$CellContext`t] + \
+($CellContext`bb/$CellContext`mm) 
+                  Derivative[
+                   1][$CellContext`x][$CellContext`t] + \
+($CellContext`kk/$CellContext`mm) $CellContext`x[$CellContext`t] == \
+$CellContext`AA Cos[$CellContext`\[Omega]\[Omega] $CellContext`t], 
+                Derivative[1][$CellContext`x][0] == 
+                0, $CellContext`x[
+                 0] == $CellContext`xinit}, $CellContext`x, {$CellContext`t, 
+                0, $CellContext`tfinal}]]}, 
+           ParametricPlot[{
+             Evaluate[
+              ReplaceAll[
+               $CellContext`x[$CellContext`t], $CellContext`sol]], 
+             Evaluate[
+              ReplaceAll[
+               Derivative[
+               1][$CellContext`x][$CellContext`t], $CellContext`sol]]}, \
+{$CellContext`t, 0, $CellContext`tfinal}, 
+            PlotRange -> {{-$CellContext`zoom, $CellContext`zoom}, \
+{-$CellContext`zoom, $CellContext`zoom}}, ImageSize -> {425, 350}, 
+            AxesLabel -> {
+              Style["x(t)", 14, Italic, Bold], 
+              Style["x'(t)", Italic, 14, Bold]}]]]}; 
+      Typeset`initDone$$ = True); ReleaseHold[
+       HoldComplete[{$CellContext`DPPlot[
+           Pattern[$CellContext`bb, 
+            Blank[]], 
+           Pattern[$CellContext`mm, 
+            Blank[]], 
+           Pattern[$CellContext`kk, 
+            Blank[]], 
+           Pattern[$CellContext`xinit, 
+            Blank[]], 
+           Pattern[$CellContext`AA, 
+            Blank[]], 
+           Pattern[$CellContext`\[Omega]\[Omega], 
+            Blank[]], 
+           Pattern[$CellContext`tfinal, 
+            Blank[]]] := 
+         Module[{}, 
+           Clear[$CellContext`t, $CellContext`x, 
+             A, $CellContext`\[Omega], $CellContext`k, $CellContext`b, \
+$CellContext`m]; With[{$CellContext`sol = First[
+                
+                NDSolve[{
+                 Derivative[
+                    2][$CellContext`x][$CellContext`t] + \
+($CellContext`bb/$CellContext`mm) 
+                    Derivative[
+                    1][$CellContext`x][$CellContext`t] + \
+($CellContext`kk/$CellContext`mm) $CellContext`x[$CellContext`t] == \
+$CellContext`AA Cos[$CellContext`\[Omega]\[Omega] $CellContext`t], 
+                  Derivative[1][$CellContext`x][0] == 
+                  0, $CellContext`x[
+                   0] == $CellContext`xinit}, $CellContext`x, {$CellContext`t,
+                   0, $CellContext`tfinal}]]}, 
+             Plot[
+              Evaluate[
+               ReplaceAll[
+                $CellContext`x[$CellContext`t], $CellContext`sol]], \
+{$CellContext`t, 0, $CellContext`tfinal}, 
+              PlotRange -> {{0, $CellContext`tfinal}, {-10, 10}}, 
+              ImageSize -> {425, 350}, ImagePadding -> {{35, 35}, {20, 40}}, 
+              AxesLabel -> {
+                Style["t", 14, Bold, Italic], 
+                Style["x(t)", 14, Italic, Bold]}, PlotLabel -> 
+              TraditionalForm[$CellContext`m 
+                  Derivative[
+                   2][$CellContext`x][$CellContext`t] + $CellContext`b 
+                  Derivative[
+                   1][$CellContext`x][$CellContext`t] + $CellContext`k \
+$CellContext`x[$CellContext`t] == 
+                A Cos[$CellContext`\[Omega] $CellContext`t]]]]], \
+$CellContext`DPPhasePlot[
+           Pattern[$CellContext`bb, 
+            Blank[]], 
+           Pattern[$CellContext`mm, 
+            Blank[]], 
+           Pattern[$CellContext`kk, 
+            Blank[]], 
+           Pattern[$CellContext`xinit, 
+            Blank[]], 
+           Pattern[$CellContext`AA, 
+            Blank[]], 
+           Pattern[$CellContext`\[Omega]\[Omega], 
+            Blank[]], 
+           Pattern[$CellContext`zoom, 
+            Blank[]], 
+           Pattern[$CellContext`tfinal, 
+            Blank[]]] := Module[{$CellContext`x, $CellContext`t}, 
+           With[{$CellContext`sol = First[
+               
+               NDSolve[{
+                Derivative[
+                   2][$CellContext`x][$CellContext`t] + \
+($CellContext`bb/$CellContext`mm) 
+                   Derivative[
+                    1][$CellContext`x][$CellContext`t] + \
+($CellContext`kk/$CellContext`mm) $CellContext`x[$CellContext`t] == \
+$CellContext`AA Cos[$CellContext`\[Omega]\[Omega] $CellContext`t], 
+                 Derivative[1][$CellContext`x][0] == 
+                 0, $CellContext`x[
+                  0] == $CellContext`xinit}, $CellContext`x, {$CellContext`t, 
+                 0, $CellContext`tfinal}]]}, 
+            ParametricPlot[{
+              Evaluate[
+               ReplaceAll[
+                $CellContext`x[$CellContext`t], $CellContext`sol]], 
+              Evaluate[
+               ReplaceAll[
+                Derivative[
+                
+                1][$CellContext`x][$CellContext`t], $CellContext`sol]]}, \
+{$CellContext`t, 0, $CellContext`tfinal}, 
+             PlotRange -> {{-$CellContext`zoom, $CellContext`zoom}, \
+{-$CellContext`zoom, $CellContext`zoom}}, ImageSize -> {425, 350}, 
+             AxesLabel -> {
+               Style["x(t)", 14, Italic, Bold], 
+               Style["x'(t)", Italic, 14, Bold]}]]]}]]; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->587689723],
+
+Cell[CellGroupData[{
+
+Cell["THIS NOTEBOOK IS THE SOURCE CODE FROM", "Text",
+ CellFrame->{{0, 0}, {0, 1}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.691905, 0.790311, 0.300252],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.691905, 0.790311, 0.300252]],
+
+Cell[TextData[{
+ "\"",
+ ButtonBox["Forced Oscillator with Damping",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/ForcedOscillatorWithDamping/"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/ForcedOscillatorWithDamping/"],
+ "\"",
+ " from ",
+ ButtonBox["The Wolfram Demonstrations Project",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+ "\[ParagraphSeparator]\[NonBreakingSpace]",
+ ButtonBox["http://demonstrations.wolfram.com/ForcedOscillatorWithDamping/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/ForcedOscillatorWithDamping/"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/ForcedOscillatorWithDamping/"]
+}], "Text",
+ CellMargins->{{48, Inherited}, {0, Inherited}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.5]],
+
+Cell[" ", "Text",
+ CellFrame->{{0, 0}, {0, 1}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.691905, 0.790311, 0.300252],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.691905, 0.790311, 0.300252]],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Rob Morris",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Rob+Morris"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Rob+Morris"]
+}], "Text",
+ CellDingbat->"\[FilledSmallSquare]",
+ CellMargins->{{66, 48}, {2, 4}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.6],
+ CellID->203486226],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "A full-function Wolfram ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " 6 system is required to edit this notebook.\n",
+ StyleBox[ButtonBox["GET WOLFRAM MATHEMATICA 6 \[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/products/mathematica/"], None},
+  ButtonNote->"http://www.wolfram.com/products/mathematica/"],
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.42, 0]]
+}], "Text",
+ CellFrame->True,
+ CellMargins->{{48, 68}, {8, 28}},
+ CellFrameMargins->12,
+ CellFrameColor->RGBColor[0.865507, 0.90634, 0.680751],
+ CellChangeTimes->{3.3750111182355957`*^9},
+ ParagraphSpacing->{1., 1.},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.411765],
+ Background->RGBColor[0.986023, 0.991363, 0.969818]],
+
+Cell[TextData[{
+ "\[Copyright] ",
+ StyleBox[ButtonBox["The Wolfram Demonstrations Project & Contributors",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Terms of Use",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/termsofuse.html"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/termsofuse.html"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Make a new version of this Demonstration \
+\[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/participate/upload.jsp?id=\
+ForcedOscillatorWithDamping"], None},
+  ButtonNote->None],
+  FontColor->GrayLevel[0.6]]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellMargins->{{48, 10}, {20, 50}},
+ CellFrameMargins->{{6, 0}, {6, 6}},
+ CellFrameColor->GrayLevel[0.6],
+ FontFamily->"Verdana",
+ FontSize->9,
+ FontColor->GrayLevel[0.6]]
+}, Open  ]]
+}, Open  ]]
+},
+Editable->True,
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{780, 650},
+WindowMargins->{{Inherited, Inherited}, {Inherited, 0}},
+WindowElements->{
+ "StatusArea", "MemoryMonitor", "MagnificationPopUp", "VerticalScrollBar", 
+  "MenuBar"},
+WindowTitle->"Forced Oscillator with Damping - Source",
+DockedCells->{},
+CellContext->Notebook,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (February 7, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 222, 4, 70, "Section"],
+Cell[815, 29, 4233, 107, 70, "Input",
+ CellID->225476673],
+Cell[5051, 138, 3499, 89, 70, "Input",
+ CellID->378994988],
+Cell[8553, 229, 5060, 119, 70, "Input",
+ CellID->1496021318]
+}, Open  ]],
+Cell[13628, 351, 13399, 289, 70, "Output",
+ CellID->587689723],
+Cell[CellGroupData[{
+Cell[27052, 644, 373, 9, 70, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[27428, 655, 960, 28, 70, "Text"],
+Cell[28391, 685, 337, 9, 70, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[28731, 696, 447, 15, 70, "Text",
+ CellID->203486226],
+Cell[CellGroupData[{
+Cell[29203, 715, 829, 24, 70, "Text"],
+Cell[30035, 741, 1203, 33, 70, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+(* NotebookSignature WQNCTyrMUM8tSC03TI3s8Miu *)

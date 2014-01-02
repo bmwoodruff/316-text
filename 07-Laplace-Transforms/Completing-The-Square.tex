@@ -1,0 +1,37 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\newcommand{\ds}{\displaystyle}
+\begin{document}
+
+{\huge Completing the Square }
+(Rough Draft \today)
+
+A perfect square binomial is a degree 2 polynomial with a repeated root (meaning it factors as the square of a linear term).  For example, $x^2+6x+9 = (x+3)^2$ is a perfect square binomial, or often we just say it is a perfect square.  Some other examples are $(x+5)^2=x^2+10x+25$ and $(x-4)^2=x^2-8x+16$. In general we have $(x-a)^2 = x^2-2a+a^2$, so we can recognize that $x^2+bx+c$ is a perfect square if $b=2a$ and $c=a^2$, or $a=(b/2)$ and $c=(b/2)^2$. The binomial $x^2+3x+9/4$ is the perfect square $(x-3/2)^2$, since half of 3 is 3/2 and $(3/2)^2=9/4$. 
+
+The process of completing the square requires that we recognize perfect squares and use them in solving.  To solve $x^2+6x+10=0,$ we recognize that $x^2+6x$ would be a perfect square if we added $(6/2)^2 = 9$ to the polynomial.  So we add and subtract 9 from the left hand side to obtain and then have $x^2+6x+9-9+10 = (x+3)^2+1$.  This means our equation becomes $(x+3)^2+1=0$ or $(x+3)^2=-1$. Taking the square root of each side gives $x+3=\pm i$, or $x=-3\pm i$.  This is the general process require to complete the square. As another example, we solve $x^2-2x+5=0$ by writing $x^2-2x+1-1+5=(x-1)^2+4=0$, or $(x-1)^2=-4$. Taking square roots gives $x-1=\pm 2i$ or $x=1\pm 2i$. 
+
+You can also obtain real roots using this process. For example, we can solve $x^2+4x+3=0$ by either factoring $(x+3)(x+1)=0$ or by completing the square. To complete the square we would write $x^2+4x+4-4+3= (x+2)^2-1=0$ or $(x+2)^2=1$. Taking square roots gives $x+2=\pm 1$ or $x=-2\pm 1 = -3,-1$, which is the same solution we get by factoring.
+
+To solve a problem which contains a constant in front of the $x^2$ term, we just factor that constant out of $x^2$ and $x$ terms.  For example $2x^2+12x+3 = 2(x^2+6x)+3$. Then we complete the square on the factor in parenthesis, giving $2(x^2+6x+9-9)+3 = 2((x+3)^2-9)+3 = 2(x+3)^2-2(9)+3 = 2(x+3)^3-15$. So to solve $2x^2+12x+3=0$ by completing the square, we would write $ 2(x+3)^3-15=0$ or $ (x+3)^3=15/2$. Taking square roots gives $x+3 = \pm \sqrt{15/2}$ or $x = -3\pm \sqrt {15/2}$.  The quadratic formula (which is derived by completing the square) gives us $x = \dfrac{-12\pm\sqrt{144-4(2)(3)}}{2(2)}=-3\pm\dfrac{\sqrt{120}}{4} = -3\pm\sqrt{\dfrac{120}{16}} = -3\pm\sqrt{\dfrac{15}{2}}$. 
+
+
+
+Solve the following problems using completing the square:
+
+\begin{enumerate}
+	\item $x^2-2x+5=0$
+	\item $x^2-8x+20=0$
+	\item $x^2+4x+8=0$
+	\item $x^2+6x+13=0$
+	\item $x^2+10x+34=0$
+	\item $x^2+2x-3=0$
+	\item $x^2-2x+5=0$ (You will get 2 real roots on this and some below)
+	\item $x^2+6x+5=0$
+	\item $x^2+8x+25=0$
+\end{enumerate}
+\end{document}

@@ -1,0 +1,87 @@
+\section{Preparation}
+
+\noindent 
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{04-First-Order-ODEs/First-Order-ODEs-objectives}
+
+Here are the preparation problems for this unit. Please make sure you come to class having completed your problem, and able to explain to others how to do it.  We will often be doing problems very similar to the prep problems in class, and your preparation will help you contribute to your group. 
+%As time permits, I will post handwritten solutions to these problems on I-Learn. Please check there if you are struggling with your prep problem. 
+
+
+
+
+
+\begin{center}
+\begin{tabular}{ll|l}
+\multicolumn{2}{c}{Preparation Problems (from Schaum's Outlines)
+(\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/04-First-Order-ODEs-Preparation-Solutions.pdf}{click for solutions})
+}
+&
+%\href{http://www.youtube.com/user/bmwoodruff#grid/user/26D7C9E45A54794F}{Webcasts on YouTube - click here} 
+%(
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-videos.pdf}{pdf copy}
+%)
+\\
+\hline\hline
+Day 1&
+5.5,5.21,6.4,7.4
+&
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-01.wmv}{1},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-02.wmv}{2},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-03.wmv}{3}
+\\ \hline
+Day 2&
+7.10,7.17,4.11,6.16
+&
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-04.wmv}{4},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-05.wmv}{5},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-06.wmv}{6}
+\\ \hline
+Day 3&
+22.1-3,24.1,24.14,7.7 
+&
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-07.wmv}{7},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-08.wmv}{8},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-09.wmv}{9},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-10.wmv}{10},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-11.wmv}{11}
+\\ \hline
+Day 4&
+Lesson Plan,
+Quiz&
+\\ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+	
+%All the problems for this unit come from Schaum's Outlines \textit{Differential Equations} by Rob Bronson. The suggested problems are a minimum set of problems to attempt. 
+
+\begin{center}
+
+\begin{tabular}{|l|c|l|l|l|l|}
+\hline
+Concept	&Sec.	&Suggested	&Relevant	\\\hline
+Separable Review&4 & 42 &1-8,23-45	\\\hline
+Exact &5 & 5,11,26,29,34& 1-13,24-40,56-65	\\\hline
+Integrating Factors&5 & 21,22,41,47 & 21,22,41-42,47-49,51,55	\\\hline
+Linear&6 &4,13,20,32,51 & 1-6,9-15,20-36,43-49,50-57	\\\hline
+Homogeneous&4, &11,12,48 &11-17,46-54	\\\hline
+Bernoulli &6 & 16,53& 16,17,37-42,53	\\\hline
+Applications&7 &4[27],6[33],1[38] & 1-6 [26-44]	\\
+&7 &10[48],17[67],7[88] & 8-10 [45-50],16-18[65-70], 7[87-88]	\\\hline
+Laplace Review &21 & 19,32,33[use table] & 4-7,10-12,27-35	\\\hline
+Inverse Transforms &22 & 1,2,3,6,13,15 & 1-3,6,15,17,20-28,42,42,45-47	\\\hline
+Solving ODEs &24 & 1,14,19(parfrac) & 1,2,11,14,15,19-19,22,24,25,38-42 	\\\hline
+\end{tabular}
+\end{center}
+
+\section{Problems}
+All the problems for this unit come from Schaum's Outlines \textit{Differential Equations} by Rob Bronson.
+\section{Solutions}
+Every problem in Schaum's Outlines has a solution provided.  

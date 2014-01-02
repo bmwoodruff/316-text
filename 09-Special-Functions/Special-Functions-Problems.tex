@@ -1,0 +1,49 @@
+
+
+\section{Preparation}
+
+\noindent The name of this module is ``Special Functions.'' These are functions which show up as the solution to problems of real world interest whose solution is a function which does not appear in regular calculus.  Many of these functions can only be represented using series. 
+When you make your lesson plan, make sure that you have an example illustrating each idea.
+
+\input{09-Special-Functions/Special-Functions-objectives}
+
+
+\begin{center}
+\begin{tabular}{ll}
+&Preparation Problems
+(\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/09-Special-Functions-Preparation-Solutions.pdf}{click for solutions})
+\\
+\hline\hline
+Day 1&28.4, 28.5, 28.6, 28.9\\ \hline
+Day 2&27.12, 29.4, 28.10, 28.14\\ \hline
+Day 3&30.4, 30.6, 30.8, 30.9\\ \hline
+\end{tabular}
+\end{center}
+
+
+Section numbers correspond to problems from Schaum's Outlines \textit{Differential Equations} by Rob Bronson. The suggested problems are a minimum set of problems to attempt. 
+
+
+\begin{center}
+\begin{tabular}{|l|c|l|l|l|l|}
+\hline
+Concept	&Sec.	&Suggested	&Relevant\\\hline
+Frobenius Method*&&&28:1-4, 5-10, 12,14,16,18-20\\ \hline
+Legendre Polynomials&&&27:11-13; 29:4,6,8,11,12,15 \\ \hline
+Bessel Functions&&&30:9,11,12,26, 27,\\ \hline
+Gamma Functions&&& 30:1-8, 24, 25\\ \hline
+Substitutions&&&28:22-23, 34-38; 30:30,31 \\ \hline
+\end{tabular}
+\end{center}
+
+Here are some vocabulary reminders to help you.
+
+\begin{itemize}
+	\item 
+Remember, a function is said to be analytic at $x=c$ if it has a power series solution centered at $x=c$ with a positive radius of convergence.  Polynomials, exponentials, trig function, and rational functions whose denominator is not zero at $x=c$ are all analytic.
+\item
+The point $x=c$ is called an ordinary point of the differential equation $y''+P(x) y' +Q(x) y =r(x)$ if both coefficients $P(x)$ and $Q(x)$ are analytic at $x=c$. We can solve ODEs at regular points by using the power series method.
+\item The point $x=c$ is called a singular point of the ODE $y''+P(x) y' +Q(x) y =r(x)$ if either coefficient $P(x)$ or $Q(x)$ is not analytic at $x=c$. In general, we can't solve ODEs at singular points.
+\item The point $x=c$ is called a regular singular point of the ODE $y''+P(x) y' +Q(x) y =r(x)$  it is singular and if $(x-c)P(x)$ and $(x-c)^2Q(x)$ are both analytic. We can use the Frobenius method to solve ODEs at regular singular points. The big idea is to guess a solution of the form $\ds y = x^\lambda \sum_{n=0}^\infty a_n x^n$ and then solve for $\lambda$ and the remaining coefficients as in the power series method.  The indicial equation is the first equation resulting from matching coefficients, and it's roots $\lambda_1$ and $\lambda_2$ determine the type of solution.
+\end{itemize}
+

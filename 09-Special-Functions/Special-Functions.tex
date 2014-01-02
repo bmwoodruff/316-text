@@ -1,0 +1,87 @@
+
+\chapter{Special Functions}
+
+{This section needs revamping.  Until I have time to revamp it, Schaum's Outlines provides a great explanation of these topics. }
+
+
+\noindent The name of this chapter is ``Special Functions.'' These are functions which show up as the solution to problems of real world interest whose solution is a function which does not appear in regular calculus.  Many of these functions can only be represented using series. This chapter covers the following objectives:
+
+\input{09-Special-Functions/Special-Functions-objectives}
+
+%
+%When you make your lesson plan, it should explain and contain examples of the following:
+%\begin{enumerate}
+%\item Explain the Frobenius method and use it to solve ODEs where zero is a regular singular point.
+%\item Solve Legendre's equation and derive Legendre polynomials.
+%\item Solve Bessel's equation giving solutions of the first kind, and write solutions to ODEs in terms of Bessel functions.
+%\item Describe the Gamma function and how it generalizes the factorial. Be able to prove various relationships related to the Gamma function.
+%\end{enumerate}
+%
+%
+%
+%\section{Legendre's Equation}
+%Legendre's equation is the ODE $(1-x^2)y^{\prime\prime}-2xy^\prime+n(n+1)y=0$. It appears in physics often and is used to solve problems which have radial symmetry.  We will solve this ODE in general, and then look at the special cases where $n$ is a positive integer value. Since $1-x^2\neq 0$ at $x=0$, and $-2x$ and $n(n+1)$ are analytic functions (meaning they can be represented using a power series with a positive radiu of convergence), this ODE has a power series solution.  Hence we let $\ds y=\sum_{m=0}^\infty a_mx^m, y^\prime=\sum_{m=1}^\infty ma_mx^{m-1}, y^{\prime\prime}=\sum_{m=2}^\infty m(m-1)a_mx^{m-2}$.  Inserting these into the ODE gives 
+%\begin{align*}
+%&\sum_{m=2}^\infty (1-x^2)m(m-1)a_mx^{m-2}
+%-\sum_{m=1}^\infty 2xma_mx^{m-1}
+%+\sum_{m=0}^\infty n(n+1)a_mx^m\\
+%&=
+%\sum_{m=2}^\infty m(m-1)a_mx^{m-2}-\sum_{m=2}^\infty m(m-1)a_mx^{m}
+%-\sum_{m=1}^\infty 2ma_mx^{m}
+%+\sum_{m=0}^\infty n(n+1)a_mx^m=0.
+%\end{align*}
+%Shifting indices on the first power series ($s=m-2$) gives 
+%\begin{align*}
+%\sum_{s=0}^\infty (s+2)(s+1)a_{s+2}x^{s}-\sum_{s=2}^\infty s(s-1)a_sx^{s}
+%-\sum_{s=1}^\infty 2sa_sx^{s}
+%+\sum_{s=0}^\infty n(n+1)a_sx^s=0.
+%\end{align*}
+%Since two series start at 0, one at 1, and one at 2, we write down the coefficients for the first two terms, giving $(2)(1)a_2+n(n+1)a_0=0$ and $(3)(2)a_3-2a_1+n(n+1)a_1=0$. Then the general recurrence relation is $$(s+2)(s+1)a_{s+2} - s(s-1)a_s-2sa_s+n(n+1)a_s,$$ or after solving for $a_{s+2}$ we obtain $$\ds a_{s+2} = \frac{s(s-1)+2s-n(n+1)}{(s+2)(s+1)} a_s= -\frac{(n-s)(n+s+1)}{(s+2)(s+1)}a_s$$ (the last equality is just a convenient way that someone discovered to rewrite the relation). Notice that if $s=0$ or $s=1$, this equation is also valid as the terms which do not appear in the first two equations become zero. We calculate the first few terms as $a_0=a_0, a_1=a_1, a_2 = -\frac{n(n+1)}{2!}a_0, a_3 = -\frac{(n-1)(n+2)}{3!}a_1, a_4 = -\frac{(n-2)(n+3)}{4\cdot 3}a_2 = \frac{(n-2)(n)(n+1)(n+3)}{4!}a_0, a_5 = -\frac{(n-3)(n+4)}{5\cdot 5}a_3 = \frac{(n-3)(n-1)(n+2)(n+4)}{4!}a_1,\ldots$. So using these coefficients we can write $y=a_0y_1+a_1y_2$ as the solution to Legendre's equation, where $y_1$ contains only even powers of $x$ and $y_2$ contains only odd powers of $x$.
+%
+%Notice that if $n$ is a positive integer, then $a_{n+2}=0$ means that $a_{n+2m}$ is zero for all $m\geq 1$ as the recursion looks at two terms back.  If $n$ is even, this means that the power series for $y_1$ will terminate and represent a polynomial.  Similarly, if $n$ is odd, then the coefficients of $y_2$ will terminate.  Hence for any positive integer $n$, one of the solutions is a polynomial, which we will call $P_n(x)$. To remove the arbitrary coefficient $a_0$ or $a_1$ from the solution, we choose $a_n=\frac{(2n)!}{2^n(n!)^2}$ and then use the recursion (solved for $a_s$ instead of $a_{s+2}$) $a_s = -\frac{(s+2)(s+1)}{(n-s)(n+s+1)}a_{s+2}$. This choice makes $P_n(1)=1$ for all $n$. These polynomials are special solutions to Legendre's equation and are called Legendre Polynomials. It can be shown that $\ds P_n(x) = \sum_{m=0}^M(-1)^m\frac{(2n-2m)!}{2^nm!(n-m)!(n-2m)!}x^{n-2m}$ where $M$ is the largest integer with $n-2M\geq 0$. Details are on page 179 in your book.
+%
+%\section{Reduction of Order and Partial Fraction Decomposition}
+%These two techniques are used occasionally in the explanation in the textbook.  The first, reduction of order, we discussed with 2nd order homogeneous ODEs, however we will now make the idea more explicit.  If you have a solution $y_1$ to a 2nd order linear homogeneous ODE $y^{\prime\prime}+p(x)y^\prime+q(x)y=0$, then let $y_2=u y_1$ and solve for $u$ to find a second solution. The details are on page 51 in the text.  In summary, if you let $U=u^\prime$, then you can show that $\ds u^\prime = U = \frac{1}{y_1^2}e^{-\int p(x)dx}$.  If this quantity is not to complicated, then you can find $u=\int u^\prime dx$ and hence $y_2=uy_1$.  As a quick example, we will apply this method to solve $y^{\prime\prime}+3y^\prime+2y=0$, where $y_1=e^{-x}$ is a solution.  We have $u^\prime = U = \frac{1}{e^{-2x}}e^{-\int 3 dx} = e^{2x}e^{-3x} = e^{-x}$.  Integration gives $u=-e^{-x}$. Hence $y_2=-e^{-x}e^{-x}=-e^{-2x}$. To solve $y^{\prime\prime}+4y^\prime+4y=0$, we know a solution is $y=e^{-2x}$.  Hence $u^\prime = \frac{1}{e^{-4x}}e^{-\int 4 dx} = e^{4x}e^{-4x} = 1$.  Integration shows that $u=x$ is a solution. Hence $y_2=xe^{-2x}$ is a second solution.
+%
+%The method of partial fractions is designed to take a complex rational function and simplify it by breaking it up into a sum of smaller rational expressions (which we employed in the Laplace transform section).  It takes complex fractions and breaks them up as simpler fractions with smaller denominators. Just as $\frac{1}{6} = \frac{1}{2}-\frac{1}{3}$, we will take a rational function such as $\frac{2}{x(x-1)}$, and rewrite it as $\frac{A}{x}+\frac{B}{x-1}$ for some constants $A$ and $B$.  The latter expression is called a partial fraction decomposition. To find $A$ and $B$, write $ \frac{2}{x(x-1)} = \frac{A}{x}+\frac{B}{x-1}$ and multiply both sides by $x(x-1)$ giving $2 = A(x-1)+B(x)$. We now equate the coefficients on each side of the equal sign, giving us $(2) + (0)x=(-A)+(A+B)x$ or $2=-A$ and $0=A+B$.  This is a system of equations (recall linear algebra) and the solution is $A=-2$ and $B=2$.  Hence the partial fraction decomposition of $\frac{2}{x(x-1)}$ is $\frac{-2}{x}+\frac{2}{x-1}$. 
+%
+%To perform a partial fraction decomposition of a function $f(x) = \frac{p(x)}{q(x)}$, first the degree of numerator must be less than the degree of the denominator.  If it is not, then you first must perform long division of polynomials (math 110). Then factor the denominator into linear $(x-a)$ and quadratic $[(x-b)^2+c^2]$ terms (by finding the roots, where complex roots correspond to quadratic terms). If you have a function which can be written as $\frac{p(x)}{(x-a_1)(x-a_2)\cdots (x-a_n)}$ where the $a_i$ are all different, then the partial fraction decomposition will be of the form $\frac{A_1}{x-a_1}+\frac{A_2}{x-a_2}+\cdots+\frac{A_n}{x-a_n}$, one term for each factor in the denominator.  If a term $(x-a)$ occurs more than once in the denominator, then you modify this by including all powers of that term in the expansion. For example, we write $\frac{p(x)}{(x-a)^3} = \frac{A}{x-a}+\frac{B}{(x-a)^2}+\frac{C}{(x-a)^3}$.  A quadratic term requires that we include $\frac{Bx+C}{(x-b)^2+c^2}$ in the decomposition, and if the quadratic term occurs more than once, we include all of its powers in the expansion.  For example we write 
+%$$\frac{3x-4}{(x)^3(x-1)(x^2+1)^2(x^2+4x+5)}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x^3}+\frac{D}{x-1}+\frac{Ex+F}{x^2+1}+\frac{Gx+H}{(x^2+1)^2}+\frac{Ix+J}{x^2+4x+5}.$$ This is the general form of a partial fraction decomposition, and then you just use linear algebra to find the coefficients.  The benefit of a partial fraction decomposition is that you can then integrate every term of the decomposition (as they have only linear or quadratic terms in the denominator).  This method is used to integrate rational functions.
+%
+%Reduction of order and partial fractions are combined regularly in the textbook as it works through examples.  For example on page 186 the textbook solves the ODE $x(x-1)y^{\prime\prime}+(3x-1)y^\prime+y=0$ or $y^{\prime\prime}+\frac{3x-1}{x(x-1)}y^\prime+\frac{1}{x(x-1)}y=0$.  They first show that a solution is $\frac{1}{1-x}$ using the Frobenius Method, which we will discuss shortly, and then they use reduction of order to get the second solution.  We have $p(x) = \frac{3x-1}{x(x-1)}$, so $u^\prime = \frac{1}{y_1^2}e^{-\int p(x)dx}$.  A partial fraction decomposition gives $\frac{3x-1}{x(x-1)} = \frac{A}{x}+\frac{B}{x-1} = \frac{2}{x-1}+\frac{1}{x}$ (check the algebra).  Hence we can integrate and obtain $\int p(x) = 2\ln|x-2|+\ln|x|$.  So $e^{-\int p dx} = \frac{1}{(x-1)^2x}$ and $u^\prime = \frac{1}{y_1^2}e^{-\int p(x)dx} = \frac{(1-x)^2}{1}\frac{1}{(x-1)^2x} = \frac{1}{x}$. Since $u^\prime=\frac{1}{x}$, we have $u=\ln |x|$ or $y_2=\ln x y_1 = \ln x \frac{1}{1-x}$. Using reduction of order and partial fractions is a method of solution you should try if the first solution in the method below is a function which you can understand.
+%
+%
+%\section{Frobenius Method}
+%Some special functions have coefficients that are not analytic at the origin. The Frobenius Method allows us to extend the idea of a power series solution to some special functions, in particular Bessel functions.
+%Here is a summary of the method. Let $b(x)$ and $c(x)$ be analytic functions at $x=0$. The ODE $\ds y^{\prime\prime}+\frac{b(x)}{x}y^\prime+\frac{c(x)}{x^2}y=0$ may not have analytic coefficients at $x=0$, but nevertheless has a solution of the form $\ds y_1(x)=x^{r}\sum_{m=0}^\infty a_m x^m$ where $r$ may be any real or complex number (and $r$ is chosen so that $a_0\neq 0$).  The equation $r(r-1)+b_0r+c_0 = 0$ is called the \textbf{indicial equation}. The Frobenius Method is a method of solving this ODE, and has three cases which are solved by considering the roots of the indicial equation.  
+%\begin{enumerate}
+%\item If there are \textbf{two distinct roots (real or complex) which do not differ by an integer}, then a second solution is $\ds y_2(x)=x^r_2\sum_{m=0}^\infty A_m x^m$ where the coefficients are obtained by insertion into the ODE. 
+%\item If the indicial equation has a \textbf{double root}, the a second solution is $\ds y_2(x)=y_1(x)\ln x + x^r\sum_{m=1}^\infty A_m x^m$. 
+%\item If there are \textbf{two distinct roots which differ by an integer}, then a second solution is $\ds y_2(x)=ky_1(x)\ln x+ x^{r_2}\sum_{m=0}^\infty A_m x^m$ where $r_1-r_2>0$ and $k$ may be zero.  
+%\end{enumerate}
+%
+%The textbook gives a few examples of how to do this. Due to time constraints, I will not be giving you worked examples that are typed up.  Instead, please read the examples in 5.4 on page 185 - 187. Since the book does not give you any examples of what to do with the $\ln x$ term in the third case when you cannot recognize the function, I will include a handwritten example of how to do problem 3 online. This section of homework will take the most time.  Try the other sections first and then spend 3 or more hours working problems from this section. 
+%
+%\section{Bessel's Equation}
+%The ODE $x^2y^{\prime\prime}+xy^\prime +(x^2-v^2)y=0$ is called Bessel's equation.  It shows up in electric fields, heat conduction, and vibration problems. It shows up when a problem involves cylindrical symmetry. We will assume that the parameter $v$ is real and nonnegative. The Frobenius method is used to solve this ODE.  The indicial equation reduces to $(r-v)(r+v)=$, and so the roots are $r=\pm v$. Using $r_1=v$, solving for the coefficients of $y_1=\sum_{m=0}^\infty a_mx^{r+m} $, you can show that $a_1=0$ and $a_m=0$ for all odd $m$, so solutions only involve even coefficients.  The recursion is $a_{2m} = -\frac{1}{2^2 m (v+m)}a_{2m-2}$, which means we can write $a_{2m}=\frac{(-1)^m a_0}{2^{2m}m!(v+1)(v+2)(v+3)\cdots (v+m)}$. When $v=n$ is an integer, by choosing $a_0=\frac{1}{2^n n!}$ we get the ``nice'' formula $a_{2m}=\frac{(-1)^m }{2^{2m+n}m!(n+m)!}$.  We then write the Bessel function of the first kind of order $n$ as $\ds J_n(x) = x^n\sum_{m=0}^\infty \frac{(-1)^m}{2^{2m+n}m!(n+m)!}x^{2m}$. The factorials in the denominator make the series converge very rapidly. When graphed, the series looks like a cosine wave, but the zeros are not equally spaced. There is a lot more information known about Bessel functions by our goal in this section is to introduce some of the special functions and gain familiarity with ideas which are needed for a basic understanding of special functions. 
+%
+%
+%\section{Gamma Function}
+%You can extend the Bessel functions from integers $n$ to positive real numbers $v$ after you extend the factorial function to what is called the gamma function, $\ds \Gamma(v) = \int_0^\infty e^{-t}t^{v-1}dt$. For $v=1$ the integral is 1. Integration by parts yields $\Gamma(v+1) = \int_0^\infty e^{-t}t^{v-1}dt = -e^{-t}t^v\big|_0^\infty + v\int_o^\infty e^{-t}t^{v-1} = 0+v\Gamma(v)$, hence we have a recurrence relation $\Gamma(v+1)=v\Gamma(v)$. You can use this recurrence relation to show that $\Gamma(2)=1\Gamma(1)=1, \Gamma(3) = 2\Gamma(2) = 2\cdot 1 = 2!, \Gamma(4)=3\Gamma(3)=3\cdot 2! = 3!, \Gamma(n+1)=n!$.  This means that the gamma function generalizes the factorial function, allowing us to replace the factorial in the definition of Bessel functions with the the gamma function.  Instead of letting $a_0=\frac{1}{2^n n!}$, we let $a_0 = \frac{1}{2^v\Gamma(v+1)}$ for any $v$.  Then we have 
+%\begin{align*}
+%a_{2m}&=\frac{(-1)^m }{2^{2m+v}m!(v+1)(v+2)(v+3)\cdots (v+m)\Gamma(v+1)}\\
+%&=\frac{(-1)^m }{2^{2m+v}m!(v+2)(v+3)\cdots (v+m)\Gamma(v+2)}\\
+%&=\frac{(-1)^m }{2^{2m+v}m!(v+3)\cdots (v+m)\Gamma(v+3)}   \\
+%&\vdots \\
+%&=\frac{(-1)^m }{2^{2m+v}m!(v+m)\Gamma(v+m)}\\
+%&=\frac{(-1)^m }{2^{2m+v}m!\Gamma(v+m+1)}.\\
+%\end{align*}
+%The Bessel function of the first kind  of order $v$ is $\ds J_v(x) = \sum_{m=0}^\infty \frac{(-1)^m}{2^{2m+v}m!\Gamma(v+m+1)}x^{2m+v}$. 
+%
+%Provided that $v$ is not an integer, the solutions $J_v(x)$ and $J_{-v}(x)$ of Bessel's equation are linearly independent, which means that a general solution to Bessel's equation is $y=c_1J_v+c_2J_{-v}$.  However if $v=n$ is an integer, then $J_{-n}(x) = (-1)^n J_n(x)$, which means that there is another solution to Bessel's equation. These solutions are called Bessel functions of the second kind of order $n$, and are addressed in 5.6 using case III of the Frobenius Method. If you need these functions in your further work, you will spend time studying them in depth at that point.
+%
+%In the homework you should gain practice reducing an ODE to Bessel's equation by using the appropriate substitution (which will be given to you). Then write the general solution in terms of $J_v$ and $J_{-v}$. Many ODEs encountered in practice can be reduced to Bessel's equation, and then a solution can be given in terms of this special function. Examples of how to reduce an ODE to Bessel's equation are included online in the preparation problems.
+%
+%The textbook shows that for $v=\frac{1}{2}$, you can actually calculate $J_{1/2}(x) = \sqrt{\frac{2}{\pi x}}\sin x, J_{-1/2}(x) = \sqrt{\frac{2}{\pi x}}\cos x$, and then it shows how you can use derivatives to develop recurrence relations for finding Bessel functions of any odd multiple of 1/2 in terms of these two functions.  There is a lot more known about Bessel functions which we could spend an entire semester studying.
+%
+

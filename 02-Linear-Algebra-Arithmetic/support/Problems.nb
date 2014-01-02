@@ -1,0 +1,4061 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    141126,       4052]
+NotebookOptionsPosition[    124702,       3535]
+NotebookOutlinePosition[    125045,       3550]
+CellTagsIndexPosition[    125002,       3547]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Basic Operations", "Section",
+ CellChangeTimes->{{3.4610756250718374`*^9, 3.4610756279110374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"a", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2"},
+     {"3", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075502081437*^9, 3.4610756176930375`*^9}, {
+  3.4610757403558373`*^9, 3.461075790213437*^9}, {3.4611558013789997`*^9, 
+  3.4611558112538*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"b", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"4", 
+      RowBox[{"-", "1"}]},
+     {"3", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075502081437*^9, 3.4610756176930375`*^9}, {
+  3.4610757403558373`*^9, 3.461075790213437*^9}, {3.4611558013789997`*^9, 
+  3.4611558435614*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"c", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", 
+      RowBox[{"-", "1"}]},
+     {"2", "3", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075502081437*^9, 3.4610756176930375`*^9}, {
+  3.4610757403558373`*^9, 3.461075790213437*^9}, {3.4611558013789997`*^9, 
+  3.4611558465878*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"d", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "2", "1"},
+     {"3", "0", "4"},
+     {
+      RowBox[{"-", "1"}], "1", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075502081437*^9, 3.4610756176930375`*^9}, {
+  3.4610757403558373`*^9, 3.461075790213437*^9}, {3.4611558013789997`*^9, 
+  3.4611558490994*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"e", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"3"},
+     {"1"},
+     {
+      RowBox[{"-", "4"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075502081437*^9, 3.4610756176930375`*^9}, {
+  3.4610757403558373`*^9, 3.461075790213437*^9}, {3.4611558013789997`*^9, 
+  3.4611558490994*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", ".", "b"}], "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610756892502375`*^9, 3.461075699842637*^9}, {
+  3.461075793785837*^9, 3.4610758087306376`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"b", ".", "a"}], "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610757147874374`*^9, 3.4610757192490377`*^9}, {
+  3.4610758011490374`*^9, 3.4610758013206377`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"a", "+", "b"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610758156414375`*^9, 3.4610758417558374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"3", "a"}], "-", 
+  RowBox[{"2", "b"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610758598362374`*^9, 3.461075861380637*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"a", ".", "c"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610758687906375`*^9, 3.461075870834237*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"b", ".", "c"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610758819102373`*^9, 3.4610758830802374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"c", ".", "d"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075887354637*^9, 3.461075887869437*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"d", ".", "e"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610758959034376`*^9, 3.4610758967146378`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"c", ".", "d", ".", "e"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759042962375`*^9, 3.4610759049826374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"d", ".", 
+  RowBox[{"Transpose", "[", "c", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461075914202237*^9, 3.4610759184142375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"c", ".", 
+  RowBox[{"Transpose", "[", "d", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4611916658764*^9, 3.4611916678887997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"c", ".", 
+  RowBox[{"Transpose", "[", "c", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759364790373`*^9, 3.461075936541437*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Transpose", "[", "c", "]"}], ".", "c"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759419390373`*^9, 3.461075945059037*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"a", ".", "b"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759541226377`*^9, 3.4610759579602375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Transpose", "[", "b", "]"}], ".", 
+  RowBox[{"Transpose", "[", "a", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759632642374`*^9, 3.4610759688958373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"b", ".", "a"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759864926376`*^9, 3.4610759866642375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Transpose", "[", "a", "]"}], ".", 
+  RowBox[{"Transpose", "[", "b", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610759955718374`*^9, 3.461075998754237*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Tr", "[", "a", "]"}], ",", 
+   RowBox[{"Tr", "[", "b", "]"}], ",", 
+   RowBox[{"Tr", "[", "d", "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.4611566970797997`*^9, 3.4611567210102*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Determinants", "Section",
+ CellChangeTimes->{{3.4610760471610374`*^9, 3.4610760511702375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2"},
+     {"3", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.461076056957837*^9, 3.461076113273837*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"4", "3"},
+     {"5", "9"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610761333822374`*^9, 3.4610761375318375`*^9}, {
+  3.4610761969990377`*^9, 3.4610762011330376`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "1", "0"},
+     {"0", "2", "1"},
+     {"1", "0", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610761536778374`*^9, 3.4610761541614375`*^9}, {
+  3.4610762125678377`*^9, 3.4610762184490376`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"3", "1", 
+      RowBox[{"-", "2"}]},
+     {"1", 
+      RowBox[{"-", "1"}], "4"},
+     {"2", "2", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610761586230373`*^9, 3.4610761591066375`*^9}, {
+  3.4610762272630377`*^9, 3.461076244906637*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "3", 
+      RowBox[{"-", "1"}]},
+     {"1", "0", "0"},
+     {"4", "2", "5"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610762537986374`*^9, 3.4610762781814375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"5", "1", 
+      RowBox[{"-", "3"}]},
+     {"2", 
+      RowBox[{"-", "1"}], "2"},
+     {"1", "4", 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610763307222376`*^9, 3.4610763474454374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "1", 
+      RowBox[{"-", "6"}], "8"},
+     {"0", "3", "5", "4"},
+     {"0", "0", "1", "5"},
+     {"0", "0", "0", 
+      RowBox[{"-", "4"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610761702138376`*^9, 3.4610761788874373`*^9}, {
+  3.4610763538102374`*^9, 3.4610763992062373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"3", "2", "5", 
+      RowBox[{"-", "1"}]},
+     {"0", "8", "4", "2"},
+     {"0", 
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", 
+      RowBox[{"-", "5"}], "3", 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610764081606374`*^9, 3.4610764589386377`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "1", "1", "1"},
+     {"2", 
+      RowBox[{"-", "1"}], "1", "1"},
+     {
+      RowBox[{"-", "1"}], "1", "2", 
+      RowBox[{"-", "2"}]},
+     {"1", "1", 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610764630570374`*^9, 3.4610764916986375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "1", "1", "1"},
+     {"2", "2", "2", "2"},
+     {"0", "2", "1", 
+      RowBox[{"-", "1"}]},
+     {"1", "0", 
+      RowBox[{"-", "2"}], "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610765041162376`*^9, 3.461076521463437*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Row Reduction", "Section",
+ CellChangeTimes->{{3.461075650078637*^9, 3.4610756571610374`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Reduce Once and then state the solution.", "Subsection",
+ CellChangeTimes->{{3.4610775096124372`*^9, 3.4610775104236374`*^9}, {
+  3.461077577051237*^9, 3.4610775829636374`*^9}}],
+
+Cell["\<\
+All you have to do is alter A, select the solution you want to have, and then \
+the computer will do the rest.\
+\>", "Text",
+ CellChangeTimes->{{3.4610756618098373`*^9, 3.4610756861302376`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611576189966*^9, 3.4611576197609997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0"},
+     {"0", "0", "1"},
+     {"0", "1", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "3"},
+     {"0", "1", "0", 
+      RowBox[{"-", "2"}]},
+     {"0", "0", "1", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.461077116913637*^9, 
+  3.4610771758972373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611576189966*^9, 3.4611576197609997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0"},
+     {"0", "1", "0"},
+     {
+      RowBox[{"-", "3"}], "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2", "0", 
+      RowBox[{"-", "4"}]},
+     {"0", "0", "1", "3"},
+     {"0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610772038212376`*^9, 
+  3.461077263678437*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611576189966*^9, 3.4611576197609997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0"},
+     {"0", "5", "0"},
+     {"0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1", "0", "4"},
+     {"0", "0", "1", "3"},
+     {"0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610773052680373`*^9, 
+  3.4610773513660374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611576189966*^9, 3.4611576197609997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "4"},
+     {"0", "1", "0"},
+     {"0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2", "0"},
+     {"0", "1", 
+      RowBox[{"-", "3"}], "0"},
+     {"0", "0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610773735024376`*^9, 
+  3.4610773920508375`*^9}, {3.461077427743637*^9, 3.4610774338432374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611576189966*^9, 3.4611576197609997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0"},
+     {"0", "1", 
+      RowBox[{"-", "3"}], "0"},
+     {"0", "0", "1", "0"},
+     {"0", "0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1", "0", "7", "0", "3"},
+     {"0", "0", "1", "5", "0", 
+      RowBox[{"-", "4"}]},
+     {"0", "0", "0", "0", "1", "2"},
+     {"0", "0", "0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.461077650464837*^9, 
+  3.4610777255798373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solve the system", "Subsection",
+ CellChangeTimes->{{3.4610776040080376`*^9, 3.4610776133368373`*^9}}],
+
+Cell[TextData[{
+ "A is the coefficient matrix.  B is the reduced form you are after.  A.B is \
+the original system you are solving.  The code below will produce the ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]]],
+ " form of A.B and B (check to make sure that the determinant of A is not \
+zero, otherwise your reduced form will not be A.B)."
+}], "Text",
+ CellChangeTimes->{{3.4610777645018377`*^9, 3.4610778553250375`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787440726376`*^9, 3.4610788230398374`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      RowBox[{"-", "3"}]},
+     {"3", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "4"},
+     {"0", "1", 
+      RowBox[{"-", "2"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610788455038376`*^9, 
+  3.4610788475318375`*^9}, {3.461079780240237*^9, 3.4610798460722375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787588926373`*^9, 3.4610788155050373`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}]},
+     {"1", 
+      RowBox[{"-", "3"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "3", "0", "2"},
+     {"0", "0", "1", 
+      RowBox[{"-", "5"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610798934962378`*^9, 
+  3.4610799419186373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787276770372`*^9, 3.461078828156637*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1", 
+      RowBox[{"-", "2"}]},
+     {"2", 
+      RowBox[{"-", "1"}], "3"},
+     {"4", "1", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", 
+      RowBox[{"-", "2"}]},
+     {"0", "1", "0", "1"},
+     {"0", "0", "1", "3"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767688308372`*^9}, 3.4610769454228373`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787535574374`*^9, 3.4610788194674377`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2"},
+     {"2", 
+      RowBox[{"-", "3"}], "0"},
+     {"3", "1", 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0"},
+     {"0", "1", "0", "1"},
+     {"0", "0", "1", 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.461079991386237*^9, 
+  3.4610800190138373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787588926373`*^9, 3.4610788155050373`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "1", 
+      RowBox[{"-", "1"}]},
+     {
+      RowBox[{"-", "1"}], "3", "2"},
+     {"0", "1", 
+      RowBox[{"-", "2"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "1", "0"},
+     {"0", "1", "2", "0"},
+     {"0", "0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610822968780375`*^9, 
+  3.4610823444580374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787638066373`*^9, 3.4610788116050377`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "1", 
+      RowBox[{"-", "3"}]},
+     {
+      RowBox[{"-", "1"}], "3", "2"},
+     {"2", "1", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      RowBox[{"-", "2"}], "0", "1"},
+     {"0", "0", "1", "3"},
+     {"0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610823724444375`*^9, 
+  3.4610824321768374`*^9}, {3.461082476434037*^9, 3.4610825101300373`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787687986374`*^9, 3.4610788075334377`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2", "3"},
+     {"2", "1", "0", "4"},
+     {
+      RowBox[{"-", "1"}], "2", "3", "0"},
+     {"0", "1", 
+      RowBox[{"-", "2"}], 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0", "2"},
+     {"0", "1", "0", "0", "1"},
+     {"0", "0", "1", "0", "0"},
+     {"0", "0", "0", "1", 
+      RowBox[{"-", "3"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610825557756376`*^9, 
+  3.4610826269896374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Rank and Coordinates - Both at the same time.", "Section",
+ CellChangeTimes->{{3.4610827407916374`*^9, 3.4610827413220377`*^9}, {
+  3.4610835267040377`*^9, 3.4610835418204374`*^9}}],
+
+Cell["\<\
+Find the rank of each matrix. Then in the next problem ask if the columns are \
+linearly dependent. Then in the next, have them write each nonpivot column as \
+a linear comintation of the pivot columns.\
+\>", "Text",
+ CellChangeTimes->{{3.461082744114437*^9, 3.461082838494437*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{{3.4610787751322374`*^9, 3.4610788036490374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2", "3"},
+     {"4", 
+      RowBox[{"-", "2"}], "1"},
+     {"3", "0", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0"},
+     {"0", "1", "0"},
+     {"0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610828490712376`*^9, 
+  3.4610828699128375`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767688308372`*^9}, 3.4610826453976374`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787588926373`*^9, 3.4610788155050373`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      RowBox[{"-", "1"}], "2"},
+     {
+      RowBox[{"-", "2"}], "3", "1"},
+     {"3", "1", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2"},
+     {"0", "1", "3"},
+     {"0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610829292708373`*^9, 3.4610830100320377`*^9}, {3.4610830436344376`*^9, 
+   3.4610831657356377`*^9}, 3.4610832216304374`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787588926373`*^9, 3.4610788155050373`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "3", "2"},
+     {
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "2"}], "1"},
+     {"2", "1", 
+      RowBox[{"-", "3"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2", 
+      RowBox[{"-", "3"}]},
+     {"0", "1", 
+      RowBox[{"-", "1"}], "4"},
+     {"0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610832505528374`*^9, 
+  3.4610833044196377`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{3.4610787588926373`*^9, 3.4610788155050373`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "3", "1", "2"},
+     {"2", "0", "3", "3"},
+     {
+      RowBox[{"-", "1"}], "1", 
+      RowBox[{"-", "4"}], "4"},
+     {"0", "2", "2", "5"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", 
+      RowBox[{"-", "3"}], "0"},
+     {"0", "1", "5", "0"},
+     {"0", "0", "0", "1"},
+     {"0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610833264468374`*^9, 
+  3.4610833793620377`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Linearly Indendent Vectors", "Section",
+ CellChangeTimes->{{3.461083496970437*^9, 3.4610835035692377`*^9}}],
+
+Cell["\<\
+Are the vectors linearly independent.  I'll use the same code as above, so \
+that I know the answer to start with.\
+\>", "Text",
+ CellChangeTimes->{{3.4610835466096373`*^9, 3.461083610054837*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "1", "3"},
+     {
+      RowBox[{"-", "1"}], "0", "2"},
+     {"0", "3", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0"},
+     {"0", "1", "0"},
+     {"0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", ".", "B"}], "//", "Transpose"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", ".", "B"}], "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610836539532375`*^9, 
+  3.4610836722832375`*^9}, {3.4611590741328*^9, 3.4611591195912*^9}, {
+  3.4611947135772*^9, 3.4611947241071997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "3", "1"},
+     {"2", 
+      RowBox[{"-", "2"}], "2"},
+     {
+      RowBox[{"-", "3"}], 
+      RowBox[{"-", "1"}], "3"},
+     {"4", 
+      RowBox[{"-", "2"}], "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", 
+      RowBox[{"1", "/", "2"}]},
+     {"0", "1", 
+      RowBox[{"3", "/", "2"}]},
+     {"0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Transpose", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.4610836956988373`*^9, 
+  3.4610838294376373`*^9}, {3.4611948429792*^9, 3.4611948499835997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767688308372`*^9}, 3.4610838532744374`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1", "1", "1"},
+     {"1", "0", "1", "1"},
+     {"1", "1", "0", "1"},
+     {"1", "1", "1", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0"},
+     {"0", "1", "0", "0"},
+     {"0", "0", "1", "0"},
+     {"0", "0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Transpose", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.461083883928437*^9, 
+  3.461083920744437*^9}, {3.4611950928912*^9, 3.461195097618*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "1", "0", "1"},
+     {"0", "2", "1", "1"},
+     {
+      RowBox[{"-", "1"}], "3", 
+      RowBox[{"-", "1"}], "1"},
+     {
+      RowBox[{"-", "2"}], "0", "2", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"B", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", 
+      RowBox[{"3", "/", "2"}]},
+     {"0", "1", "0", 
+      RowBox[{"1", "/", "2"}]},
+     {"0", "0", "1", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", ".", "B"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767491124372`*^9}, {3.4610767925740376`*^9, 3.4610767957564373`*^9}, {
+  3.4610769149092374`*^9, 3.461076935002037*^9}, {3.461083967450837*^9, 
+  3.461084039054837*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"RowReduce", "[", 
+  RowBox[{"A", ".", "B"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+  3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+  3.4610767688308372`*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Find An Inverse", "Section",
+ CellChangeTimes->{{3.4610840861824374`*^9, 3.4610840937328377`*^9}, {
+   3.4610842425256376`*^9, 3.4610842486876373`*^9}, 3.4611848160620003`*^9}],
+
+Cell["\<\
+I can create these most quickly by picking the eigenvalues (as their product \
+will be the denominator of the inverse) and then selecting eigenvectors and \
+Jordan Form.  Then A = Q J Q^inv will give me a good matrix. In the homework, \
+it would not hurt to have them compute the determinant as well, so that they \
+can see when there is a connection between the two.\
+\>", "Text",
+ CellChangeTimes->{{3.4610843508832374`*^9, 3.4610844450916376`*^9}, {
+  3.461149964775488*^9, 3.461149991404688*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2"},
+     {"3", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.4611500450062876`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "2"}], "4"},
+     {"3", 
+      RowBox[{"-", "5"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.461150015335088*^9}, {3.461150055146288*^9, 3.461150058921488*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1"},
+     {
+      RowBox[{"-", "1"}], "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.461150015335088*^9}, {3.461150075800688*^9, 3.461150079373088*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "3"},
+     {"4", "5"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"7", "3"},
+     {"2", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491622275877`*^9, 3.461149172351988*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2"},
+     {"0", "1", "0"},
+     {"0", "0", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.461150015335088*^9}, {3.461150126297888*^9, 3.4611501347998877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "2"},
+     {"0", "1", "0"},
+     {
+      RowBox[{"-", "1"}], "1", "4"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.461150015335088*^9}, {3.4611501525214877`*^9, 3.4611501631762877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"3", "0", "3"},
+     {"0", 
+      RowBox[{"-", "1"}], "1"},
+     {"0", "3", 
+      RowBox[{"-", "4"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611493483714876`*^9, 3.4611493944589877`*^9}, {3.4611494301014876`*^9, 
+   3.4611494532514877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2", 
+      RowBox[{"-", "1"}]},
+     {"2", "3", 
+      RowBox[{"-", "2"}]},
+     {"0", "3", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "2"}], "0", "5"},
+     {
+      RowBox[{"-", "1"}], "0", "3"},
+     {"4", "1", 
+      RowBox[{"-", "1"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611494795069876`*^9, 3.4611495034829874`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "1", "1"},
+     {"1", "2", "1"},
+     {"1", "1", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611495588019876`*^9, 3.4611495857569876`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Use Inverse to solve a system.", "Section",
+ CellChangeTimes->{{3.4610840861824374`*^9, 3.4610840937328377`*^9}, {
+  3.4610842425256376`*^9, 3.4610842486876373`*^9}, {3.4611848204768*^9, 
+  3.4611848243924*^9}}],
+
+Cell["\<\
+I can create these most quickly by picking the eigenvalues (as their product \
+will be the denominator of the inverse) and then selecting eigenvectors and \
+Jordan Form.  Then A = Q J Q^inv will give me a good matrix. In the homework, \
+it would not hurt to have them compute the determinant as well, so that they \
+can see when there is a connection between the two.\
+\>", "Text",
+ CellChangeTimes->{{3.4610843508832374`*^9, 3.4610844450916376`*^9}, {
+  3.461149964775488*^9, 3.461149991404688*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"1", "2"},
+      {"3", "4"}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"3"},
+      {"4"}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"A", ",", "b"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.4611500450062876`*^9}, {3.4611848993816*^9, 3.4611849862268*^9}, {
+   3.4611852355304003`*^9, 3.4611852446252003`*^9}, {3.4611957797658*^9, 
+   3.4611957812946*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"b", "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958439754*^9, 3.4611958472202*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{"A", ",", "b"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958304969997`*^9, 3.4611958420722*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {
+       RowBox[{"-", "2"}], "4"},
+      {"3", 
+       RowBox[{"-", "5"}]}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"4"},
+      {
+       RowBox[{"-", "2"}]}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"A", ",", "b"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.461150015335088*^9}, {3.461150055146288*^9, 3.461150058921488*^9}, {
+   3.4611849989252*^9, 3.461185001078*^9}, {3.461185189526*^9, 
+   3.4611852277771997`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"b", "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958439754*^9, 3.4611958472202*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{"A", ",", "b"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958304969997`*^9, 3.4611958420722*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}, 
+   3.4611848565128*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"1", "0", "2"},
+      {"0", "1", "0"},
+      {
+       RowBox[{"-", "1"}], "1", "4"}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"2"},
+      {"3"},
+      {"1"}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"A", ",", "b"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611491212931876`*^9, 3.4611491378135877`*^9}, {3.4611500132914877`*^9, 
+   3.461150015335088*^9}, {3.4611501525214877`*^9, 3.4611501631762877`*^9}, 
+   3.4611848565128*^9, 3.4611850096268*^9, {3.4611850441652*^9, 
+   3.4611850521212*^9}, 3.4611851051612*^9, 3.461185161524*^9, {
+   3.4611852734228*^9, 3.4611852866516*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}, 3.4611848565128*^9}],
+
+Cell[BoxData[
+ RowBox[{"b", "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958439754*^9, 3.4611958472202*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{"A", ",", "b"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958304969997`*^9, 3.4611958420722*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Inverse Problem", "Subsubsection",
+ CellChangeTimes->{
+  3.4610787588926373`*^9, 3.4610788155050373`*^9, {3.4610834431504374`*^9, 
+   3.4610834509660378`*^9}, {3.4611484963715878`*^9, 3.4611485006615877`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {
+       RowBox[{"-", "2"}], "0", "5"},
+      {
+       RowBox[{"-", "1"}], "0", "3"},
+      {"4", "1", 
+       RowBox[{"-", "1"}]}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {
+       RowBox[{"-", "2"}]},
+      {"1"},
+      {"3"}
+     },
+     GridBoxDividers->{
+      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+       "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"A", ",", "b"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "A", "]"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.461149019191188*^9}, {3.4611490810919876`*^9, 3.461149090358388*^9}, {
+   3.4611494795069876`*^9, 3.4611495034829874`*^9}, {3.461185014026*^9, 
+   3.461185036802*^9}, 3.4611851779820004`*^9}],
+
+Cell[BoxData[{
+ RowBox[{"Inverse", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.4610752059622374`*^9, 3.4610753354266376`*^9}, {
+   3.4610753699026375`*^9, 3.4610753793718376`*^9}, {3.461076711485237*^9, 
+   3.4610767491124372`*^9}, {3.4610767925740376`*^9, 
+   3.4610767957564373`*^9}, {3.4610769149092374`*^9, 3.461076935002037*^9}, {
+   3.4610842350844374`*^9, 3.461084300120837*^9}, 3.461148490989588*^9, {
+   3.4611485248727875`*^9, 3.4611485276027875`*^9}, {3.4611489866807876`*^9, 
+   3.4611490138247876`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"b", "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958439754*^9, 3.4611958472202*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{"A", ",", "b"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.4611958304969997`*^9, 3.4611958420722*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Find Eigenvalues, and State all eigenvectors", "Section",
+ CellChangeTimes->{{3.4610841310012374`*^9, 3.4610841433252373`*^9}}],
+
+Cell["\<\
+There are 2 ways I know to create matrices with nice eigenvalues.  Either \
+make the sum of the rows the same, or make the sum of the columns the same.  \
+Symmetric matrices make the eigenvectors orthogonal.  Are there any other \
+tricks?  Using ODE systems and knowing the characteristic polynomial to start \
+with can give simple ODEs as well.\
+\>", "Text",
+ CellChangeTimes->{{3.461149704344988*^9, 3.4611498125899878`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2"},
+     {"0", "3"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+  3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611868752632*^9, 
+  3.461186879834*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963762318*^9, 3.4613270998652*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[Lambda]", "2"], "-", 
+   RowBox[{"4", " ", "\[Lambda]"}], "+", "3"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963762318*^9, 3.4613270998652*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "3"}], "+", "\[Lambda]"}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "\[Lambda]"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.4611963762318*^9, 3.4613270998808002`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963762318*^9, 3.4613270998964*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963762318*^9, 3.4613270998964*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ 1 & 2 \\\\
+ 0 & 3
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963762318*^9, 3.4613270998964*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["\\lambda ^2-4 \\lambda +3", "Output",
+ CellChangeTimes->{3.461196376263*^9, 3.4613270999276*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963762785997`*^9, 3.4613270999588003`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963762942*^9, 3.4613270999744*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1"},
+     {
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "2"}]}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611504566590877`*^9, 3.4611504777814875`*^9}, 
+   3.4611868903328*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763254004`*^9, 3.46132709999*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[Lambda]", "2"], "+", 
+   RowBox[{"2", " ", "\[Lambda]"}], "+", "1"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963763254004`*^9, 3.46132709999*^9}],
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   RowBox[{"1", "+", "\[Lambda]"}], ")"}], "2"]], "Output",
+ CellChangeTimes->{3.4611963763254004`*^9, 3.46132709999*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "1"}], ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763254004`*^9, 3.4613271000368*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763254004`*^9, 3.4613271000368*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ 0 & 1 \\\\
+ -1 & -2
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963763254004`*^9, 3.4613271000368*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["\\lambda ^2+2 \\lambda +1", "Output",
+ CellChangeTimes->{3.461196376341*^9, 3.4613271000524*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "1"}], ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763566*^9, 3.461327100068*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763722*^9, 3.4613271000836*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "3"},
+     {"3", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611504868606873`*^9, 3.4611504957682877`*^9}, 
+   3.4611868950596*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763878*^9, 3.4613271000992002`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[Lambda]", "2"], "-", 
+   RowBox[{"4", " ", "\[Lambda]"}], "-", "5"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963763878*^9, 3.4613271000992002`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "5"}], "+", "\[Lambda]"}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{"1", "+", "\[Lambda]"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.4611963763878*^9, 3.4613271000992002`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763878*^9, 3.4613271000992002`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963763878*^9, 3.4613271000992002`*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ 2 & 3 \\\\
+ 3 & 2
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963763878*^9, 3.4613271000992002`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["\\lambda ^2-4 \\lambda -5", "Output",
+ CellChangeTimes->{3.4611963764189997`*^9, 3.4613271001148*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963764346*^9, 3.4613271001303997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963764502*^9, 3.461327100146*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1"},
+     {
+      RowBox[{"-", "1"}], "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611505087006874`*^9, 3.4611505113682876`*^9}, 
+   3.4611869004572*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963764658003`*^9, 3.4613271001616*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[Lambda]", "2"], "+", "1"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963764658003`*^9, 3.4613271001616*^9}],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  SuperscriptBox["\[Lambda]", "2"]}]], "Output",
+ CellChangeTimes->{3.4611963764658003`*^9, 3.4613271001616*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[ImaginaryI]", ",", 
+   RowBox[{"-", "\[ImaginaryI]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963764658003`*^9, 3.4613271001616*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[ImaginaryI]", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963764658003`*^9, 3.4613271002708*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ 0 & 1 \\\\
+ -1 & 0
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963764658003`*^9, 3.4613271002708*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["\\lambda ^2+1", "Output",
+ CellChangeTimes->{3.4611963764814*^9, 3.4613271002864*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[ImaginaryI]", ",", 
+   RowBox[{"-", "\[ImaginaryI]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963764969997`*^9, 3.461327100302*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[ImaginaryI]", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963765594*^9, 3.4613271003176003`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "4"},
+     {"2", "3"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611505519750876`*^9, 3.4611505564834876`*^9}, 
+   3.4611869051996*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376575*^9, 3.4613271003332*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[Lambda]", "2"], "-", 
+   RowBox[{"4", " ", "\[Lambda]"}], "-", "5"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.461196376575*^9, 3.4613271003332*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "5"}], "+", "\[Lambda]"}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{"1", "+", "\[Lambda]"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.461196376575*^9, 3.4613271003332*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376575*^9, 3.4613271003332*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376575*^9, 3.4613271003332*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ 1 & 4 \\\\
+ 2 & 3
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.461196376575*^9, 3.4613271003332*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["\\lambda ^2-4 \\lambda -5", "Output",
+ CellChangeTimes->{3.4611963766062*^9, 3.4613271003487997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963766218*^9, 3.4613271003644*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963766373997`*^9, 3.46132710038*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"3", "1"},
+     {"4", "6"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611505642990875`*^9, 3.4611505761550875`*^9}, 
+   3.4611869106596003`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "6"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376653*^9, 3.4613271003956003`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["\[Lambda]", "2"], "-", 
+   RowBox[{"9", " ", "\[Lambda]"}], "+", "14"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.461196376653*^9, 3.4613271003956003`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "7"}], "+", "\[Lambda]"}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "2"}], "+", "\[Lambda]"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.461196376653*^9, 3.4613271004112*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376653*^9, 3.4613271004112*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376653*^9, 3.4613271004112*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{cc}
+ 3 & 1 \\\\
+ 4 & 6
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.461196376653*^9, 3.4613271004112*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["\\lambda ^2-9 \\lambda +14", "Output",
+ CellChangeTimes->{3.461196376731*^9, 3.4613271004268*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963767466*^9, 3.4613271004424*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963767622004`*^9, 3.461327100458*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2", "2"},
+     {"0", "1", "2"},
+     {"0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611506024098873`*^9, 3.4611506105062876`*^9}, 
+   3.46118691548*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963767778*^9, 3.4613270289164*^9, 3.4613271004736*^9}
+  ],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    SuperscriptBox["\[Lambda]", "3"]}], "+", 
+   RowBox[{"3", " ", 
+    SuperscriptBox["\[Lambda]", "2"]}], "-", 
+   RowBox[{"3", " ", "\[Lambda]"}], "+", "1"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963767778*^9, 3.4613270289164*^9, 3.4613271004736*^9}
+  ],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[Lambda]"}], ")"}], "3"]}]], "Output",
+ CellChangeTimes->{3.4611963767778*^9, 3.4613270289164*^9, 3.4613271004892*^9}
+  ],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963767778*^9, 3.4613270289164*^9, 3.4613271005048*^9}
+  ],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963767778*^9, 3.4613270289164*^9, 3.4613271005048*^9}
+  ],
+
+Cell["\<\
+\\left(
+\\begin{array}{ccc}
+ 1 & 2 & 2 \\\\
+ 0 & 1 & 2 \\\\
+ 0 & 0 & 1
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963767778*^9, 3.4613270289164*^9, 3.4613271005204*^9}
+  ]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Factor", "[", 
+    RowBox[{"CharacteristicPolynomial", "[", 
+     RowBox[{"A", ",", "\[Lambda]"}], "]"}], "]"}], "//", "TraditionalForm"}],
+   "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}, {
+  3.4613270019751997`*^9, 3.4613270569652*^9}}],
+
+Cell["-(\\lambda -1)^3", "Output",
+ CellChangeTimes->{{3.4613270446568003`*^9, 3.4613270575424*^9}, 
+   3.4613271005360003`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963768557997`*^9, 3.4613270291972*^9, 
+  3.4613271005516*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963768714*^9, 3.4613270292128*^9, 
+  3.4613271005671997`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2", "2"},
+     {"0", "1", "0"},
+     {"0", "0", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611506219098873`*^9, 3.461150628352688*^9}, 
+   3.4611869205032*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376887*^9, 3.4613271005828*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    SuperscriptBox["\[Lambda]", "3"]}], "+", 
+   RowBox[{"3", " ", 
+    SuperscriptBox["\[Lambda]", "2"]}], "-", 
+   RowBox[{"3", " ", "\[Lambda]"}], "+", "1"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.461196376887*^9, 3.4613271005984*^9}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[Lambda]"}], ")"}], "3"]}]], "Output",
+ CellChangeTimes->{3.461196376887*^9, 3.4613271005984*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376887*^9, 3.4613271006140003`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.461196376887*^9, 3.4613271006296*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{ccc}
+ 1 & 2 & 2 \\\\
+ 0 & 1 & 0 \\\\
+ 0 & 0 & 1
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.461196376887*^9, 3.4613271006296*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["-\\lambda ^3+3 \\lambda ^2-3 \\lambda +1", "Output",
+ CellChangeTimes->{3.461196376965*^9, 3.4613271006452*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Factor", "[", 
+    RowBox[{"CharacteristicPolynomial", "[", 
+     RowBox[{"A", ",", "\[Lambda]"}], "]"}], "]"}], "//", "TraditionalForm"}],
+   "//", "TeXForm"}]], "Input"],
+
+Cell["-(\\lambda -1)^3", "Output",
+ CellChangeTimes->{3.4613271006608*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963769806004`*^9, 3.4613271006764*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963769962*^9, 3.461327100692*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"3", "0", "0"},
+     {"0", "2", "1"},
+     {"0", "1", "2"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.461150640286688*^9, 3.4611506626414876`*^9}, 
+   3.4611869254484*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963770118*^9, 3.4613271007076*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    SuperscriptBox["\[Lambda]", "3"]}], "+", 
+   RowBox[{"7", " ", 
+    SuperscriptBox["\[Lambda]", "2"]}], "-", 
+   RowBox[{"15", " ", "\[Lambda]"}], "+", "9"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963770118*^9, 3.4613271007232*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "3"}], "+", "\[Lambda]"}], ")"}], "2"]}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "\[Lambda]"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.4611963770118*^9, 3.4613271007232*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "3", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963770118*^9, 3.4613271007388*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963770118*^9, 3.4613271007544003`*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{ccc}
+ 3 & 0 & 0 \\\\
+ 0 & 2 & 1 \\\\
+ 0 & 1 & 2
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963770118*^9, 3.4613271007544003`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["-\\lambda ^3+7 \\lambda ^2-15 \\lambda +9", "Output",
+ CellChangeTimes->{3.4611963770741997`*^9, 3.46132710077*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Factor", "[", 
+    RowBox[{"CharacteristicPolynomial", "[", 
+     RowBox[{"A", ",", "\[Lambda]"}], "]"}], "]"}], "//", "TraditionalForm"}],
+   "//", "TeXForm"}]], "Input"],
+
+Cell["-(\\lambda -3)^2 (\\lambda -1)", "Output",
+ CellChangeTimes->{3.4613271007855997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "3", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963770898*^9, 3.4613271008012*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963771054*^9, 3.4613271008168*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eigenvalue/Eigenvector Problem", "Subsubsection",
+ CellChangeTimes->{{3.4611503573026876`*^9, 3.461150374634288*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "1", "0"},
+     {"0", "2", "0"},
+     {"0", "1", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{"Factor", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvalues", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Eigenvectors", "[", "A", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"A", "//", "TeXForm"}]}], "Input",
+ CellChangeTimes->{{3.461149676674988*^9, 3.4611496947909875`*^9}, {
+   3.4611502187278876`*^9, 3.461150326321088*^9}, {3.4611504153970876`*^9, 
+   3.4611504220894876`*^9}, {3.4611506762758875`*^9, 3.4611507530122876`*^9}, 
+   3.461186929676*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963771210003`*^9, 3.4613271008324003`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"-", 
+    SuperscriptBox["\[Lambda]", "3"]}], "+", 
+   RowBox[{"4", " ", 
+    SuperscriptBox["\[Lambda]", "2"]}], "-", 
+   RowBox[{"5", " ", "\[Lambda]"}], "+", "2"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4611963771210003`*^9, 3.461327100848*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "2"}], "+", "\[Lambda]"}], ")"}]}], " ", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[Lambda]"}], ")"}], "2"]}]], "Output",
+ CellChangeTimes->{3.4611963771210003`*^9, 3.4613271008636*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963771210003`*^9, 3.4613271008636*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963771210003`*^9, 3.4613271008792*^9}],
+
+Cell["\<\
+\\left(
+\\begin{array}{ccc}
+ 1 & 1 & 0 \\\\
+ 0 & 2 & 0 \\\\
+ 0 & 1 & 1
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.4611963771210003`*^9, 3.4613271008948*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharacteristicPolynomial", "[", 
+   RowBox[{"A", ",", "\[Lambda]"}], "]"}], "//", "TeXForm"}]], "Input",
+ CellChangeTimes->{{3.461196259809*^9, 3.4611962618682003`*^9}}],
+
+Cell["-\\lambda ^3+4 \\lambda ^2-5 \\lambda +2", "Output",
+ CellChangeTimes->{3.461196377199*^9, 3.4613271009104*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Factor", "[", 
+    RowBox[{"CharacteristicPolynomial", "[", 
+     RowBox[{"A", ",", "\[Lambda]"}], "]"}], "]"}], "//", "TraditionalForm"}],
+   "//", "TeXForm"}]], "Input"],
+
+Cell["-(\\lambda -2) (\\lambda -1)^2", "Output",
+ CellChangeTimes->{3.4613271009416*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.4611962755494003`*^9, 3.4611962774526*^9}, 
+   3.4611963134418*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963772146*^9, 3.4613271009416*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.461196295455*^9, 3.4611963080598*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4611963772302*^9, 3.4613271009572*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{607, 549},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 105, 1, 71, "Section"],
+Cell[675, 25, 497, 12, 73, "Input"],
+Cell[1175, 39, 519, 13, 73, "Input"],
+Cell[1697, 54, 529, 13, 73, "Input"],
+Cell[2229, 69, 551, 14, 91, "Input"],
+Cell[2783, 85, 521, 14, 91, "Input"],
+Cell[3307, 101, 260, 5, 52, "Input"],
+Cell[3570, 108, 264, 5, 52, "Input"],
+Cell[3837, 115, 238, 4, 72, "Input"],
+Cell[4078, 121, 272, 6, 72, "Input"],
+Cell[4353, 129, 236, 4, 72, "Input"],
+Cell[4592, 135, 238, 4, 72, "Input"],
+Cell[4833, 141, 234, 4, 72, "Input"],
+Cell[5070, 147, 238, 4, 72, "Input"],
+Cell[5311, 153, 248, 4, 72, "Input"],
+Cell[5562, 159, 272, 5, 72, "Input"],
+Cell[5837, 166, 270, 5, 72, "Input"],
+Cell[6110, 173, 272, 5, 72, "Input"],
+Cell[6385, 180, 272, 5, 72, "Input"],
+Cell[6660, 187, 238, 4, 72, "Input"],
+Cell[6901, 193, 310, 6, 72, "Input"],
+Cell[7214, 201, 238, 4, 72, "Input"],
+Cell[7455, 207, 308, 6, 72, "Input"],
+Cell[7766, 215, 238, 6, 31, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8041, 226, 101, 1, 41, "Section"],
+Cell[8145, 229, 452, 11, 93, "Input"],
+Cell[8600, 242, 509, 12, 93, "Input"],
+Cell[9112, 256, 541, 13, 111, "Input"],
+Cell[9656, 271, 583, 15, 111, "Input"],
+Cell[10242, 288, 510, 13, 111, "Input"],
+Cell[10755, 303, 554, 15, 111, "Input"],
+Cell[11312, 320, 627, 16, 129, "Input"],
+Cell[11942, 338, 618, 17, 129, "Input"],
+Cell[12563, 357, 640, 18, 129, "Input"],
+Cell[13206, 377, 572, 15, 129, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13815, 397, 100, 1, 41, "Section"],
+Cell[CellGroupData[{
+Cell[13940, 402, 183, 2, 36, "Subsection"],
+Cell[14126, 406, 204, 4, 47, "Text"],
+Cell[CellGroupData[{
+Cell[14355, 414, 98, 1, 27, "Subsubsection"],
+Cell[14456, 417, 1194, 28, 213, "Input"],
+Cell[15653, 447, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16091, 459, 98, 1, 27, "Subsubsection"],
+Cell[16192, 462, 1216, 29, 213, "Input"],
+Cell[17411, 493, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17849, 505, 98, 1, 27, "Subsubsection"],
+Cell[17950, 508, 1174, 27, 213, "Input"],
+Cell[19127, 537, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19565, 549, 98, 1, 27, "Subsubsection"],
+Cell[19666, 552, 1244, 28, 213, "Input"],
+Cell[20913, 582, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21351, 594, 98, 1, 27, "Subsubsection"],
+Cell[21452, 597, 1325, 31, 251, "Input"],
+Cell[22780, 630, 401, 7, 92, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23230, 643, 108, 1, 36, "Subsection"],
+Cell[23341, 646, 588, 14, 68, "Text"],
+Cell[CellGroupData[{
+Cell[23954, 664, 100, 1, 27, "Subsubsection"],
+Cell[24057, 667, 1197, 27, 175, "Input"],
+Cell[25257, 696, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25695, 708, 100, 1, 27, "Subsubsection"],
+Cell[25798, 711, 1181, 28, 175, "Input"],
+Cell[26982, 741, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27420, 753, 98, 1, 27, "Subsubsection"],
+Cell[27521, 756, 1136, 28, 213, "Input"],
+Cell[28660, 786, 404, 7, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29101, 798, 100, 1, 27, "Subsubsection"],
+Cell[29204, 801, 1238, 30, 213, "Input"],
+Cell[30445, 833, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30883, 845, 100, 1, 27, "Subsubsection"],
+Cell[30986, 848, 1240, 30, 213, "Input"],
+Cell[32229, 880, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32667, 892, 100, 1, 27, "Subsubsection"],
+Cell[32770, 895, 1288, 30, 213, "Input"],
+Cell[34061, 927, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34499, 939, 100, 1, 27, "Subsubsection"],
+Cell[34602, 942, 1351, 33, 251, "Input"],
+Cell[35956, 977, 401, 7, 92, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[36418, 991, 187, 2, 41, "Section"],
+Cell[36608, 995, 292, 5, 47, "Text"],
+Cell[CellGroupData[{
+Cell[36925, 1004, 102, 1, 27, "Subsubsection"],
+Cell[37030, 1007, 1181, 28, 213, "Input"],
+Cell[38214, 1037, 404, 7, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38655, 1049, 100, 1, 27, "Subsubsection"],
+Cell[38758, 1052, 1285, 30, 213, "Input"],
+Cell[40046, 1084, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40484, 1096, 100, 1, 27, "Subsubsection"],
+Cell[40587, 1099, 1284, 32, 213, "Input"],
+Cell[41874, 1133, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42312, 1145, 100, 1, 27, "Subsubsection"],
+Cell[42415, 1148, 1309, 32, 251, "Input"],
+Cell[43727, 1182, 401, 7, 92, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[44177, 1195, 113, 1, 41, "Section"],
+Cell[44293, 1198, 206, 4, 47, "Text"],
+Cell[CellGroupData[{
+Cell[44524, 1206, 157, 3, 27, "Subsubsection"],
+Cell[44684, 1211, 1377, 32, 233, "Input"],
+Cell[46064, 1245, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46502, 1257, 157, 3, 27, "Subsubsection"],
+Cell[46662, 1262, 1455, 36, 251, "Input"],
+Cell[48120, 1300, 404, 7, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48561, 1312, 157, 3, 27, "Subsubsection"],
+Cell[48721, 1317, 1366, 31, 271, "Input"],
+Cell[50090, 1350, 401, 7, 92, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50528, 1362, 157, 3, 27, "Subsubsection"],
+Cell[50688, 1367, 1381, 35, 251, "Input"],
+Cell[52072, 1404, 401, 7, 92, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[52522, 1417, 182, 2, 41, "Section"],
+Cell[52707, 1421, 510, 8, 83, "Text"],
+Cell[CellGroupData[{
+Cell[53242, 1433, 215, 3, 27, "Subsubsection"],
+Cell[53460, 1438, 1000, 19, 93, "Input"],
+Cell[54463, 1459, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55139, 1474, 215, 3, 27, "Subsubsection"],
+Cell[55357, 1479, 1088, 21, 93, "Input"],
+Cell[56448, 1502, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57124, 1517, 215, 3, 27, "Subsubsection"],
+Cell[57342, 1522, 1066, 20, 93, "Input"],
+Cell[58411, 1544, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59087, 1559, 215, 3, 27, "Subsubsection"],
+Cell[59305, 1564, 946, 18, 93, "Input"],
+Cell[60254, 1584, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60930, 1599, 215, 3, 27, "Subsubsection"],
+Cell[61148, 1604, 944, 18, 93, "Input"],
+Cell[62095, 1624, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62771, 1639, 215, 3, 27, "Subsubsection"],
+Cell[62989, 1644, 1078, 20, 111, "Input"],
+Cell[64070, 1666, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64746, 1681, 215, 3, 27, "Subsubsection"],
+Cell[64964, 1686, 1102, 21, 111, "Input"],
+Cell[66069, 1709, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66745, 1724, 215, 3, 27, "Subsubsection"],
+Cell[66963, 1729, 1076, 22, 111, "Input"],
+Cell[68042, 1753, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68718, 1768, 215, 3, 27, "Subsubsection"],
+Cell[68936, 1773, 920, 20, 111, "Input"],
+Cell[69859, 1795, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70535, 1810, 215, 3, 27, "Subsubsection"],
+Cell[70753, 1815, 1044, 22, 111, "Input"],
+Cell[71800, 1839, 639, 10, 72, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72476, 1854, 215, 3, 27, "Subsubsection"],
+Cell[72694, 1859, 978, 19, 111, "Input"],
+Cell[73675, 1880, 639, 10, 72, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[74363, 1896, 217, 3, 41, "Section"],
+Cell[74583, 1901, 510, 8, 83, "Text"],
+Cell[CellGroupData[{
+Cell[75118, 1913, 215, 3, 27, "Subsubsection"],
+Cell[75336, 1918, 1509, 33, 113, "Input"],
+Cell[76848, 1953, 639, 10, 72, "Input"],
+Cell[77490, 1965, 118, 2, 31, "Input"],
+Cell[77611, 1969, 184, 4, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77832, 1978, 215, 3, 27, "Subsubsection"],
+Cell[78050, 1983, 1574, 36, 113, "Input"],
+Cell[79627, 2021, 639, 10, 72, "Input"],
+Cell[80269, 2033, 118, 2, 31, "Input"],
+Cell[80390, 2037, 184, 4, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80611, 2046, 239, 4, 27, "Subsubsection"],
+Cell[80853, 2052, 1659, 37, 131, "Input"],
+Cell[82515, 2091, 659, 10, 72, "Input"],
+Cell[83177, 2103, 118, 2, 31, "Input"],
+Cell[83298, 2107, 184, 4, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83519, 2116, 215, 3, 27, "Subsubsection"],
+Cell[83737, 2121, 1519, 37, 131, "Input"],
+Cell[85259, 2160, 639, 10, 72, "Input"],
+Cell[85901, 2172, 118, 2, 31, "Input"],
+Cell[86022, 2176, 184, 4, 31, "Input"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[86255, 2186, 133, 1, 41, "Section"],
+Cell[86391, 2189, 437, 7, 83, "Text"],
+Cell[CellGroupData[{
+Cell[86853, 2200, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[87001, 2205, 834, 19, 153, "Input"],
+Cell[87838, 2226, 231, 7, 30, "Output"],
+Cell[88072, 2235, 214, 5, 46, "Output"],
+Cell[88289, 2242, 264, 8, 30, "Output"],
+Cell[88556, 2252, 133, 3, 30, "Output"],
+Cell[88692, 2257, 231, 7, 30, "Output"],
+Cell[88926, 2266, 153, 8, 124, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89116, 2279, 204, 4, 31, "Input"],
+Cell[89323, 2285, 102, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89462, 2291, 154, 3, 31, "Input"],
+Cell[89619, 2296, 141, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89797, 2304, 126, 2, 31, "Input"],
+Cell[89926, 2308, 231, 7, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[90206, 2321, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[90354, 2326, 963, 22, 153, "Input"],
+Cell[91320, 2350, 275, 9, 30, "Output"],
+Cell[91598, 2361, 216, 5, 46, "Output"],
+Cell[91817, 2368, 168, 4, 30, "Output"],
+Cell[91988, 2374, 175, 5, 30, "Output"],
+Cell[92166, 2381, 256, 8, 30, "Output"],
+Cell[92425, 2391, 159, 8, 124, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92621, 2404, 204, 4, 31, "Input"],
+Cell[92828, 2410, 102, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92967, 2416, 154, 3, 31, "Input"],
+Cell[93124, 2421, 170, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93331, 2431, 126, 2, 31, "Input"],
+Cell[93460, 2435, 252, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93761, 2449, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[93909, 2454, 919, 20, 153, "Input"],
+Cell[94831, 2476, 235, 7, 30, "Output"],
+Cell[95069, 2485, 218, 5, 46, "Output"],
+Cell[95290, 2492, 244, 7, 30, "Output"],
+Cell[95537, 2501, 156, 4, 30, "Output"],
+Cell[95696, 2507, 256, 8, 30, "Output"],
+Cell[95955, 2517, 157, 8, 124, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96149, 2530, 204, 4, 31, "Input"],
+Cell[96356, 2536, 107, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96500, 2542, 154, 3, 31, "Input"],
+Cell[96657, 2547, 156, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96850, 2556, 126, 2, 31, "Input"],
+Cell[96979, 2560, 251, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97279, 2574, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[97427, 2579, 941, 21, 153, "Input"],
+Cell[98371, 2602, 256, 8, 30, "Output"],
+Cell[98630, 2612, 176, 4, 46, "Output"],
+Cell[98809, 2618, 146, 3, 30, "Output"],
+Cell[98958, 2623, 180, 4, 30, "Output"],
+Cell[99141, 2629, 280, 8, 30, "Output"],
+Cell[99424, 2639, 158, 8, 124, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99619, 2652, 204, 4, 31, "Input"],
+Cell[99826, 2658, 91, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99954, 2664, 154, 3, 31, "Input"],
+Cell[100111, 2669, 179, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100327, 2678, 126, 2, 31, "Input"],
+Cell[100456, 2682, 280, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100785, 2696, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[100933, 2701, 919, 20, 153, "Input"],
+Cell[101855, 2723, 230, 7, 30, "Output"],
+Cell[102088, 2732, 213, 5, 46, "Output"],
+Cell[102304, 2739, 239, 7, 30, "Output"],
+Cell[102546, 2748, 151, 4, 30, "Output"],
+Cell[102700, 2754, 251, 8, 30, "Output"],
+Cell[102954, 2764, 152, 8, 124, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103143, 2777, 204, 4, 31, "Input"],
+Cell[103350, 2783, 107, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103494, 2789, 154, 3, 31, "Input"],
+Cell[103651, 2794, 152, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103840, 2803, 126, 2, 31, "Input"],
+Cell[103969, 2807, 254, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104272, 2821, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[104420, 2826, 923, 20, 153, "Input"],
+Cell[105346, 2848, 234, 7, 30, "Output"],
+Cell[105583, 2857, 218, 5, 46, "Output"],
+Cell[105804, 2864, 259, 8, 30, "Output"],
+Cell[106066, 2874, 132, 3, 30, "Output"],
+Cell[106201, 2879, 251, 8, 30, "Output"],
+Cell[106455, 2889, 152, 8, 124, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[106644, 2902, 204, 4, 31, "Input"],
+Cell[106851, 2908, 103, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[106991, 2914, 154, 3, 31, "Input"],
+Cell[107148, 2919, 133, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107318, 2927, 126, 2, 31, "Input"],
+Cell[107447, 2931, 255, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107751, 2945, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[107899, 2950, 949, 21, 171, "Input"],
+Cell[108851, 2973, 343, 10, 30, "Output"],
+Cell[109197, 2985, 325, 9, 46, "Output"],
+Cell[109525, 2996, 230, 7, 30, "Output"],
+Cell[109758, 3005, 166, 4, 30, "Output"],
+Cell[109927, 3011, 343, 10, 30, "Output"],
+Cell[110273, 3023, 201, 10, 140, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110511, 3038, 332, 8, 52, "Input"],
+Cell[110846, 3048, 128, 2, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111011, 3055, 154, 3, 31, "Input"],
+Cell[111168, 3060, 170, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111375, 3069, 126, 2, 31, "Input"],
+Cell[111504, 3073, 347, 10, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111900, 3089, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[112048, 3094, 949, 21, 171, "Input"],
+Cell[113000, 3117, 319, 9, 30, "Output"],
+Cell[113322, 3128, 301, 8, 46, "Output"],
+Cell[113626, 3138, 206, 6, 30, "Output"],
+Cell[113835, 3146, 146, 3, 30, "Output"],
+Cell[113984, 3151, 340, 10, 30, "Output"],
+Cell[114327, 3163, 177, 9, 140, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114541, 3177, 204, 4, 31, "Input"],
+Cell[114748, 3183, 117, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114902, 3189, 218, 6, 52, "Input"],
+Cell[115123, 3197, 74, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115234, 3203, 154, 3, 31, "Input"],
+Cell[115391, 3208, 147, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115575, 3216, 126, 2, 31, "Input"],
+Cell[115704, 3220, 340, 10, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116093, 3236, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[116241, 3241, 949, 21, 171, "Input"],
+Cell[117193, 3264, 320, 9, 30, "Output"],
+Cell[117516, 3275, 303, 8, 46, "Output"],
+Cell[117822, 3285, 309, 10, 30, "Output"],
+Cell[118134, 3297, 143, 3, 30, "Output"],
+Cell[118280, 3302, 345, 10, 30, "Output"],
+Cell[118628, 3314, 182, 9, 140, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118847, 3328, 204, 4, 31, "Input"],
+Cell[119054, 3334, 121, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119212, 3340, 218, 6, 52, "Input"],
+Cell[119433, 3348, 92, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119562, 3354, 154, 3, 31, "Input"],
+Cell[119719, 3359, 143, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119899, 3367, 126, 2, 31, "Input"],
+Cell[120028, 3371, 341, 10, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[120418, 3387, 123, 1, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[120566, 3392, 950, 21, 171, "Input"],
+Cell[121519, 3415, 328, 9, 30, "Output"],
+Cell[121850, 3426, 305, 8, 46, "Output"],
+Cell[122158, 3436, 312, 10, 30, "Output"],
+Cell[122473, 3448, 147, 3, 30, "Output"],
+Cell[122623, 3453, 324, 9, 30, "Output"],
+Cell[122950, 3464, 182, 9, 140, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[123169, 3478, 204, 4, 31, "Input"],
+Cell[123376, 3484, 117, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[123530, 3490, 218, 6, 52, "Input"],
+Cell[123751, 3498, 88, 1, 44, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[123876, 3504, 154, 3, 31, "Input"],
+Cell[124033, 3509, 143, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124213, 3517, 126, 2, 31, "Input"],
+Cell[124342, 3521, 320, 9, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

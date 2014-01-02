@@ -1,0 +1,463 @@
+
+\section{Preparation}
+
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{03-Linear-Algebra-Applications/Linear-Algebra-Applications-objectives}
+
+Here are the preparation problems for this unit. Please make sure you come to class having completed your problem, and able to explain to others how to do it.  We will often be doing problems very similar to the prep problems in class, and your preparation will help you contribute to your group. As time permits, I will post handwritten solutions to these problems on I-Learn. Please check there if you are struggling with your prep problem. 
+
+
+
+\begin{center}
+\begin{tabular}{ll|l}
+\multicolumn{2}{c}{Preparation Problems (\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/03-Linear-Algebra-Applications-Preparation-Solutions.pdf}{click for solutions})}
+&
+\href{http://www.youtube.com/user/bmwoodruff#grid/user/26D7C9E45A54794F}{Webcasts on YouTube - click here} 
+%(
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-videos.pdf}{pdf copy}
+%)
+\\
+\hline\hline
+Day 1&
+1a, 1b, 2a, 3b
+&
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-01.wmv}{1},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-02.wmv}{2},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-03.wmv}{3}
+\\ \hline
+Day 2&
+3f, 4c, 4d, 5b
+&
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-04.wmv}{4},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-05.wmv}{5},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-06.wmv}{6}
+\\ \hline
+Day 3&
+6a, 6b, 7d, 7g 
+&
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-07.wmv}{7},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-08.wmv}{8},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-09.wmv}{9},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-10.wmv}{10},
+%\href{http://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/341/2-Applications-video-11.wmv}{11}
+\\ \hline
+Day 4&
+Lesson Plan,
+Quiz&
+\\ \hline
+\end{tabular}
+\end{center}
+
+	The problems listed below are found in this book. 
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Concept&Suggestions&Relevant Problems\\ \hline
+Kirchoff's Laws&&1\\ \hline
+Cramer's Rule&&2\\ \hline
+Interpolating Polynomials&&3\\ \hline
+Least Square Regression&&4\\ \hline
+Partial Fraction Decomposition&&5\\ \hline
+Markov Process&&6\\ \hline
+2nd Derivative Test&&7\\ \hline
+\end{tabular}
+\end{center}
+
+\section{Problems}
+
+\begin{enumerate}
+\item Consider the following electrical systems. Use the given values to find the current in each wire.
+
+\centerline{\input{03-Linear-Algebra-Applications/electric-circuit-2-loops}
+\input{03-Linear-Algebra-Applications/electric-circuit-3-loops}}
+\begin{multicols}{2}
+\begin{enumerate}
+
+\item $E=12, R_1=2,R_2=2, R_3=2$.
+\item $E=12, R_1=2,R_2=3, R_3=3$.
+\item $E=12, R_1=2,R_2=3, R_3=6$.
+\item $E=12, R_1=1,R_2=2, R_3=2$.
+\item $E=9, R_1=3,R_2=1, R_3=2$.
+\item $E=6, R_1=1,R_2=1, R_3=2$.
+\end{enumerate}
+\end{multicols}
+
+
+\begin{enumerate} \setcounter{enumii}{6}
+\item $E=12$, $R_1=1$, $R_2=1$, $R_3=1$, $R_4=1$, $R_5=1$, $R_6=1$
+\item $E=12$, $R_1=2$, $R_2=1$, $R_3=3$, $R_4=4$, $R_5=2$, $R_6=3$
+\end{enumerate}
+
+
+\item Use Cramer's rule to find solutions to the following linear systems. If Cramer's rule fails, explain why.
+
+\begin{enumerate}
+\begin{multicols}{2}
+\item $2x+3y=0, x-2y=1$
+\item $x+y=2, x-y=3$
+\item $3x+y=6, x+3y=2$
+\item $2x+y=1, 4x+2y=2$
+\item $x+y=0, 2x-y+z=1, x+z=0$
+\item $x+2y=3, x-y+z=0, x+3y+z=1$
+\item $y+2z=1, x-z=3, 2x+y=1$
+\end{multicols}
+\end{enumerate}
+
+
+
+
+
+\item In each of the following scenarios, find a polynomial of least degree which passes through the given points. Then plot the points and the polynomial.
+\begin{enumerate}
+\begin{multicols}{2}
+\item $(1,2),(3,3)$ 			
+\item $(0,1),(2,3),(-1,4)$  
+\item $(1,1),(2,2),(-1,5)$   
+\item $(1,2),(3,3),(5,6)$ 			
+\item $(1,2),(3,3),(5,5)$ 
+\item $(0,1),(1,3),(-1,4),(2,4)$ 
+\end{multicols}
+\end{enumerate}
+
+
+
+\item For each set of data points, find an equation of the least squares regression line. Plot the points and the line on the same axes.
+
+\begin{enumerate}
+\begin{multicols}{2}
+\item $(0,0),(1,3),(1,2)$
+\item $(1,1),(2,1),(3,2)$
+\item $(1,2),(3,0),(5,1)$
+\item $(0,0),(1,3),(1,2),(4,5)$
+\item $(0,0),(1,3),(1,2),(4,-5)$
+\item $(-1,2),(1,3),(2,5),(3,3)$
+\item Challenge: Find an equation of the least squares regression parabola $y=ax^2+bx+c$ which passes through the points $(0,0),(1,3),(1,2),(4,5)$. [Hint, you will need a 4 by 3 matrix for $A$ instead of an $n$ by $2$. Use the transpose to reduce the size of the matrix to a 3 by 3 matrix, and then solve.]
+\end{multicols}
+\end{enumerate}
+
+
+
+
+\item Compute each integral by finding a partial fraction decomposition. 
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\ds\int\frac{1}{(x-3)(x+2)}dx $%, \frac{A}{x-3}+\frac{B}{x+2}$         
+\item $\ds\int\frac{2x+3}{(x-3)(x+2)}dx$%, \frac{A}{x-3}+\frac{B}{x+2}$ 
+\item $\ds\int\frac{x}{(x+1)(x-2)}dx$%,  \frac{A}{x+1}+\frac{B}{x-2}$  
+\item $\ds\int\frac{x^2+2}{x^2(x-2)}dx$%, \frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-2}$ 
+\item $\ds\int\frac{1}{(x^2+1)(x-2)}dx$%, \frac{Ax+B}{x^2+1}+\frac{C}{x-2}$
+\item $\ds\int\frac{x+1}{(x^2+1)x^2}dx$%, \frac{Ax+B}{x^2+1}+\frac{C}{x}+\frac{D}{x^2}$  
+\end{multicols}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\item Markov Process - In each scenario, write the transition matrix. If an initial state is given, then find the next two states. Finish by finding a steady state solution and use it to answer the question at the end.
+%\begin{multicols}{2}
+\begin{enumerate}
+
+\item In a certain town, there are 3 types of land zones: residential, commercial, and industrial. The city has been undergoing growth recently, and the city has noticed the following trends.  Every 5 years, 10\% of the older residential land gets rezoned as commercial land, while 5\% gets rezoned as industrial.  The other 85\% remains residential.  For commercial land, 70\% remains commercial, while 10\% becomes residential and 20\% becomes industrial. For industrial land, 60\% remains industrial, while 25\% becomes commercial and 15\% becomes residential. Currently the percent of land in each zone is 40\% residential, 30\% commercial, and 30\% industrial. What will the percent distribution be in 5 years? In 10 years?  If this trend continues indefinitely, what percent of the land will eventually be residential?. 
+\item Suppose we own a car rental company which rents cars in Idaho Falls and Rexburg. The last few weeks have shown a weekly trend that 60\% of the cars rented in Rexburg will remain in Rexburg (the other 40\% end up in IF), whereas 80\% of the cars rented in Idaho Falls will remain in Idaho Falls. If there are currently 60 cars in Rexburg and 140 cars in IF, how many will be in each city next week?  In two weeks? In three weeks? If this trend continues indefinitely, about how many cars should you expect to find in Rexburg each week?
+\item Repeat the previous problem if 40\% of the cars rented in Rexburg will remain in Rexburg (the other 60\% end up in IF), whereas 80\% of the cars rented in Idaho Falls will remain in Idaho Falls.
+\item Repeat the previous problem if 70\% of the cars rented in Rexburg will remain in Rexburg (the other 30\% end up in IF), whereas 80\% of the cars rented in Idaho Falls will remain in Idaho Falls.
+\item A school cafeteria regularly offers 3 types of meals to its students. One of the meals is always a pizza/salad combo, One is always hamburgers and fries, and one is a daily special which changes daily. In an attempt to understand student preferences, the school discovered the following information. If a student has a hamburger one day, then there is a 30\% chance they will try the daily special the next day, and a 40\% percent chance they will have the salad bar.  If they have the salad bar, then there is a 30\% chance they'll switch to the daily special, and a 40\% chance they'll switch to the hamburger.  If the have the daily special, then there is a 50\% chance they'll get the daily special the next day, a 20\% chance they'll switch to pizza, and a 30\% chance they'll switch to hamburger.  If this trend continues, what percent of the students will eat each type of meal? 
+
+[While this problem is highly rigged, there is a branch of applied mathematics which is studied by financial analysts call stochastic processes which models such a scenario. This modeling process can help predict how a new restaurant will perform in a city, sometimes predict stock market fluctuations, and more. The study of stochastic processes begins with a Markov process and then introduces statistics and probability to help predict what happens when trends change.]
+\end{enumerate}
+%\end{multicols}
+
+
+
+
+
+\item For each function, find the location of all critical points. Then use the second derivative test to determine if each critical point corresponds to a maximum, minimum, or saddle point. Graph the function in 3D to verify your results, and locate the eigenvectors and eigenvalues in the picture.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(x,y) = x^2+xy+y^2$
+\item $f(x,y) = x^2+4xy+y^2$
+\item $f(x,y) = x^2+2xy+y^2$
+\item $f(x,y) = x^2-4x+y^2+2y+1$
+\item $f(x,y) = x^2-2x+xy+y^2$
+\item $f(x,y) = x^2+xy+3y^2$
+\item $f(x,y) = x^3-3x+y^2-2y$ (2 critical points)
+\item $f(x,y) = x^3-3x+y^3-3y^2$ (4 critical points)
+\end{enumerate}
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section{Solutions}
+{
+\begin{multicols}{2}
+
+
+\newpage
+\small
+Remember that the Technology introduction has a step-by-step guide for solving many of these problems.
+\begin{enumerate}
+
+\item Kirchoff's Laws
+
+ $\begin{bmatrix}[lll|l]
+ 1 & -1 & -1 & 0 \\
+ R_1 & R_2 & 0 & E \\
+ 0 & -R_2 & R_3 & 0
+\end{bmatrix}$
+
+\begin{enumerate}
+\item $(4,2,2)$
+\item $(24/7,12/7,12/7)$
+\item $(3,2,1)$
+\item $(6,3,3)$
+\item $(27/11,18/11,9/11)$
+\item $(18/5,12/5,6/5)$
+
+$\begin{bmatrix}[llllll|l]
+ 1 & -1 & -1 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & -1 & -1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 1 & -1 & 0 \\
+ R_1 & R_2 & 0 & 0 & 0 & 0 & E \\
+ 0 & -R_2 & R_3 & R_4 & 0 & R_6 & 0 \\
+ 0 & 0 & 0 & -R_4 & R_5 & 0 & 0
+\end{bmatrix}$
+
+\item $\left\{7, 5, 2, 1, 1, 2\right\}$
+
+\item $\left\{\frac{25}{6},\frac{11}{3},\frac{1}{2},\frac{1}{6},\frac{1}{3},\frac{1}{2}\right\}$
+\end{enumerate}
+
+
+\item Cramer's rule
+\begin{enumerate}
+\item $\left\{\frac{3}{7},-\frac{2}{7}\right\}$
+\item $\left\{\frac{5}{2},-\frac{1}{2}\right\}$
+\item $\{2,0\}$
+\item Fails. The determinant of the coefficient matrix is zero.
+\item $\left\{\frac{1}{2},-\frac{1}{2},-\frac{1}{2}\right\}$
+\item $\left\{\frac{5}{2},\frac{1}{4},-\frac{9}{4}\right\}$
+\item Fails. The determinant of the coefficient matrix is zero.
+\end{enumerate}
+
+
+
+
+
+\item Interpolating Polynomials
+\begin{enumerate}
+\item $1/2 x + 3/2$
+\item $(4/3)x^2-(5/3)x+1$
+\item $x^2-2x+2$
+\item $(1/4)x^2-(1/2)x+9/4$
+\item $(1/8)x^2+15/8$
+\item $-x^3+(5/2)x^2+(1/2)x+1$
+\end{enumerate}
+
+
+\item Regression (Make the plots using technology)
+
+\begin{enumerate}
+\item $y=\frac{5 x}{2}$
+\item $y=\frac{x}{2}+\frac{1}{3}$
+\item $y=\frac{7}{4}-\frac{x}{4}$
+\item $y=\frac{10 x}{9}+\frac{5}{6}$
+\item $y=\frac{5}{2}-\frac{5 x}{3}$
+\item $y=\frac{3 x}{7}+\frac{19}{7}$
+\item 
+$
+A=
+\begin{bmatrix} 
+ 0 & 0 & 1 \\
+ 1 & 1 & 1 \\
+ 1 & 1 & 1 \\
+ 16 & 4 & 1
+\end{bmatrix},
+B=
+\begin{bmatrix} 
+ 0 \\
+ 3 \\
+ 2 \\
+ 5
+\end{bmatrix},
+A^T A=
+\begin{bmatrix} 
+ 258 & 66 & 18 \\
+ 66 & 18 & 6 \\
+ 18 & 6 & 4
+\end{bmatrix},
+A^T B=
+\begin{bmatrix} 
+ 85 \\
+ 25 \\
+ 10
+\end{bmatrix}$,
+
+$y=-\frac{5}{12}x^2+\frac{35}{12}x+0
+$
+\end{enumerate}
+
+
+
+
+
+
+\item Partial Fractions
+\begin{enumerate}
+\item $-1/5\,\ln  \left( x+2 \right) +1/5\,\ln  \left( x-3 \right)$
+\item $1/5\,\ln  \left( x+2 \right) +9/5\,\ln  \left( x-3 \right) $
+\item $1/3\,\ln  \left( x+1 \right) +2/3\,\ln  \left( x-2 \right) $
+\item ${x}^{-1}+3/2\,\ln  \left( x-2 \right) -1/2\,\ln  \left( x \right)$
+\item $-\frac{1}{10}\ln  \left( {x}^{2}+1 \right) -\frac{2}{5}\arctan \left( x \right) +\frac{1}{5}\ln  \left( x-2 \right) $
+\item $-{x}^{-1}-1/2\,\ln  \left( {x}^{2}+1 \right) -\arctan \left( x
+ \right) +\ln  \left( x \right)
+$
+\end{enumerate}
+
+
+
+
+
+
+
+
+\item Markov Process
+
+\begin{enumerate}
+\item Transition matrix 
+$\begin{bmatrix}
+ 0.85 & 0.1 & 0.15 \\
+ 0.1 & 0.7 & 0.25 \\
+ 0.05 & 0.2 & 0.6
+\end{bmatrix}$,
+5 years  (41.5,32.5,26), 
+10 years: (42.425,33.4,24.175),
+Steady state: $[4,3,2]^T$ so 4/9 or 44.4\% will be residential. 
+
+\item
+Transition matrix 
+$\begin{bmatrix}
+ {3}/{5} & {1}/{5} \\
+ {2}/{5} & {4}/{5}
+\end{bmatrix}$,
+1 week  (64,136), 
+2 week: (65.6,134.4),
+3 week: (66.24,133.76),
+Steady state: $[1,2]^T$ so 1/3 (33.3\%) will be in Rexburg. This means 66 or 67 cars will be in Rexburg. 
+ 
+\item 
+Transition matrix 
+$\begin{bmatrix}
+ {2}/{5} & {1}/{5} \\
+ {3}/{5} & {4}/{5}
+\end{bmatrix}$,
+1 week  (52,148), 
+2 week: (50.4,149.6),
+3 week: (50.08,149.92),
+Steady state: $[1,3]^T$ so 1/4 or 25\% will be in Rexburg. This means 50 cars will be in Rexburg. 
+
+\item 
+Transition matrix 
+$\begin{bmatrix}
+ {7}/{10} & {1}/{5} \\
+ {3}/{10} & {4}/{5}
+\end{bmatrix}$,
+1 week  (70,130), 
+2 week: (75,125),
+3 week: (77.5,122.5),
+Steady state: $[2,3]^T$ so 2/5 or 40\% will be in Rexburg. This means 80 cars will be in Rexburg. 
+
+\item My order is hamburger, pizza/salad, special (your order may vary which means your matrix will be a little different, but the eigenvector will still have the same ratios).
+Transition matrix 
+$\begin{bmatrix}
+ {3}/{10} & {2}/{5} & {3}/{10} \\
+ {2}/{5} & {3}/{10} & {1}/{5} \\
+ {3}/{10} & {3}/{10} & {1}/{2}
+\end{bmatrix}$,
+Steady state: $[29,26,33]^T$ or $[29/88,26/88,33/88]^T$ so Hamburger - 32.9545\%, Pizza/Salad - 29.5455\%, Special - 37.5\%. 
+
+\end{enumerate}
+
+
+
+
+
+
+\item Second Derivative Test
+\begin{enumerate}
+\item At $(0,0)$ eigenvalues are $3,1$ (both positive so min) with eigenvectors $[1,1]^T,[-1,1]^T$.
+\item At $(0,0)$ eigenvalues are $6,-2$ (saddle point) with eigenvectors $[1,1]^T,[-1,1]^T$.
+\item At $(0,0)$ eigenvalues are $4,0$ (test fails) with eigenvectors $[1,1]^T,[-1,1]^T$.
+\item At $(2,-1)$ eigenvalues are $2,2$ (both positive so min) with eigenvectors $[1,0]^T,[0,1]^T$.
+\item At $(4/3,-2/3)$ eigenvalues are $3,1$ (both positive so min) with eigenvectors $[1,1]^T,[-1,1]^T$.
+\item At $(0,0)$ eigenvalues are $6.23607,1.76393$ (both positive so min) with eigenvectors $[.236,1]^T,[-4.236,1]^T$.
+\item 
+At $(-1,1)$ eigenvalues are $-6,2$ (saddle) with eigenvectors $[1,0]^T,[0,1]^T$.
+At $(1,1)$ eigenvalues are $6,2$ (both positive so min) with eigenvectors $[1,0]^T,[0,1]^T$.
+\item 
+At $(-1,0)$ eigenvalues are $-6,-6$ (both negative so max) with eigenvectors $[1,0]^T,[0,1]^T$.
+At $(-1,2)$ eigenvalues are $-6,6$ (saddle) with eigenvectors $[1,0]^T,[0,1]^T$.
+At $(1,0)$ eigenvalues are $6,-6$ (saddle) with eigenvectors $[1,0]^T,[0,1]^T$.
+At $(1,2)$ eigenvalues are $6,6$ (both positive so min) with eigenvectors $[1,0]^T,[0,1]^T$.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+\end{enumerate}
+
+
+\end{multicols}
+}
+
+
+
+

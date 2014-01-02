@@ -1,0 +1,897 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     34573,        887]
+NotebookOptionsPosition[     33521,        848]
+NotebookOutlinePosition[     34137,        872]
+CellTagsIndexPosition[     34094,        869]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Driven Damped Oscillator", "Section",
+ CellFrameColor->RGBColor[
+  0.6449835965514611, 0.758632791638056, 0.2516823071641108],
+ FontColor->RGBColor[
+  0.6449835965514611, 0.758632791638056, 0.2516823071641108]],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"xmot", "=", 
+     RowBox[{"-", "3.2"}]}], ";", 
+    RowBox[{"xblock", "=", 
+     RowBox[{"-", "2"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"xplotmin", "=", 
+     RowBox[{"xmot", "-", "0.6"}]}], ";", 
+    RowBox[{"xplotmax", "=", "2.1"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"yy", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"mass", "/", "100"}], ")"}], "^", 
+       RowBox[{"(", 
+        RowBox[{"1", "/", "3"}], ")"}]}], "/", "2"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"beta", "=", 
+     RowBox[{"damp", "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "mass"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"om0", "=", 
+     SqrtBox[
+      RowBox[{"k", "/", "mass"}]]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"delta", "=", 
+     RowBox[{"Mod", "[", 
+      RowBox[{
+       RowBox[{"ArcTan", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", "w", " ", "beta"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["om0", "2"], "-", 
+           SuperscriptBox["w", "2"]}], ")"}]}], "]"}], ",", "Pi"}], "]"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"om1", "=", 
+     SqrtBox[
+      RowBox[{
+       RowBox[{"om0", "^", "2"}], "-", 
+       RowBox[{"beta", "^", "2"}]}]]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"fod", "=", 
+     RowBox[{"k", " ", 
+      RowBox[{"foramp", "/", 
+       RowBox[{"(", 
+        RowBox[{"mass", " ", 
+         SqrtBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"om0", "^", "2"}], "-", 
+              RowBox[{"w", "^", "2"}]}], ")"}], "2"], "+", 
+           RowBox[{"4", 
+            RowBox[{"w", "^", "2"}], " ", 
+            RowBox[{"beta", "^", "2"}]}]}]]}], ")"}]}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"phi", "=", 
+     RowBox[{"ArcTan", "[", 
+      RowBox[{
+       RowBox[{"beta", "/", "om1"}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"fod", " ", "w", " ", 
+          RowBox[{"Sin", "[", "delta", "]"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"om1", " ", 
+          RowBox[{"(", 
+           RowBox[{"initpos", "-", 
+            RowBox[{"fod", " ", 
+             RowBox[{"Cos", "[", "delta", "]"}]}]}], ")"}]}], ")"}]}]}], 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"x0", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"initpos", "-", 
+        RowBox[{"fod", " ", 
+         RowBox[{"Cos", "[", "delta", "]"}]}]}], ")"}], "/", 
+      RowBox[{"Cos", "[", "phi", "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"xoft", "=", 
+     RowBox[{"oscil", "[", 
+      RowBox[{
+      "tv", ",", "x0", ",", "beta", ",", "fod", ",", "w", ",", "delta", ",", 
+       "om1", ",", "phi"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"boft", "=", 
+     RowBox[{"motion", "[", 
+      RowBox[{"tv", ",", "w", ",", "foramp"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Graphics", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"GrayLevel", "[", 
+            RowBox[{"1", "-", 
+             RowBox[{"damp", "/", 
+              SqrtBox[
+               RowBox[{"4", "mass", " ", "k"}]]}]}], "]"}], ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"xplotmin", ",", 
+               RowBox[{"-", "0.4"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"xplotmax", ",", "0"}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "Orange", ",", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", 
+                RowBox[{"-", "0.3"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0.3"}], "}"}]}], "}"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"GrayLevel", "[", "0.2", "]"}], ",", 
+           RowBox[{"Disk", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"xmot", ",", "yy"}], "}"}], ",", "foramp"}], "]"}], ",",
+            "\[IndentingNewLine]", "Blue", ",", 
+           RowBox[{"Disk", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"boft", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "+", "xmot"}], ",", 
+               RowBox[{
+                RowBox[{"boft", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "+", "yy"}]}], "}"}], ",", 
+             "0.03"}], "]"}], ",", "\[IndentingNewLine]", "Black", ",", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"boft", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], "+", "xblock"}], ",", 
+                "yy"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"boft", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], "+", "xmot"}], ",", 
+                RowBox[{
+                 RowBox[{"boft", "[", 
+                  RowBox[{"[", "2", "]"}], "]"}], "+", "yy"}]}], "}"}]}], 
+             "}"}], "]"}], ",", "\[IndentingNewLine]", "Red", ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"boft", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "+", "xblock", "-", "0.05"}],
+                ",", 
+               RowBox[{
+                RowBox[{"2", "yy"}], "-", "0.02"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"boft", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "+", "xblock"}], ",", 
+               "0.02"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", "Green", 
+           ",", 
+           RowBox[{"Rectangle", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"xoft", "-", "yy"}], ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"xoft", "+", "yy"}], ",", 
+               RowBox[{"2", "yy"}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "Blue", ",", 
+           RowBox[{"Line", "[", 
+            RowBox[{"springform", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"boft", "[", 
+                  RowBox[{"[", "1", "]"}], "]"}], "+", "xblock"}], ",", 
+                "yy"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"xoft", ",", "yy"}], "}"}]}], "]"}], "]"}], ",", 
+           "\[IndentingNewLine]", "Black", ",", 
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"xplotmin", ",", "0"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"xplotmax", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}],
+          ",", "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"390", ",", "160"}], "}"}]}], ",", 
+         RowBox[{"Axes", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"False", ",", "False"}], "}"}]}], ",", " ", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"xplotmin", ",", "xplotmax"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "0.9"}], ",", "1.2"}], "}"}]}], "}"}]}]}], "]"}], 
+       ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Evaluate", "[", 
+            RowBox[{"oscil", "[", 
+             RowBox[{
+             "tt", ",", "x0", ",", "beta", ",", "fod", ",", "w", ",", "delta",
+               ",", "om1", ",", "phi"}], "]"}], "]"}], ",", " ", 
+           RowBox[{
+            RowBox[{"Evaluate", "[", 
+             RowBox[{"motion", "[", 
+              RowBox[{"tt", ",", "w", ",", "foramp"}], "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"tt", ",", "0", ",", "MaxTime"}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"Thick", ",", "Black"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Thin", ",", "Red"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"Green", ",", 
+            RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+            RowBox[{"Point", "[", 
+             RowBox[{"{", 
+              RowBox[{"tv", ",", "xoft"}], "}"}], "]"}]}], "}"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"390", ",", "250"}], "}"}]}], ",", 
+         RowBox[{"Axes", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"True", ",", "True"}], "}"}]}], ",", " ", 
+         RowBox[{"AxesLabel", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<t\>\"", ",", "14", ",", "Bold", ",", "Italic"}], 
+             "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<x(t)\>\"", ",", "14", ",", "Italic", ",", "Bold"}], 
+             "]"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotLabel", "\[Rule]", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"mass", " ", 
+              RowBox[{
+               RowBox[{"x", "''"}], "[", "t", "]"}]}], "+", 
+             RowBox[{"damp", " ", 
+              RowBox[{
+               RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+             RowBox[{"k", " ", 
+              RowBox[{"x", "[", "t", "]"}]}]}], "\[Equal]", 
+            RowBox[{"foramp", " ", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"w", " ", "t"}], "]"}]}]}], "]"}]}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+         RowBox[{"ImagePadding", "\[Rule]", "45"}]}], "]"}]}], "}"}], "]"}]}],
+    ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"initpos", ",", "1", ",", "\"\<initial position\>\""}], "}"}], 
+     ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "3.1", ",", "\"\<spring constant\>\""}], "}"}], ",", 
+     "0.1", ",", "10", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"damp", ",", "0.65", ",", "\"\<damping friction\>\""}], "}"}], 
+     ",", "0.05", ",", 
+     RowBox[{"2.2", 
+      SqrtBox[
+       RowBox[{"mass", " ", "k"}]]}], ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mass", ",", "2.5", ",", "\"\<mass\>\""}], "}"}], ",", "0.3", 
+     ",", "9", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"foramp", ",", "0.7", ",", "\"\<forcing amplitude\>\""}], "}"}],
+      ",", "0.01", ",", "1", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"w", ",", "2.4", ",", "\"\<forcing frequency\>\""}], "}"}], ",",
+      "0.01", ",", "5", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"tv", ",", "0", ",", "\"\<run\>\""}], "}"}], ",", "0", ",", 
+     "Infinity", ",", 
+     RowBox[{"ControlType", "\[Rule]", "Trigger"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"MaxTime", ",", "40", ",", "\"\<time interval\>\""}], "}"}], 
+     ",", "20", ",", "100", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"springform", "[", 
+        RowBox[{"lft_", ",", "rgt_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"i", ",", "dnode", ",", "imax"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"imax", "=", 
+           RowBox[{"2", "*", "10"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"dnode", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"rgt", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "-", 
+              RowBox[{"lft", "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"2", "*", "imax"}], "+", "2"}], ")"}]}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "lft", "}"}], "~", "Join", "~", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"lft", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "+", "dnode"}], ",", 
+              RowBox[{"lft", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "}"}], "}"}], "~", "Join", 
+           "~", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"2", "i", "*", "dnode"}], "+", 
+                RowBox[{"lft", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+               RowBox[{"yy", "+", 
+                RowBox[{"0.1", "*", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"-", "1"}], ")"}], "^", "i"}]}]}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "1", ",", "imax"}], "}"}]}], "]"}], "~", 
+           "Join", "~", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"rgt", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "-", "dnode"}], ",", 
+              RowBox[{"rgt", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "}"}], "}"}], "~", "Join", 
+           "~", 
+           RowBox[{"{", "rgt", "}"}]}]}]}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"motion", "[", 
+        RowBox[{"t_", ",", "w_", ",", "amp_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"xco", ",", "yco"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"xco", "=", 
+           RowBox[{"amp", " ", 
+            RowBox[{"Cos", "[", 
+             RowBox[{"w", " ", "t"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"yco", "=", 
+           RowBox[{"amp", " ", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"w", " ", "t"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"xco", ",", "yco"}], "}"}]}]}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"oscil", "[", 
+        RowBox[{
+        "t_", ",", "x0_", ",", "beta_", ",", "amp_", ",", "w_", ",", "delta_",
+          ",", "om1_", ",", "phi_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"xco", "=", 
+          RowBox[{
+           RowBox[{"x0", "  ", 
+            RowBox[{"Exp", "[", 
+             RowBox[{
+              RowBox[{"-", "beta"}], "*", "t"}], "]"}], 
+            RowBox[{"Cos", "[", 
+             RowBox[{
+              RowBox[{"om1", " ", "t"}], "-", "phi"}], "]"}]}], "+", 
+           RowBox[{"amp", " ", 
+            RowBox[{"Cos", "[", 
+             RowBox[{
+              RowBox[{"w", " ", "t"}], "-", "delta"}], "]"}]}]}]}]}], 
+        "]"}]}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", "Manipulate"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.40329998446875*^9, {3.4034658026776094`*^9, 
+   3.4034658140838594`*^9}, {3.4034658461307344`*^9, 
+   3.4034660093651094`*^9}, {3.4034660426307344`*^9, 
+   3.4034660478963594`*^9}, {3.4034661288026094`*^9, 
+   3.4034661329588594`*^9}, {3.4034662036151094`*^9, 
+   3.4034662085526094`*^9}, {3.40352632753125*^9, 3.403526363578125*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`damp$$ = 0.65, $CellContext`foramp$$ = 
+    0.7, $CellContext`initpos$$ = 1, $CellContext`k$$ = 
+    3.1, $CellContext`mass$$ = 2.5, $CellContext`MaxTime$$ = 
+    40, $CellContext`tv$$ = 0, $CellContext`w$$ = 2.4, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`initpos$$], 1, "initial position"}, -1, 1, 0.01}, {{
+       Hold[$CellContext`k$$], 3.1, "spring constant"}, 0.1, 10, 0.01}, {{
+       Hold[$CellContext`damp$$], 0.65, "damping friction"}, 0.05, 
+      Dynamic[2.2 ($CellContext`mass$$ $CellContext`k$$)^Rational[1, 2]], 
+      0.01}, {{
+       Hold[$CellContext`mass$$], 2.5, "mass"}, 0.3, 9, 0.01}, {{
+       Hold[$CellContext`foramp$$], 0.7, "forcing amplitude"}, 0.01, 1, 
+      0.01}, {{
+       Hold[$CellContext`w$$], 2.4, "forcing frequency"}, 0.01, 5, 0.01}, {{
+       Hold[$CellContext`tv$$], 0, "run"}, 0, 
+      DirectedInfinity[1]}, {{
+       Hold[$CellContext`MaxTime$$], 40, "time interval"}, 20, 100, 0.01}}, 
+    Typeset`size$$ = {390., {205., 210.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`initpos$27344$$ = 0, $CellContext`k$27345$$ = 
+    0, $CellContext`damp$27346$$ = 0, $CellContext`mass$27347$$ = 
+    0, $CellContext`foramp$27348$$ = 0, $CellContext`w$27349$$ = 
+    0, $CellContext`tv$27350$$ = 0, $CellContext`MaxTime$27351$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`damp$$ = 0.65, $CellContext`foramp$$ = 
+        0.7, $CellContext`initpos$$ = 1, $CellContext`k$$ = 
+        3.1, $CellContext`mass$$ = 2.5, $CellContext`MaxTime$$ = 
+        40, $CellContext`tv$$ = 0, $CellContext`w$$ = 2.4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`initpos$$, $CellContext`initpos$27344$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$27345$$, 0], 
+        Hold[$CellContext`damp$$, $CellContext`damp$27346$$, 0], 
+        Hold[$CellContext`mass$$, $CellContext`mass$27347$$, 0], 
+        Hold[$CellContext`foramp$$, $CellContext`foramp$27348$$, 0], 
+        Hold[$CellContext`w$$, $CellContext`w$27349$$, 0], 
+        Hold[$CellContext`tv$$, $CellContext`tv$27350$$, 0], 
+        Hold[$CellContext`MaxTime$$, $CellContext`MaxTime$27351$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`xmot = -3.2; $CellContext`xblock = -2; \
+$CellContext`xplotmin = $CellContext`xmot - 0.6; $CellContext`xplotmax = 
+        2.1; $CellContext`yy = ($CellContext`mass$$/100)^(1/3)/
+         2; $CellContext`beta = $CellContext`damp$$/(
+         2 $CellContext`mass$$); $CellContext`om0 = \
+($CellContext`k$$/$CellContext`mass$$)^Rational[1, 2]; $CellContext`delta = 
+        Mod[
+          
+          ArcTan[((
+             2 $CellContext`w$$) $CellContext`beta)/($CellContext`om0^2 - \
+$CellContext`w$$^2)], 
+          Pi]; $CellContext`om1 = ($CellContext`om0^2 - $CellContext`beta^2)^
+         Rational[
+          1, 2]; $CellContext`fod = $CellContext`k$$ \
+($CellContext`foramp$$/($CellContext`mass$$ (($CellContext`om0^2 - \
+$CellContext`w$$^2)^2 + (4 $CellContext`w$$^2) $CellContext`beta^2)^
+           Rational[1, 2])); $CellContext`phi = 
+        ArcTan[$CellContext`beta/$CellContext`om1 - (($CellContext`fod \
+$CellContext`w$$) 
+           Sin[$CellContext`delta])/($CellContext`om1 ($CellContext`initpos$$ - \
+$CellContext`fod 
+           Cos[$CellContext`delta]))]; $CellContext`x0 = \
+($CellContext`initpos$$ - $CellContext`fod Cos[$CellContext`delta])/
+         Cos[$CellContext`phi]; $CellContext`xoft = \
+$CellContext`oscil[$CellContext`tv$$, $CellContext`x0, $CellContext`beta, \
+$CellContext`fod, $CellContext`w$$, $CellContext`delta, $CellContext`om1, \
+$CellContext`phi]; $CellContext`boft = $CellContext`motion[$CellContext`tv$$, \
+$CellContext`w$$, $CellContext`foramp$$]; Column[{
+          Graphics[{
+            GrayLevel[
+            1 - $CellContext`damp$$/((
+               4 $CellContext`mass$$) $CellContext`k$$)^Rational[1, 2]], 
+            
+            Rectangle[{$CellContext`xplotmin, -0.4}, {$CellContext`xplotmax, 
+              0}], Orange, 
+            Line[{{0, -0.3}, {0, 0.3}}], 
+            GrayLevel[0.2], 
+            Disk[{$CellContext`xmot, $CellContext`yy}, $CellContext`foramp$$],
+             Blue, 
+            
+            Disk[{Part[$CellContext`boft, 1] + $CellContext`xmot, 
+              Part[$CellContext`boft, 2] + $CellContext`yy}, 0.03], Black, 
+            
+            Line[{{Part[$CellContext`boft, 
+                 1] + $CellContext`xblock, $CellContext`yy}, {
+              Part[$CellContext`boft, 1] + $CellContext`xmot, 
+               Part[$CellContext`boft, 2] + $CellContext`yy}}], Red, 
+            
+            Rectangle[{
+             Part[$CellContext`boft, 1] + $CellContext`xblock - 0.05, 
+              2 $CellContext`yy - 0.02}, {
+             Part[$CellContext`boft, 1] + $CellContext`xblock, 0.02}], Green, 
+            
+            
+            Rectangle[{$CellContext`xoft - $CellContext`yy, 
+              0}, {$CellContext`xoft + $CellContext`yy, 2 $CellContext`yy}], 
+            Blue, 
+            Line[
+             $CellContext`springform[{
+              Part[$CellContext`boft, 
+                 1] + $CellContext`xblock, $CellContext`yy}, \
+{$CellContext`xoft, $CellContext`yy}]], Black, 
+            Line[{{$CellContext`xplotmin, 0}, {$CellContext`xplotmax, 0}}]}, 
+           ImageSize -> {390, 160}, Axes -> {False, False}, 
+           PlotRange -> {{$CellContext`xplotmin, $CellContext`xplotmax}, \
+{-0.9, 1.2}}], 
+          Plot[{
+            Evaluate[
+             $CellContext`oscil[$CellContext`tt, $CellContext`x0, \
+$CellContext`beta, $CellContext`fod, $CellContext`w$$, $CellContext`delta, \
+$CellContext`om1, $CellContext`phi]], 
+            Part[
+             Evaluate[
+              $CellContext`motion[$CellContext`tt, $CellContext`w$$, \
+$CellContext`foramp$$]], 1]}, {$CellContext`tt, 0, $CellContext`MaxTime$$}, 
+           PlotStyle -> {{Thick, Black}, {Thin, Red}}, Epilog -> {Green, 
+             PointSize[Large], 
+             Point[{$CellContext`tv$$, $CellContext`xoft}]}, 
+           ImageSize -> {390, 250}, Axes -> {True, True}, AxesLabel -> {
+             Style["t", 14, Bold, Italic], 
+             Style["x(t)", 14, Italic, Bold]}, PlotLabel -> 
+           Text[$CellContext`mass$$ 
+               Derivative[
+                2][$CellContext`x][$CellContext`t] + $CellContext`damp$$ 
+               Derivative[
+                1][$CellContext`x][$CellContext`t] + $CellContext`k$$ \
+$CellContext`x[$CellContext`t] == $CellContext`foramp$$ 
+              Cos[$CellContext`w$$ $CellContext`t]], PlotRange -> All, 
+           ImagePadding -> 45]}]), 
+      "Specifications" :> {{{$CellContext`initpos$$, 1, 
+          "initial position"}, -1, 1, 0.01, Appearance -> "Labeled", 
+         ImageSize -> Tiny}, {{$CellContext`k$$, 3.1, "spring constant"}, 0.1,
+          10, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`damp$$, 0.65, "damping friction"}, 0.05, 
+         Dynamic[2.2 ($CellContext`mass$$ $CellContext`k$$)^Rational[1, 2]], 
+         0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`mass$$, 2.5, "mass"}, 0.3, 9, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`foramp$$, 0.7, "forcing amplitude"}, 0.01, 1, 
+         0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`w$$, 2.4, "forcing frequency"}, 0.01, 5, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`tv$$, 0, "run"}, 0, 
+         DirectedInfinity[1], ControlType -> 
+         Trigger}, {{$CellContext`MaxTime$$, 40, "time interval"}, 20, 100, 
+         0.01, Appearance -> "Labeled", ImageSize -> Tiny}}, 
+      "Options" :> {TrackedSymbols :> Manipulate}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{642., {232., 237.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`springform[
+         Pattern[$CellContext`lft, 
+          Blank[]], 
+         Pattern[$CellContext`rgt, 
+          Blank[]]] := 
+       Module[{$CellContext`i, $CellContext`dnode, $CellContext`imax}, \
+$CellContext`imax = 
+          2 10; $CellContext`dnode = (Part[$CellContext`rgt, 1] - 
+            Part[$CellContext`lft, 1])/(2 $CellContext`imax + 2); Join[
+           Join[
+            Join[
+             
+             Join[{$CellContext`lft}, {{
+               Part[$CellContext`lft, 1] + $CellContext`dnode, 
+                Part[$CellContext`lft, 2]}}], 
+             
+             Table[{(2 $CellContext`i) $CellContext`dnode + 
+               Part[$CellContext`lft, 1], $CellContext`yy + 
+               0.1 (-1)^$CellContext`i}, {$CellContext`i, 
+               1, $CellContext`imax}]], {{
+             Part[$CellContext`rgt, 1] - $CellContext`dnode, 
+              
+              Part[$CellContext`rgt, 
+               2]}}], {$CellContext`rgt}]], $CellContext`motion[
+         Pattern[$CellContext`t, 
+          Blank[]], 
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`amp, 
+          Blank[]]] := 
+       Module[{$CellContext`xco, $CellContext`yco}, $CellContext`xco = \
+$CellContext`amp 
+           Cos[$CellContext`w $CellContext`t]; $CellContext`yco = \
+$CellContext`amp 
+           Sin[$CellContext`w $CellContext`t]; {$CellContext`xco, \
+$CellContext`yco}], $CellContext`oscil[
+         Pattern[$CellContext`t, 
+          Blank[]], 
+         Pattern[$CellContext`x0, 
+          Blank[]], 
+         Pattern[$CellContext`beta, 
+          Blank[]], 
+         Pattern[$CellContext`amp, 
+          Blank[]], 
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`delta, 
+          Blank[]], 
+         Pattern[$CellContext`om1, 
+          Blank[]], 
+         Pattern[$CellContext`phi, 
+          Blank[]]] := 
+       Module[{}, $CellContext`xco = ($CellContext`x0 
+            Exp[(-$CellContext`beta) $CellContext`t]) 
+           Cos[$CellContext`om1 $CellContext`t - $CellContext`phi] + \
+$CellContext`amp Cos[$CellContext`w $CellContext`t - $CellContext`delta]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->323805411],
+
+Cell[CellGroupData[{
+
+Cell["THIS NOTEBOOK IS THE SOURCE CODE FROM", "Text",
+ CellFrame->{{0, 0}, {0, 1}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.691905, 0.790311, 0.300252],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.691905, 0.790311, 0.300252]],
+
+Cell[TextData[{
+ "\"",
+ ButtonBox["Driven Damped Oscillator",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/DrivenDampedOscillator/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/DrivenDampedOscillator/"],
+ "\"",
+ " from ",
+ ButtonBox["The Wolfram Demonstrations Project",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+ "\[ParagraphSeparator]\[NonBreakingSpace]",
+ ButtonBox["http://demonstrations.wolfram.com/DrivenDampedOscillator/",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/DrivenDampedOscillator/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/DrivenDampedOscillator/"]
+}], "Text",
+ CellMargins->{{48, Inherited}, {0, Inherited}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.5]],
+
+Cell[" ", "Text",
+ CellFrame->{{0, 0}, {0, 1}},
+ CellMargins->{{48, 10}, {4, 28}},
+ CellGroupingRules->{"SectionGrouping", 25},
+ CellFrameMargins->{{48, 48}, {6, 5}},
+ CellFrameColor->RGBColor[0.691905, 0.790311, 0.300252],
+ FontFamily->"Helvetica",
+ FontSize->10,
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.691905, 0.790311, 0.300252]],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Mark Robertson-Tessi",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Mark+Robertson-\
+Tessi"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Mark+Robertson-\
+Tessi"]
+}], "Text",
+ CellDingbat->"\[FilledSmallSquare]",
+ CellMargins->{{66, 48}, {2, 4}},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.6]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "A full-function Wolfram ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " 6 system is required to edit this notebook.\n",
+ StyleBox[ButtonBox["GET WOLFRAM MATHEMATICA 6 \[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://www.wolfram.com/products/mathematica/"], None},
+  ButtonNote->"http://www.wolfram.com/products/mathematica/"],
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0.42, 0]]
+}], "Text",
+ CellFrame->True,
+ CellMargins->{{48, 68}, {8, 28}},
+ CellFrameMargins->12,
+ CellFrameColor->RGBColor[0.865507, 0.90634, 0.680751],
+ CellChangeTimes->{3.3750111182355957`*^9},
+ ParagraphSpacing->{1., 1.},
+ FontFamily->"Verdana",
+ FontSize->10,
+ FontColor->GrayLevel[0.411765],
+ Background->RGBColor[0.986023, 0.991363, 0.969818]],
+
+Cell[TextData[{
+ "\[Copyright] ",
+ StyleBox[ButtonBox["The Wolfram Demonstrations Project & Contributors",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Terms of Use",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/termsofuse.html"], None},
+  ButtonNote->"http://demonstrations.wolfram.com/termsofuse.html"],
+  FontColor->GrayLevel[0.6]],
+ "\[ThickSpace]\[ThickSpace]\[ThickSpace]|\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+ StyleBox[ButtonBox["Make a new version of this Demonstration \
+\[RightGuillemet]",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/participate/upload.jsp?id=\
+DrivenDampedOscillator"], None},
+  ButtonNote->None],
+  FontColor->GrayLevel[0.6]]
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellMargins->{{48, 10}, {20, 50}},
+ CellFrameMargins->{{6, 0}, {6, 6}},
+ CellFrameColor->GrayLevel[0.6],
+ FontFamily->"Verdana",
+ FontSize->9,
+ FontColor->GrayLevel[0.6]]
+}, Open  ]]
+}, Open  ]]
+},
+Editable->True,
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{780, 650},
+WindowMargins->{{Inherited, Inherited}, {Inherited, 0}},
+WindowElements->{
+ "StatusArea", "MemoryMonitor", "MagnificationPopUp", "VerticalScrollBar", 
+  "MenuBar"},
+WindowTitle->"Driven Damped Oscillator - Source",
+DockedCells->{},
+CellContext->Notebook,
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (February 7, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 216, 4, 70, "Section"],
+Cell[809, 29, 17574, 459, 70, "Input"]
+}, Open  ]],
+Cell[18398, 491, 10929, 223, 70, "Output",
+ CellID->323805411],
+Cell[CellGroupData[{
+Cell[29352, 718, 373, 9, 70, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[29728, 729, 911, 24, 70, "Text"],
+Cell[30642, 755, 337, 9, 70, "Text",
+ CellGroupingRules->{"SectionGrouping", 25}],
+Cell[30982, 766, 456, 15, 70, "Text"],
+Cell[CellGroupData[{
+Cell[31463, 785, 829, 24, 70, "Text"],
+Cell[32295, 811, 1198, 33, 70, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+(* NotebookSignature tSNEqdzeq8h4rApPEth5i0NN *)

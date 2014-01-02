@@ -1,0 +1,210 @@
+
+\section{Preparation}
+
+\noindent  
+This chapter covers the following ideas. When you create your lesson plan, it should contain examples which illustrate these key ideas. Before you take the quiz on this unit, meet with another student out of class and teach each other from the examples on your lesson plan. 
+
+\input{12-PDEs/PDEs-objectives}
+
+\begin{center}
+\begin{tabular}{ll}
+&Preparation Problems 
+(\href{https://ilearn.byui.edu/bbcswebdav/institution/Physical\_Sci\_Eng/Mathematics/Personal\%20Folders/WoodruffB/316/12-PDEs-Preparation-Solutions.pdf}{click for solutions})
+\\
+\hline\hline
+Day 1& 2, 21, 22
+\\\hline
+Day 2& 23-26
+\\\hline
+Day 3& 27, 28
+\\\hline
+\end{tabular}
+\end{center}
+
+
+You find the the homework problems below.  
+I strongly suggest that you use your homework time to organize how you solve ODEs using the various methods we have learned all semester long. 
+Hence, spend a bunch of time with problem 22. 
+A good lesson plan for this unit would consist of a flow chart of some sort which tells you how to determine an appropriate method to use to solve and ODE.
+
+
+\section{Problems}
+
+\begin{enumerate}
+	\item[(I)] Verifying a function satisfies an ODE.  Verify that the functions below satisfy the given PDE.
+	\item $u(x,y) = x^2-y^2$ satisfies Laplace's equation $u_{xx}+u_{yy}=0$
+	\item $u(x,y)= \arctan(y/x)$ satisfies Laplace's equation $u_{xx}+u_{yy}=0$
+	\item $u(x,y)=e^x\cos y$ satisfies Laplace's equation $u_{xx}+u_{yy}=0$
+	\item $u(x,y)=\ln(x^2+y^2)$ satisfies Laplace's equation $u_{xx}+u_{yy}=0$
+	\item $u(x,t)=\cos(3x)\sin(t)$ satisfies the wave equation $u_{tt}  = c^2u_{xx}$ (what is $c$?)
+	\item $u(x,t)=\cos(Ax)\sin(Bt)$ satisfies the wave equation $u_{tt}  = c^2u_{xx}$ (what is $c$?)
+
+  \item[(II)] Solving PDEs by reducing them to ODEs.  Solve each of the following ODEs by using an appropriate technique from earlier in the semester. For simplicity, we will assume that $u(x,y)$ is our function in each case. You can solve each of these using the technology introduction to get a solution.  The key here is to learn to recognize what type of technique to use with each problem.
+\begin{multicols}{2}
+  \item $u_y = xy^2 u$
+  \item $u_x = xy^2 u$
+  \item $u_y = 3u - x$
+  \item $u_x = 3u - x$
+  \item $u_{xy}=2u_x+1$
+	\item $u_y+2u=u^2$
+	\item $u_{xx}+3u_x+2u=0$
+	\item $u_{yy}+3u_y+2u=x$
+	\item $u_{yy}+3u_y+2u=y$
+	\item $u_{x}+4u = 12 \delta(x-3)$
+	\item $u_{x}+4u = 12 \delta(y-3)$
+	\item $u_x = 2u-v, v_x = -u+2v$ ($v$ is a function of $x$ and $y$) 
+	\item $u_{xx}+2x u_x + 4 u = 0$
+	\item $y^2 u_{yy} + 2y u_y +(y^2-4) u = 0$
+\end{multicols}	
+	\item For each of the problems above, write the type of technique you need to use to solve it. Write a guide for yourself to know what method you should use based on what you see in the PDE.
+	\item Construct an example of a PDE which needs each of the following ODE solution techniques to solve. Then solve the PDE.  You can count each technique a homework problem:
+	Separable, 
+	Exact,
+	Integrating Factor,
+	Linear,
+	 Bernoulli,
+	 Homogeneous with constant coefficients,
+	 Nonhomogeneous with constant coefficients,
+	 Laplace Transforms,
+	 Power Series,
+	 Frobenius Method,
+	 Matrix exponential.
+
+
+
+\item[(IV)] Solving the Wave Equation. The first 4 problems in this section ask you to repeat the derivation of the wave equation.  The solutions are in the lecture notes.  The last few problems ask you to solve the wave equation using some given initial conditions.
+
+  \item Derive the one dimensional wave equation $u_{tt} = c^2 u_{xx}$, with boundary conditions $u(t,0)=u(t,L) = 0$ and initial conditions $u(0,x) = f(x)$, $u_t(0,x)=g(x)$.
+  \item Separate variables on the 1D wave equation to obtain 2 ODEs.
+  \item Solve both of the ODEs from the previous step.
+  \item Use superposition and Fourier series to obtain a general solution to the wave equation.
+ 
+ 	\item If the length of the string is $L=1$, its initial position is $u(0,x) = x(1-x)$, and the initial velocity is $u_t(0,x)=0$ (meaning the string is released with no initial velocity), find and graph the position of the string at any time $t$.
+ 	\item If $L=2$, $u(0,x) = \begin{cases}x & 0\leq x\leq 1\\2-x & 1\leq x\leq 2\end{cases}$, and $u_t(0,x)=0$, repeat the previous problem.
+ 	
+%\item Solve the 1D heat equation problems described in the last section of this unit.
+\end{enumerate}
+
+
+
+\section{Solutions}
+{\small 
+
+\begin{enumerate}
+	\item[(I)] Verifying a function satisfies an ODE.  
+	\item Just take derivatives. 
+	\item Just take derivatives. 
+	\item Just take derivatives. 
+	\item Just take derivatives. 
+	\item Just take derivatives. $c=1/3$
+	\item Just take derivatives. $c=B/A$
+
+  \item[(II)] Solving PDEs by reducing them to ODEs. I'll list the technique as well as the solution.
+  \item 
+%  $u_y = xy^2 u$ 
+  Separate variables, then integrate both sides.  
+  $u(x,y)\to e^{\frac{x y^3}{3}} c_1[x]$
+  \item 
+%  $u_x = xy^2 u$
+  Separate variables, then integrate both sides.  
+  $u(x,y)\to e^{\frac{x^2 y^2}{2}} c_1[y]$
+  \item 
+%  $u_y = 3u - x$
+  Find an integrating factor, or find $y_h$ and guess $y_p=A$, where the constant $A$ could be a function of $x$.
+  $u(x,y)\to e^{3 y} c_1[x]+\frac{x}{3}$
+  
+  \item 
+%  $u_x = 3u - x$
+  Find an integrating factor, or find $y_h$ and guess $y_p=Ax+B$, where the constants $A$ and $B$ could be functions of $y$.
+  $u(x,y)\to e^{3 x} c_1[y]+\frac{x}{3}+\frac{1}{9}$
+  \item 
+%  $u_{xy}=2u_x+1$
+  Let $z=u_x$, and then solve $z_y=2x+1$. After that, solve $z=u_x$.  
+  $z=u(x,y)\to e^{2 y} c_1[x]-\frac{1}{2}$ and 
+  $u(x,y)\to  e^{2 y}\int c_1[x]dx-\frac12 x +c_2[y] = e^{2 y} c_3[x]-\frac12 x +c_2[y]$.
+	\item 
+%	$u_y+2u=u^2$
+	Use a Bernoulli substitution.  This will require that you let $w=u^{1-2}$. 
+	$u(x,y)\to -\frac{2}{e^{2 c_1[x]+2 y}-1}$
+	\item 
+%	$u_{xx}+3u_x+2u=0$
+	Find $y_h$ by getting the roots of the characteristic polynomial.
+	$u(x,y)\to e^{-2 x} c_1[y]+e^{-x} c_2[y]$
+	
+	\item 
+%	$u_{yy}+3u_y+2u=x$
+	Find $y_h$ and then guess $y_p=A$, where $A$ is a function of $x$.
+	$u(x,y)\to e^{-2 y} c_1[x]+e^{-y} c_2[x]+\frac{x}{2}$
+	
+	\item 
+%	$u_{yy}+3u_y+2u=y$
+	Find $y_h$ and then guess $y_p=Ay+B$, where $A$ and $B$ are functions of $x$. 
+	$u(x,y)\to e^{-2 y} c_1[x]+e^{-y} c_2[x]+\frac{1}{4} (2 y-3)$
+	
+	\item 
+%	$u_{x}+4u = 12 \delta(x-3)$
+	Use Laplace transforms, just remember that all your constants are functions of $y$. The transform of $\delta(x-3)$ is $e^{-3s}$.  
+	$u(x,y)\to c(x)e^{-4x}+12 e^{-4(x-3)}u(x-3)$
+	\item 
+%	$u_{x}+4u = 12 \delta(y-3)$
+	Use Laplace transforms, and notice that $\delta(y-3)$ is a constant here, so its transform is $\frac{\delta(y-3)}{s}$
+	$u(x,y)\to c(x)e^{-4x}+12 e^{-4(x-3)}u(x-3)$
+	
+	
+	\item 
+%	$u_x = 2u-v, v_x = -u+2v$ ($v$ is a function of $x$ and $y$) 
+	This is a system where $y$ is just assumed to be a constant. Find the matrix exponential.	
+	The matrix exponential is 
+	$\left(
+\begin{array}{cc}
+ \frac{e^t}{2}+\frac{e^{3 t}}{2} & \frac{e^t}{2}-\frac{e^{3 t}}{2} \\
+ \frac{e^t}{2}-\frac{e^{3 t}}{2} & \frac{e^t}{2}+\frac{e^{3 t}}{2}
+\end{array}
+\right)$
+The solution is 
+$\left(
+\begin{array}{cc}
+ \text{u}(x,y)\to \frac{c_1[y] e^x}{2}+\frac{1}{2} c_1[y] e^{3 x}+\frac{c_2[y]
+   e^x}{2}-\frac{1}{2} c_2[y] e^{3 x} \\ \text{v}(x,y)\to \frac{c_1[y]
+   e^x}{2}-\frac{1}{2} c_1[y] e^{3 x}+\frac{c_2[y] e^x}{2}+\frac{1}{2} c_2[y]
+   e^{3 x}
+\end{array}
+\right)$
+	\item 
+	$u_{xx}+2x u_x + 4 u = 0$
+	Use a power series, since the coefficients depend on variable we are differentiating with respect to.
+	Your solution will look like $u(x,y)=\sum_{n=1}^\infty a_n(y)x^n$, where $a_n$ is a function of $y$.  
+	
+	\item 
+	$y^2 u_{yy} + 2y u_y +(y^2-4) u = 0$
+	Use the Frobenius method. We have variable coefficients and the $y^2$ in front of $u_{yy}$ causes this to not be ordinary at $y=0$, but it is regular singular at $y=0$.  Your series will look like $u_1(x,y) = y^\lambda \sum_{n=1}^\infty a_n(x) y^n$ where each coefficient $a_n$ is a function of $x$. This is Bessel's equation, where $p=2$.  The solution in general is $c_1(x)B_1[y,2]+c_2(x)B_2[y,2]$ where $B_1$ and $B_2$ are the two independent Bessel equations that come from the Frobenius method, and the constants $c_1$ and $c_2$ could be any function of $x$.   
+
+	\item For each of the problems above, write the type of technique you need to use to solve it. Write a guide for yourself to know what method you should use based on what you see in the PDE.
+	\item Construct an example of a PDE which needs each of the following ODE solution techniques to solve. Then solve the PDE.  You can count each technique a homework problem:
+	Separable, 
+	Exact,
+	Integrating Factor,
+	Linear,
+	 Bernoulli,
+	 Homogeneous with constant coefficients,
+	 Nonhomogeneous with constant coefficients,
+	 Laplace Transforms,
+	 Power Series,
+	 Frobenius Method,
+	 Matrix exponential.
+
+
+
+\item[(IV)] Solving the Wave Equation. The first 4 problems in this section ask you to repeat the derivation of the wave equation.  The solutions are in the lecture notes.  The last few problems ask you to solve the wave equation using some given initial conditions.
+
+  \item Derive the one dimensional wave equation $u_{tt} = c^2 u_{xx}$, with boundary conditions $u(t,0)=u(t,L) = 0$ and initial conditions $u(0,x) = f(x)$, $u_t(0,x)=g(x)$.
+  \item Separate variables on the 1D wave equation to obtain 2 ODEs.
+  \item Solve both of the ODEs from the previous step.
+  \item Use superposition and Fourier series to obtain a general solution to the wave equation.
+ 
+ 	\item If the length of the string is $L=1$, its initial position is $u(0,x) = x(1-x)$, and the initial velocity is $u_t(0,x)=0$ (meaning the string is released with no initial velocity), find and graph the position of the string at any time $t$.
+ 	\item If $L=2$, $u(0,x) = \begin{cases}x & 0\leq x\leq 1\\2-x & 1\leq x\leq 2\end{cases}$, and $u_t(0,x)=0$, repeat the previous problem.
+ 	
+%\item Solve the 1D heat equation problems described in the last section of this unit.
+\end{enumerate}
+}

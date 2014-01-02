@@ -1,0 +1,54 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\newcommand{\ds}{\displaystyle}
+\begin{document}
+
+\noindent{\huge Partial Fraction Decomposition }
+
+\noindent(Rough Draft \today)
+The goal of this handout is to help you perform a partial fraction decomposition.
+We will answer the following questions 1) What is a partial fraction decomposition? 2) How do you handle quadratic factors? 3) How do you handle repeated factors?
+
+Let's start by illustrating the key ideas with simple fractions. The fraction $\frac{1}{6} = \frac{1}{2\cdot 3}$ can be written as a sum of two fractions with simpler denominators as $\frac16=\frac12-\frac13$. The prime factors of 6 are 2 and 3, so we decompose the more complicated fraction $\frac16$ into two simpler fractions whose denominators are the factors of 6. The fraction $\frac{5}{9} = \frac{5}{3\cdot 3}$ has a repeated factor of $3$ in the denominator, and can be written as $\frac{5}{9} = \frac{1}{3}+\frac{2}{9}$. This simplifies the numerators and uses the simplest denominators possible, as there is no way to express $\frac 59$ as a sum of fractions without a 9 in the denominator. Improper fractions (a larger numerator than denominator) are written in proper form before performing any decomposition, for example $\frac{14}{9}=1+\frac59$ which then becomes $1+\frac13+\frac29$ after decomposing the fraction.
+%By writing a fraction as a sum of simpler fractions, we can sometimes simplify a problem by studying each small fraction, instead of the possibly more complex sum. 
+
+A partial fraction decomposition expresses a rational function (the quotient of two polynomials) as a sum of simpler rational functions whose denominators are the factors of the original. Let's look at an example. The function $\frac{2x+3}{x^2-1}$ has the denominator $x^2-1$ which factors as $(x-1)(x+1)$. A partial fraction decomposition of $\frac{1}{x^2-1}$ requires that we write 
+$$\frac{2x+3}{x^2-1}=\frac{A}{x-1}+\frac{B}{x+1}$$ 
+for some constants $A$ and $B$. The numerator of each term must have a smaller degree than the factor expressed in the denominator (since the factors are all degree 1, the numerators must be constants). We decompose the more complicated fraction into simpler fractions. To find $A$ and $B$, multiply both sides by the denominator of the original function, which gives 
+$1=A(x+1)+B(x-1).$ 
+To find $A$ and $B$, you can equate the coefficients of $x$ and the constants on both sides. For example, we have $(2)x+(3) = (A+B)x+(A-B)$, which means $A+B=2$ and $A-B=3$.  Adding the two equations gives $2A=5$ or $A=5/2$, and then $B=-1/2$.  So our partial fraction decomposition is $\frac{1}{x^2-1}=\frac{5/2}{x-1}+\frac{-1/2}{x+1}.$
+
+
+As a second example, to give a partial fraction decomposition for $\frac{x-3}{(x-2)(x+1)}$, we write  
+$\frac{x-3}{(x-2)(x+1)} = \frac{A}{x-2}+ \frac{B}{x+1} $. Multiplying both sides by the denominator $(x-2)(x+1)$ gives $x-3 = A(x+1)+B(x-2)$.  Expanding and collecting like terms gives $(1)x-(3) = (A+B)x+(A-2B)$, which yields the system of equations $1=A+B$ and $3=A-2B$.  Subtracting the two equations gives $-2=3B$ or $B=-2/3$ which means $A=5/3$.
+
+The denominator of $\frac{x+1}{x^3+x)}$ factors as $x(x^2+1)$. The zeros of $x^2+1$ are $\pm i$. To avoid complex numbers, we refrain from factoring the denominator as $x(x-i)(x+i)$ and instead write the decomposition in the form 
+$$\frac{x+2}{x^3+x} = \frac{A}{x}+\frac{Bx+C}{x^2+1)}.$$ When a factor involves a quadratic term with complex zeros, the numerator can be a liner term $Bx+C$. To find $A,B$, and $C$, we would multiply both sides by  $x(x^2+1)$ and then equate the coefficients on each side of our equation. In other words, we write $x+2 = A(x^2+1)+(Bx+C)x$ in the form $(0)x^2 + (1) x+(2) = (A+B)x^2+(C)x+(A)$ which gives the equations $0=A+B, 1=C, $ and $2=A$, so $B=-2$.  Our partial fraction decomposition is $\frac{x+2}{x^3+x)} = \frac{2}{x}+\frac{-2x+1}{x^2+1)}.$
+
+We modify our partial fraction decomposition when the denominator has a repeated factor. If the factor appears twice, then we include a term with the factor and a term with the square of the factor in our decomposition.  If a factor occurs 3 times, then we also include a term with the factor cubed. If the factor is linear, then the numerator will be a constant for each term. Similarly, the numerator for each term will be linear if the factor is a quadratic. 
+For example we would write $\frac{3x+2}{x^2+2x+1} = \frac{3x+2}{(x+1)^2} = \frac{A}{x+1}+\frac{B}{(x+1)^2}$, and then solve for $A$ and $B$. This parallels the example with integers where $\frac{5}{9} = \frac{1}{3}+\frac{2}{9}$ cannot be decomposed into terms with only a 3 in the denominator.  As a more complicated example, we would write 
+$$\frac{x^4+2x-1}{x(x^2+4x+5)(x^2+1)^2(x-1)^3} =
+\frac{A}{x}+
+\frac{Bx+C}{x^2+4x+5}+
+\frac{Dx+E}{x^2+1}+
+\frac{Fx+G}{(x^2+1)^2}+
+\frac{H}{x-1}+
+\frac{I}{(x-1)^2}+
+\frac{J}{(x-1)^3}$$ 
+to begin a partial fraction decomposition, and then multiply both sides by $x(x^2+4x+5)(x^2+1)^2(x-1)^3$ and equate coefficients to find the constants.
+
+
+One use for partial fraction decompositions occurs in integration. To find the integral 
+$\int \frac{2x+3}{x^2-1} dx$, 
+we can use the partial fraction decomposition to write 
+$\int \frac{1}{x^2-1} dx
+=\int\frac{5/2}{x-1}+\frac{-1/2}{x+1} = \frac52\ln|x-1|-\frac12\ln|x+1|$. Another use occurs when trying to work with Laplace transforms, as most Laplace transform problems involve division by polynomials. 
+
+Partial fraction decompositions illustrate the following principle: sometimes a complex problem can be solved by breaking the problem up into smaller problems, and then tackling each problem individually.  A partial fraction decomposition provides the means of decomposing complicated problems into simpler ones.
+
+\end{document}
